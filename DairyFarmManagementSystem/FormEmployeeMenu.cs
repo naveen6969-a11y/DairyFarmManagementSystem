@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace DairyFarmManagementSystem
 {
-    public partial class FormEmployeeMenu : Form
+    public partial class FormEmployeeMenu : MetroFramework.Forms.MetroForm
     {
         public FormEmployeeMenu()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.Resizable = false;
+            this.Movable = false;
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

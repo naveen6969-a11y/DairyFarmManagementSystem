@@ -34,11 +34,11 @@
             this.picBoxFarmerCow = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.picBoxLoginback = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLogin = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFarmerCow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoginback)).BeginInit();
             this.SuspendLayout();
@@ -48,9 +48,9 @@
             this.panelLoginFrame.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelLoginFrame.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLoginFrame.ForeColor = System.Drawing.Color.White;
-            this.panelLoginFrame.Location = new System.Drawing.Point(0, 0);
+            this.panelLoginFrame.Location = new System.Drawing.Point(20, 60);
             this.panelLoginFrame.Name = "panelLoginFrame";
-            this.panelLoginFrame.Size = new System.Drawing.Size(228, 450);
+            this.panelLoginFrame.Size = new System.Drawing.Size(228, 370);
             this.panelLoginFrame.TabIndex = 0;
             // 
             // lblSoftwareNameShort
@@ -94,16 +94,6 @@
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(428, 377);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(146, 35);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Gray;
@@ -142,13 +132,23 @@
             this.comboBox1.TabIndex = 10;
             this.comboBox1.Text = "Select Role";
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(440, 366);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(110, 46);
+            this.btnLogin.TabIndex = 11;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseSelectable = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblUsername);
@@ -157,11 +157,8 @@
             this.Controls.Add(this.lblSoftwareNameShort);
             this.Controls.Add(this.panelLoginFrame);
             this.Controls.Add(this.picBoxLoginback);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFarmerCow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoginback)).EndInit();
             this.ResumeLayout(false);
@@ -176,10 +173,10 @@
         private System.Windows.Forms.PictureBox picBoxFarmerCow;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox picBoxLoginback;
         private System.Windows.Forms.ComboBox comboBox1;
+        private MetroFramework.Controls.MetroButton btnLogin;
     }
 }

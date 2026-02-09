@@ -12,14 +12,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DairyFarmManagementSystem
 {   
-    public partial class FormLoading : Form
+    public partial class FormLoading : MetroFramework.Forms.MetroForm
     {
        
 
         public FormLoading()
         {
             InitializeComponent();
-
+            this.ControlBox = false;
+            this.Resizable = false;
+            this.Movable = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
