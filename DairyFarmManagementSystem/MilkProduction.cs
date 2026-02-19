@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace DairyFarmManagementSystem
 {
-    public partial class FormEmployeeMenu : MetroFramework.Forms.MetroForm
+    public partial class FormMilkProduction : MetroFramework.Forms.MetroForm
     {
-        public FormEmployeeMenu()
+        public FormMilkProduction()
         {
             InitializeComponent();
-            this.ControlBox = false;
-            this.Resizable = false;
-            this.Movable = false;
-           
-
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton1_Click_1(object sender, EventArgs e)
+        private void btnempLogout_Click(object sender, EventArgs e)
         {
             FormLogin frmlog = new FormLogin();
             frmlog.Show();

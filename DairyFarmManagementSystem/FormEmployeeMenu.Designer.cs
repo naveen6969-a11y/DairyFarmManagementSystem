@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployeeMenu));
             this.panelLoginFrame = new System.Windows.Forms.Panel();
+            this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.lblCowname = new System.Windows.Forms.Label();
@@ -52,12 +54,17 @@
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblManagecows = new MetroFramework.Controls.MetroLabel();
+            this.panelLoginFrame.SuspendLayout();
             this.panelEmpMenuTOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLoginFrame
             // 
             this.panelLoginFrame.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLoginFrame.Controls.Add(this.btnempLogout);
             this.panelLoginFrame.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLoginFrame.ForeColor = System.Drawing.Color.White;
             this.panelLoginFrame.Location = new System.Drawing.Point(20, 60);
@@ -65,9 +72,22 @@
             this.panelLoginFrame.Size = new System.Drawing.Size(198, 370);
             this.panelLoginFrame.TabIndex = 1;
             // 
+            // btnempLogout
+            // 
+            this.btnempLogout.AutoSize = true;
+            this.btnempLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnempLogout.BackgroundImage")));
+            this.btnempLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnempLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnempLogout.Location = new System.Drawing.Point(72, 323);
+            this.btnempLogout.Name = "btnempLogout";
+            this.btnempLogout.Size = new System.Drawing.Size(36, 34);
+            this.btnempLogout.TabIndex = 0;
+            this.btnempLogout.UseSelectable = true;
+            this.btnempLogout.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
             // panelEmpMenuTOP
             // 
-            this.panelEmpMenuTOP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelEmpMenuTOP.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panelEmpMenuTOP.Controls.Add(this.lblSoftwareNameShort);
             this.panelEmpMenuTOP.ForeColor = System.Drawing.SystemColors.Control;
             this.panelEmpMenuTOP.Location = new System.Drawing.Point(228, 4);
@@ -90,7 +110,7 @@
             // 
             this.lblCowname.AutoSize = true;
             this.lblCowname.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCowname.Location = new System.Drawing.Point(280, 60);
+            this.lblCowname.Location = new System.Drawing.Point(282, 66);
             this.lblCowname.Name = "lblCowname";
             this.lblCowname.Size = new System.Drawing.Size(66, 15);
             this.lblCowname.TabIndex = 3;
@@ -100,7 +120,7 @@
             // 
             this.lblEartag.AutoSize = true;
             this.lblEartag.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEartag.Location = new System.Drawing.Point(390, 60);
+            this.lblEartag.Location = new System.Drawing.Point(392, 66);
             this.lblEartag.Name = "lblEartag";
             this.lblEartag.Size = new System.Drawing.Size(46, 15);
             this.lblEartag.TabIndex = 4;
@@ -110,7 +130,7 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblColor.Location = new System.Drawing.Point(493, 60);
+            this.lblColor.Location = new System.Drawing.Point(495, 66);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(36, 15);
             this.lblColor.TabIndex = 5;
@@ -120,7 +140,7 @@
             // 
             this.lblBreed.AutoSize = true;
             this.lblBreed.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblBreed.Location = new System.Drawing.Point(612, 60);
+            this.lblBreed.Location = new System.Drawing.Point(614, 66);
             this.lblBreed.Name = "lblBreed";
             this.lblBreed.Size = new System.Drawing.Size(39, 15);
             this.lblBreed.TabIndex = 6;
@@ -130,7 +150,7 @@
             // 
             this.lblDateofbirth.AutoSize = true;
             this.lblDateofbirth.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDateofbirth.Location = new System.Drawing.Point(280, 134);
+            this.lblDateofbirth.Location = new System.Drawing.Point(282, 140);
             this.lblDateofbirth.Name = "lblDateofbirth";
             this.lblDateofbirth.Size = new System.Drawing.Size(74, 15);
             this.lblDateofbirth.TabIndex = 7;
@@ -140,7 +160,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAge.Location = new System.Drawing.Point(493, 134);
+            this.lblAge.Location = new System.Drawing.Point(495, 140);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 15);
             this.lblAge.TabIndex = 8;
@@ -150,7 +170,7 @@
             // 
             this.lblWeightatbirth.AutoSize = true;
             this.lblWeightatbirth.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblWeightatbirth.Location = new System.Drawing.Point(582, 134);
+            this.lblWeightatbirth.Location = new System.Drawing.Point(584, 140);
             this.lblWeightatbirth.Name = "lblWeightatbirth";
             this.lblWeightatbirth.Size = new System.Drawing.Size(85, 15);
             this.lblWeightatbirth.TabIndex = 10;
@@ -160,7 +180,7 @@
             // 
             this.lblPasture.AutoSize = true;
             this.lblPasture.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPasture.Location = new System.Drawing.Point(709, 134);
+            this.lblPasture.Location = new System.Drawing.Point(711, 140);
             this.lblPasture.Name = "lblPasture";
             this.lblPasture.Size = new System.Drawing.Size(47, 15);
             this.lblPasture.TabIndex = 11;
@@ -168,7 +188,7 @@
             // 
             // CalenderDateofbirth
             // 
-            this.CalenderDateofbirth.Location = new System.Drawing.Point(228, 162);
+            this.CalenderDateofbirth.Location = new System.Drawing.Point(230, 168);
             this.CalenderDateofbirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.CalenderDateofbirth.Name = "CalenderDateofbirth";
             this.CalenderDateofbirth.Size = new System.Drawing.Size(200, 29);
@@ -176,7 +196,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(292, 227);
+            this.btnSave.Location = new System.Drawing.Point(294, 233);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(136, 23);
             this.btnSave.TabIndex = 20;
@@ -199,7 +219,7 @@
             this.txtCowname.CustomButton.UseSelectable = true;
             this.txtCowname.CustomButton.Visible = false;
             this.txtCowname.Lines = new string[0];
-            this.txtCowname.Location = new System.Drawing.Point(271, 87);
+            this.txtCowname.Location = new System.Drawing.Point(273, 93);
             this.txtCowname.MaxLength = 32767;
             this.txtCowname.Name = "txtCowname";
             this.txtCowname.PasswordChar = '\0';
@@ -229,7 +249,7 @@
             this.txtColor.CustomButton.UseSelectable = true;
             this.txtColor.CustomButton.Visible = false;
             this.txtColor.Lines = new string[0];
-            this.txtColor.Location = new System.Drawing.Point(475, 87);
+            this.txtColor.Location = new System.Drawing.Point(477, 93);
             this.txtColor.MaxLength = 32767;
             this.txtColor.Name = "txtColor";
             this.txtColor.PasswordChar = '\0';
@@ -259,7 +279,7 @@
             this.txtEartag.CustomButton.UseSelectable = true;
             this.txtEartag.CustomButton.Visible = false;
             this.txtEartag.Lines = new string[0];
-            this.txtEartag.Location = new System.Drawing.Point(378, 87);
+            this.txtEartag.Location = new System.Drawing.Point(380, 93);
             this.txtEartag.MaxLength = 32767;
             this.txtEartag.Name = "txtEartag";
             this.txtEartag.PasswordChar = '\0';
@@ -289,7 +309,7 @@
             this.txtBreed.CustomButton.UseSelectable = true;
             this.txtBreed.CustomButton.Visible = false;
             this.txtBreed.Lines = new string[0];
-            this.txtBreed.Location = new System.Drawing.Point(602, 87);
+            this.txtBreed.Location = new System.Drawing.Point(604, 93);
             this.txtBreed.MaxLength = 32767;
             this.txtBreed.Name = "txtBreed";
             this.txtBreed.PasswordChar = '\0';
@@ -319,7 +339,7 @@
             this.txtAge.CustomButton.UseSelectable = true;
             this.txtAge.CustomButton.Visible = false;
             this.txtAge.Lines = new string[0];
-            this.txtAge.Location = new System.Drawing.Point(475, 168);
+            this.txtAge.Location = new System.Drawing.Point(477, 174);
             this.txtAge.MaxLength = 32767;
             this.txtAge.Name = "txtAge";
             this.txtAge.PasswordChar = '\0';
@@ -349,7 +369,7 @@
             this.txtWeightatbirth.CustomButton.UseSelectable = true;
             this.txtWeightatbirth.CustomButton.Visible = false;
             this.txtWeightatbirth.Lines = new string[0];
-            this.txtWeightatbirth.Location = new System.Drawing.Point(585, 165);
+            this.txtWeightatbirth.Location = new System.Drawing.Point(587, 171);
             this.txtWeightatbirth.MaxLength = 32767;
             this.txtWeightatbirth.Name = "txtWeightatbirth";
             this.txtWeightatbirth.PasswordChar = '\0';
@@ -379,7 +399,7 @@
             this.txtPasture.CustomButton.UseSelectable = true;
             this.txtPasture.CustomButton.Visible = false;
             this.txtPasture.Lines = new string[0];
-            this.txtPasture.Location = new System.Drawing.Point(702, 165);
+            this.txtPasture.Location = new System.Drawing.Point(704, 171);
             this.txtPasture.MaxLength = 32767;
             this.txtPasture.Name = "txtPasture";
             this.txtPasture.PasswordChar = '\0';
@@ -396,7 +416,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(454, 227);
+            this.btnEdit.Location = new System.Drawing.Point(456, 233);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 28;
@@ -405,7 +425,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(551, 227);
+            this.btnDelete.Location = new System.Drawing.Point(553, 233);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 29;
@@ -414,7 +434,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(653, 227);
+            this.btnUpdate.Location = new System.Drawing.Point(655, 233);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 30;
@@ -424,17 +444,37 @@
             // lblCowlist
             // 
             this.lblCowlist.AutoSize = true;
-            this.lblCowlist.Location = new System.Drawing.Point(460, 264);
+            this.lblCowlist.Location = new System.Drawing.Point(460, 268);
             this.lblCowlist.Name = "lblCowlist";
             this.lblCowlist.Size = new System.Drawing.Size(62, 19);
             this.lblCowlist.TabIndex = 31;
             this.lblCowlist.Text = "Cows List";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
+            this.dataGridView1.TabIndex = 32;
+            // 
+            // lblManagecows
+            // 
+            this.lblManagecows.AutoSize = true;
+            this.lblManagecows.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagecows.Location = new System.Drawing.Point(460, 41);
+            this.lblManagecows.Name = "lblManagecows";
+            this.lblManagecows.Size = new System.Drawing.Size(92, 19);
+            this.lblManagecows.TabIndex = 33;
+            this.lblManagecows.Text = "Manage Cows";
             // 
             // FormEmployeeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblManagecows);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -459,8 +499,11 @@
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.panelLoginFrame);
             this.Name = "FormEmployeeMenu";
+            this.panelLoginFrame.ResumeLayout(false);
+            this.panelLoginFrame.PerformLayout();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +535,8 @@
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroLabel lblCowlist;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroButton btnempLogout;
+        private MetroFramework.Controls.MetroLabel lblManagecows;
     }
 }
