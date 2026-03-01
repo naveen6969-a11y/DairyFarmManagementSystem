@@ -121,7 +121,7 @@
   <data name="picBoxFarmerCow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAKa4SURBVHhe7Z0F
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAKa4SURBVHhe7Z0F
         dBxH0sfbFliyJFuyLTOjzMxsmZmZmZmZLTMzM1MMMQWcOHEcQ2I7zMx0l7vAfXeu79Vk5chdLW3v7Oxq
         Z7f+7/3e5aydnp6e2q7ame4qIVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8Vi
         sVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwW
@@ -839,7 +839,7 @@
   <data name="picBoxLoginback.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEQuSURBVHhe7Z0H
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEQuSURBVHhe7Z0H
         tDVFlbZfyWACFQVFJKgoZlHUMYHimBUJ6hgwjAqGMTIjYxYVdQyIKGZnRuVXMaCDGUwzigGUYABFREBQ
         VIIklfT/a2t//1x21b239unu0119nmetZ61v7fvd6qq+darqdFeQAGAKbCFpZ0lPlPRCSW+U9B+SPi/p
         GEmnNv5W0nmSLpT0fxsva2LmWZJOkvRdSV+WdKikAyXtK+kJku4r6aaSruEzAAAAAP1gne52TUf8ekmf

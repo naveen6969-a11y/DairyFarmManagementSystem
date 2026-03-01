@@ -40,7 +40,6 @@
             this.txtNoonMilk = new MetroFramework.Controls.MetroTextBox();
             this.txtCowName2 = new MetroFramework.Controls.MetroTextBox();
             this.txtAMmilk = new MetroFramework.Controls.MetroTextBox();
-            this.txtCowid = new MetroFramework.Controls.MetroTextBox();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.CalenderDate = new MetroFramework.Controls.MetroDateTime();
             this.lblTotalMilk = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
+            this.cmbboxCowid = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             this.panelLoginFrame.SuspendLayout();
@@ -263,36 +263,6 @@
             this.txtAMmilk.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAMmilk.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtCowid
-            // 
-            // 
-            // 
-            // 
-            this.txtCowid.CustomButton.Image = null;
-            this.txtCowid.CustomButton.Location = new System.Drawing.Point(53, 1);
-            this.txtCowid.CustomButton.Name = "";
-            this.txtCowid.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCowid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCowid.CustomButton.TabIndex = 1;
-            this.txtCowid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCowid.CustomButton.UseSelectable = true;
-            this.txtCowid.CustomButton.Visible = false;
-            this.txtCowid.Lines = new string[0];
-            this.txtCowid.Location = new System.Drawing.Point(263, 96);
-            this.txtCowid.MaxLength = 32767;
-            this.txtCowid.Name = "txtCowid";
-            this.txtCowid.PasswordChar = '\0';
-            this.txtCowid.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCowid.SelectedText = "";
-            this.txtCowid.SelectionLength = 0;
-            this.txtCowid.SelectionStart = 0;
-            this.txtCowid.ShortcutsEnabled = true;
-            this.txtCowid.Size = new System.Drawing.Size(75, 23);
-            this.txtCowid.TabIndex = 46;
-            this.txtCowid.UseSelectable = true;
-            this.txtCowid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCowid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(284, 236);
@@ -425,11 +395,20 @@
             this.btnempLogout.UseSelectable = true;
             this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
+            // cmbboxCowid
+            // 
+            this.cmbboxCowid.FormattingEnabled = true;
+            this.cmbboxCowid.Location = new System.Drawing.Point(249, 96);
+            this.cmbboxCowid.Name = "cmbboxCowid";
+            this.cmbboxCowid.Size = new System.Drawing.Size(104, 21);
+            this.cmbboxCowid.TabIndex = 59;
+            // 
             // FormMilkProduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbboxCowid);
             this.Controls.Add(this.lblManagecows);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblCowlist);
@@ -441,7 +420,6 @@
             this.Controls.Add(this.txtNoonMilk);
             this.Controls.Add(this.txtCowName2);
             this.Controls.Add(this.txtAMmilk);
-            this.Controls.Add(this.txtCowid);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.CalenderDate);
             this.Controls.Add(this.lblTotalMilk);
@@ -477,7 +455,6 @@
         private MetroFramework.Controls.MetroTextBox txtNoonMilk;
         private MetroFramework.Controls.MetroTextBox txtCowName2;
         private MetroFramework.Controls.MetroTextBox txtAMmilk;
-        private MetroFramework.Controls.MetroTextBox txtCowid;
         private MetroFramework.Controls.MetroButton btnSave;
         private MetroFramework.Controls.MetroDateTime CalenderDate;
         private System.Windows.Forms.Label lblTotalMilk;
@@ -491,5 +468,6 @@
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private System.Windows.Forms.Panel panelLoginFrame;
         private MetroFramework.Controls.MetroButton btnempLogout;
+        private System.Windows.Forms.ComboBox cmbboxCowid;
     }
 }

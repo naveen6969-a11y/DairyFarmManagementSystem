@@ -104,6 +104,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Breedings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Breedings.Designer.cs">
+      <DependentUpon>Breedings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance.Designer.cs">
+      <DependentUpon>Finance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmployeeMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +133,12 @@
     </Compile>
     <Compile Include="FormLoading.Designer.cs">
       <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Health.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Health.Designer.cs">
+      <DependentUpon>Health.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -128,19 +152,40 @@
     <Compile Include="MilkProduction.Designer.cs">
       <DependentUpon>MilkProduction.cs</DependentUpon>
     </Compile>
+    <Compile Include="MilkSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MilkSales.Designer.cs">
+      <DependentUpon>MilkSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Breedings.resx">
+      <DependentUpon>Breedings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance.resx">
+      <DependentUpon>Finance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEmployeeMenu.resx">
       <DependentUpon>FormEmployeeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Health.resx">
+      <DependentUpon>Health.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MilkProduction.resx">
       <DependentUpon>MilkProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MilkSales.resx">
+      <DependentUpon>MilkSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
