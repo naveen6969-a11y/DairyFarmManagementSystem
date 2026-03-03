@@ -65,5 +65,12 @@ namespace DairyFarmManagementSystem
             frmd.Show();
             this.Hide();
         }
+
+        private void btnempLogout_Click_1(object sender, EventArgs e)
+        {
+            FormLogin frmlog = new FormLogin();
+            frmlog.Show();
+            this.Hide();
+        }
     }
 }

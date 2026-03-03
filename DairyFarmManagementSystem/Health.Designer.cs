@@ -420,7 +420,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(82, 13);
+            this.lblWelcome.Location = new System.Drawing.Point(82, 20);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(112, 25);
             this.lblWelcome.TabIndex = 86;
@@ -430,7 +430,7 @@
             // 
             this.picboxCow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxCow.BackgroundImage")));
             this.picboxCow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxCow.Location = new System.Drawing.Point(26, 3);
+            this.picboxCow.Location = new System.Drawing.Point(26, 10);
             this.picboxCow.Name = "picboxCow";
             this.picboxCow.Size = new System.Drawing.Size(56, 50);
             this.picboxCow.TabIndex = 85;
@@ -703,6 +703,7 @@
             this.btnempLogout.Size = new System.Drawing.Size(36, 34);
             this.btnempLogout.TabIndex = 0;
             this.btnempLogout.UseSelectable = true;
+            this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
             // FormHealth
             // 

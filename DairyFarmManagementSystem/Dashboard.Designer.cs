@@ -54,6 +54,9 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
+            this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
+            this.lblSoftwareNameShort = new System.Windows.Forms.Label();
+            this.lblDashboard = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
             this.paneldashboard.SuspendLayout();
@@ -70,13 +73,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxmilk)).BeginInit();
             this.panelcow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).BeginInit();
+            this.panelEmpMenuTOP.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(86, 14);
+            this.lblWelcome.Location = new System.Drawing.Point(82, 20);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(112, 25);
             this.lblWelcome.TabIndex = 38;
@@ -86,7 +90,7 @@
             // 
             this.picboxCow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxCow.BackgroundImage")));
             this.picboxCow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxCow.Location = new System.Drawing.Point(30, 4);
+            this.picboxCow.Location = new System.Drawing.Point(26, 10);
             this.picboxCow.Name = "picboxCow";
             this.picboxCow.Size = new System.Drawing.Size(56, 50);
             this.picboxCow.TabIndex = 37;
@@ -358,16 +362,51 @@
             this.btnempLogout.Size = new System.Drawing.Size(36, 34);
             this.btnempLogout.TabIndex = 0;
             this.btnempLogout.UseSelectable = true;
+            this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
+            // 
+            // panelEmpMenuTOP
+            // 
+            this.panelEmpMenuTOP.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panelEmpMenuTOP.Controls.Add(this.lblSoftwareNameShort);
+            this.panelEmpMenuTOP.ForeColor = System.Drawing.SystemColors.Control;
+            this.panelEmpMenuTOP.Location = new System.Drawing.Point(228, 4);
+            this.panelEmpMenuTOP.Name = "panelEmpMenuTOP";
+            this.panelEmpMenuTOP.Size = new System.Drawing.Size(572, 32);
+            this.panelEmpMenuTOP.TabIndex = 39;
+            // 
+            // lblSoftwareNameShort
+            // 
+            this.lblSoftwareNameShort.AutoSize = true;
+            this.lblSoftwareNameShort.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoftwareNameShort.ForeColor = System.Drawing.Color.Maroon;
+            this.lblSoftwareNameShort.Location = new System.Drawing.Point(221, 0);
+            this.lblSoftwareNameShort.Name = "lblSoftwareNameShort";
+            this.lblSoftwareNameShort.Size = new System.Drawing.Size(108, 32);
+            this.lblSoftwareNameShort.TabIndex = 3;
+            this.lblSoftwareNameShort.Text = "D F M S";
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.lblDashboard.Location = new System.Drawing.Point(466, 39);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(73, 19);
+            this.lblDashboard.TabIndex = 105;
+            this.lblDashboard.Text = "DashBoard";
             // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblDashboard);
+            this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
             this.Name = "FormDashboard";
+            this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
             this.panelLoginFrame.ResumeLayout(false);
             this.panelLoginFrame.PerformLayout();
@@ -392,6 +431,8 @@
             this.panelcow.ResumeLayout(false);
             this.panelcow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).EndInit();
+            this.panelEmpMenuTOP.ResumeLayout(false);
+            this.panelEmpMenuTOP.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +465,8 @@
         private System.Windows.Forms.PictureBox picBoxcoww;
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
+        private System.Windows.Forms.Panel panelEmpMenuTOP;
+        private System.Windows.Forms.Label lblSoftwareNameShort;
+        private MetroFramework.Controls.MetroLabel lblDashboard;
     }
 }
