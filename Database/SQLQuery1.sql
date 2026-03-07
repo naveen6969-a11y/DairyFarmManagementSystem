@@ -1,1 +1,121 @@
 Create Database DairyFarmDB;
+
+-- =============================================
+-- DAIRY FARM MANAGEMENT SYSTEM - TABLE CREATION
+-- =============================================
+
+-- 1. COW TABLE (Create first - referenced by others)
+CREATE TABLE Cow (
+    CowId       INT PRIMARY KEY IDENTITY(1,1),
+    CowName     VARCHAR(50),
+    EarTag      VARCHAR(50),
+    Color       VARCHAR(50),
+    Breed       VARCHAR(50),
+    Age         INT,
+    WeightAtBirth INT,
+    Pasture     VARCHAR(50)
+);
+
+ALTER TABLE Cow
+ADD DateOfBirth DATE;
+
+-- 2. EMPLOYEE TABLE
+CREATE TABLE Employee (
+    EmpId       INT PRIMARY KEY IDENTITY(1,1),
+    EmpName     VARCHAR(50),
+    EmpDob      DATE,
+    Gender      VARCHAR(50),
+    Phone       VARCHAR(50),
+    Address     VARCHAR(50)
+);
+
+-- 3. MILK TABLE
+CREATE TABLE Milk (
+    MilkId      INT PRIMARY KEY IDENTITY(1,1),
+    CowId       INT FOREIGN KEY REFERENCES Cow(CowId),
+    -- CowName is intentionally excluded here; retrieve via JOIN from Cow table
+    AmMilk      INT,
+    NoonMilk    INT,
+    PmMilk      INT,
+    TotalMilk   AS (AmMilk + NoonMilk + PmMilk),  -- Computed automatically
+    DateProd    DATE
+);
+
+-- 4. HEALTH TABLE
+CREATE TABLE Health (
+    RepId       INT PRIMARY KEY IDENTITY(1,1),
+    CowId       INT FOREIGN KEY REFERENCES Cow(CowId),
+    -- CowName retrieved via JOIN from Cow table
+    RepDate     DATE,
+    Event       VARCHAR(50),
+    Diagnosis   VARCHAR(50),
+    Treatment   VARCHAR(50),
+    Cost        INT,
+    VetName     VARCHAR(50)
+);
+
+-- 5. MILK SALES TABLE
+CREATE TABLE MilkSales (
+    SId         INT PRIMARY KEY IDENTITY(1,1),
+    SaleDate    DATE,
+    UPrice      INT,
+    ClientName  VARCHAR(50),
+    ClientPhone VARCHAR(50),
+    EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId),
+    Quantity    INT,
+    Amount      AS (UPrice * Quantity)  -- Computed automatically
+);
+
+-- 6. EXPENDITURE TABLE
+CREATE TABLE Expenditure (
+    ExpId       INT PRIMARY KEY IDENTITY(1,1),
+    ExpDate     DATE,
+    ExpPurpose  VARCHAR(50),
+    ExpAmount   INT,
+    EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId)
+);
+
+-- 7. INCOME TABLE
+CREATE TABLE Income (
+    IncId       INT PRIMARY KEY IDENTITY(1,1),
+    IncDate     DATE,
+    IncType     VARCHAR(50),
+    IncAmount   INT,
+    EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId)
+);
+
+-- 8. BREED TABLE
+CREATE TABLE Breed (
+    BreedId         INT PRIMARY KEY IDENTITY(1,1),
+    HeatDate        DATE,
+    BreedDate       DATE,
+    CowId           INT FOREIGN KEY REFERENCES Cow(CowId),
+    -- CowName retrieved via JOIN from Cow table
+    PregDate        DATE,
+    ExpDateCalve    DATE,
+    DateCalved      DATE,
+    CowAge          INT,
+    Remarks         VARCHAR(50)
+);
+
+INSERT INTO Cow (CowName, EarTag, Color, Breed, Age, WeightAtBirth, Pasture) VALUES
+('Daisy', 'ET002', 'Light Brown', 'Jersey', 4, 30, 'River Pasture'),
+('Luna', 'ET003', 'Black', 'Angus', 3, 35, 'Hill Pasture'),
+('Molly', 'ET004', 'Brown & White', 'Hereford', 3, 36, 'South Field'),
+('Rosie', 'ET005', 'Grey', 'Brahman', 4, 32, 'Lake Pasture'),
+('Lily', 'ET006', 'Black & White', 'Holstein', 3, 39, 'East Field'),
+('Ruby', 'ET007', 'Dark Brown', 'Jersey', 3, 29, 'Garden Pasture'),
+('Hazel', 'ET008', 'Solid Black', 'Angus', 4, 34, 'West Field'),
+('Coco', 'ET009', 'Grey & White', 'Brahman', 3, 33, 'Palm Pasture'),
+('Sandy', 'ET010', 'Reddish Brown', 'Hereford', 2, 37, 'Coconut Pasture');
+
+INSERT INTO Health (CowId, RepDate, Event, Diagnosis, Treatment, Cost, VetName) VALUES
+(3, '2025-01-15', 'Illness', 'Mastitis', 'Antibiotic Injection', 4500, 'Dr. Perera'),
+(4, '2025-02-10', 'Injury', 'Foot Rot', 'Hoof Cleaning', 3200, 'Dr. Silva'),
+(5, '2025-03-05', 'Illness', 'Fever', 'Anti-fever Injection', 2000, 'Dr. Fernando'),
+(6, '2025-03-20', 'Parasite', 'Worm Infection', 'Deworming Medicine', 1500, 'Dr. Jayasinghe'),
+(7, '2025-04-12', 'Skin Issue', 'Skin Infection', 'Antibiotic Cream', 1800, 'Dr. Perera'),
+(8, '2025-05-02', 'Digestive Issue', 'Bloating', 'Stomach Relief Medicine', 2500, 'Dr. Silva'),
+(9, '2025-05-18', 'Injury', 'Leg Wound', 'Bandage and Cleaning', 2700, 'Dr. Fernando'),
+(10, '2025-06-01', 'Parasite', 'Tick Infestation', 'Anti-tick Spray', 1600, 'Dr. Jayasinghe'),
+(11, '2025-06-15', 'Illness', 'Respiratory Infection', 'Antibiotics', 3900, 'Dr. Silva');
