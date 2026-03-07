@@ -30,7 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployeeMenu));
             this.panelLoginFrame = new System.Windows.Forms.Panel();
+            this.paneldashboard = new System.Windows.Forms.Panel();
+            this.picBoxDashboard = new System.Windows.Forms.PictureBox();
+            this.lblDashboardbtn = new System.Windows.Forms.Label();
+            this.panelFinance = new System.Windows.Forms.Panel();
+            this.picBoxFinance = new System.Windows.Forms.PictureBox();
+            this.lblFinancebtn = new System.Windows.Forms.Label();
+            this.panelmilkSale = new System.Windows.Forms.Panel();
+            this.picboxSales = new System.Windows.Forms.PictureBox();
+            this.lblMilkSalesbtn = new System.Windows.Forms.Label();
+            this.panelbreeding = new System.Windows.Forms.Panel();
+            this.picBoxbreeding = new System.Windows.Forms.PictureBox();
+            this.lblBreedingbtn = new System.Windows.Forms.Label();
+            this.panelhealth = new System.Windows.Forms.Panel();
+            this.picBoxhealth = new System.Windows.Forms.PictureBox();
+            this.lblHealthbtn = new System.Windows.Forms.Label();
+            this.panelmilkpro = new System.Windows.Forms.Panel();
+            this.picBoxmilk = new System.Windows.Forms.PictureBox();
+            this.lblMilkProductionbtn = new System.Windows.Forms.Label();
             this.panelcow = new System.Windows.Forms.Panel();
+            this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
@@ -56,46 +75,27 @@
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCows = new System.Windows.Forms.DataGridView();
             this.lblManagecows = new MetroFramework.Controls.MetroLabel();
-            this.panelmilkpro = new System.Windows.Forms.Panel();
-            this.lblMilkProductionbtn = new System.Windows.Forms.Label();
-            this.panelhealth = new System.Windows.Forms.Panel();
-            this.lblHealthbtn = new System.Windows.Forms.Label();
-            this.panelbreeding = new System.Windows.Forms.Panel();
-            this.lblBreedingbtn = new System.Windows.Forms.Label();
-            this.panelmilkSale = new System.Windows.Forms.Panel();
-            this.lblMilkSalesbtn = new System.Windows.Forms.Label();
-            this.panelFinance = new System.Windows.Forms.Panel();
-            this.lblFinancebtn = new System.Windows.Forms.Label();
-            this.paneldashboard = new System.Windows.Forms.Panel();
-            this.lblDashboardbtn = new System.Windows.Forms.Label();
-            this.picBoxcoww = new System.Windows.Forms.PictureBox();
-            this.picBoxmilk = new System.Windows.Forms.PictureBox();
-            this.picBoxhealth = new System.Windows.Forms.PictureBox();
-            this.picBoxbreeding = new System.Windows.Forms.PictureBox();
-            this.picboxSales = new System.Windows.Forms.PictureBox();
-            this.picBoxFinance = new System.Windows.Forms.PictureBox();
-            this.picBoxDashboard = new System.Windows.Forms.PictureBox();
             this.picboxCow = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panelLoginFrame.SuspendLayout();
-            this.panelcow.SuspendLayout();
-            this.panelEmpMenuTOP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panelmilkpro.SuspendLayout();
-            this.panelhealth.SuspendLayout();
-            this.panelbreeding.SuspendLayout();
-            this.panelmilkSale.SuspendLayout();
-            this.panelFinance.SuspendLayout();
             this.paneldashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxmilk)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxhealth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxbreeding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxSales)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDashboard)).BeginInit();
+            this.panelFinance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinance)).BeginInit();
+            this.panelmilkSale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxSales)).BeginInit();
+            this.panelbreeding.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxbreeding)).BeginInit();
+            this.panelhealth.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxhealth)).BeginInit();
+            this.panelmilkpro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxmilk)).BeginInit();
+            this.panelcow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).BeginInit();
+            this.panelEmpMenuTOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +117,210 @@
             this.panelLoginFrame.Size = new System.Drawing.Size(198, 370);
             this.panelLoginFrame.TabIndex = 1;
             // 
+            // paneldashboard
+            // 
+            this.paneldashboard.BackColor = System.Drawing.Color.Transparent;
+            this.paneldashboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneldashboard.Controls.Add(this.picBoxDashboard);
+            this.paneldashboard.Controls.Add(this.lblDashboardbtn);
+            this.paneldashboard.Location = new System.Drawing.Point(6, 285);
+            this.paneldashboard.Name = "paneldashboard";
+            this.paneldashboard.Size = new System.Drawing.Size(192, 25);
+            this.paneldashboard.TabIndex = 6;
+            // 
+            // picBoxDashboard
+            // 
+            this.picBoxDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxDashboard.BackgroundImage")));
+            this.picBoxDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxDashboard.Location = new System.Drawing.Point(3, -1);
+            this.picBoxDashboard.Name = "picBoxDashboard";
+            this.picBoxDashboard.Size = new System.Drawing.Size(27, 25);
+            this.picBoxDashboard.TabIndex = 2;
+            this.picBoxDashboard.TabStop = false;
+            // 
+            // lblDashboardbtn
+            // 
+            this.lblDashboardbtn.AutoSize = true;
+            this.lblDashboardbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDashboardbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboardbtn.ForeColor = System.Drawing.Color.Black;
+            this.lblDashboardbtn.Location = new System.Drawing.Point(55, 0);
+            this.lblDashboardbtn.Name = "lblDashboardbtn";
+            this.lblDashboardbtn.Size = new System.Drawing.Size(105, 20);
+            this.lblDashboardbtn.TabIndex = 0;
+            this.lblDashboardbtn.Text = "Dashboard";
+            this.lblDashboardbtn.Click += new System.EventHandler(this.lblDashboardbtn_Click);
+            // 
+            // panelFinance
+            // 
+            this.panelFinance.BackColor = System.Drawing.Color.Transparent;
+            this.panelFinance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFinance.Controls.Add(this.picBoxFinance);
+            this.panelFinance.Controls.Add(this.lblFinancebtn);
+            this.panelFinance.Location = new System.Drawing.Point(6, 243);
+            this.panelFinance.Name = "panelFinance";
+            this.panelFinance.Size = new System.Drawing.Size(192, 25);
+            this.panelFinance.TabIndex = 5;
+            // 
+            // picBoxFinance
+            // 
+            this.picBoxFinance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxFinance.BackgroundImage")));
+            this.picBoxFinance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxFinance.Location = new System.Drawing.Point(3, -1);
+            this.picBoxFinance.Name = "picBoxFinance";
+            this.picBoxFinance.Size = new System.Drawing.Size(27, 25);
+            this.picBoxFinance.TabIndex = 2;
+            this.picBoxFinance.TabStop = false;
+            // 
+            // lblFinancebtn
+            // 
+            this.lblFinancebtn.AutoSize = true;
+            this.lblFinancebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFinancebtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinancebtn.ForeColor = System.Drawing.Color.Black;
+            this.lblFinancebtn.Location = new System.Drawing.Point(56, -1);
+            this.lblFinancebtn.Name = "lblFinancebtn";
+            this.lblFinancebtn.Size = new System.Drawing.Size(78, 20);
+            this.lblFinancebtn.TabIndex = 0;
+            this.lblFinancebtn.Text = "Finance";
+            this.lblFinancebtn.Click += new System.EventHandler(this.lblFinancebtn_Click);
+            // 
+            // panelmilkSale
+            // 
+            this.panelmilkSale.BackColor = System.Drawing.Color.Transparent;
+            this.panelmilkSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelmilkSale.Controls.Add(this.picboxSales);
+            this.panelmilkSale.Controls.Add(this.lblMilkSalesbtn);
+            this.panelmilkSale.Location = new System.Drawing.Point(6, 201);
+            this.panelmilkSale.Name = "panelmilkSale";
+            this.panelmilkSale.Size = new System.Drawing.Size(192, 25);
+            this.panelmilkSale.TabIndex = 4;
+            // 
+            // picboxSales
+            // 
+            this.picboxSales.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxSales.BackgroundImage")));
+            this.picboxSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboxSales.Location = new System.Drawing.Point(3, -1);
+            this.picboxSales.Name = "picboxSales";
+            this.picboxSales.Size = new System.Drawing.Size(27, 25);
+            this.picboxSales.TabIndex = 2;
+            this.picboxSales.TabStop = false;
+            // 
+            // lblMilkSalesbtn
+            // 
+            this.lblMilkSalesbtn.AutoSize = true;
+            this.lblMilkSalesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMilkSalesbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMilkSalesbtn.ForeColor = System.Drawing.Color.Black;
+            this.lblMilkSalesbtn.Location = new System.Drawing.Point(56, 0);
+            this.lblMilkSalesbtn.Name = "lblMilkSalesbtn";
+            this.lblMilkSalesbtn.Size = new System.Drawing.Size(101, 20);
+            this.lblMilkSalesbtn.TabIndex = 0;
+            this.lblMilkSalesbtn.Text = "Milk Sales";
+            this.lblMilkSalesbtn.Click += new System.EventHandler(this.lblMilkSalesbtn_Click);
+            // 
+            // panelbreeding
+            // 
+            this.panelbreeding.BackColor = System.Drawing.Color.Transparent;
+            this.panelbreeding.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelbreeding.Controls.Add(this.picBoxbreeding);
+            this.panelbreeding.Controls.Add(this.lblBreedingbtn);
+            this.panelbreeding.Location = new System.Drawing.Point(6, 159);
+            this.panelbreeding.Name = "panelbreeding";
+            this.panelbreeding.Size = new System.Drawing.Size(192, 25);
+            this.panelbreeding.TabIndex = 3;
+            // 
+            // picBoxbreeding
+            // 
+            this.picBoxbreeding.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxbreeding.BackgroundImage")));
+            this.picBoxbreeding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxbreeding.Location = new System.Drawing.Point(3, -1);
+            this.picBoxbreeding.Name = "picBoxbreeding";
+            this.picBoxbreeding.Size = new System.Drawing.Size(27, 25);
+            this.picBoxbreeding.TabIndex = 2;
+            this.picBoxbreeding.TabStop = false;
+            // 
+            // lblBreedingbtn
+            // 
+            this.lblBreedingbtn.AutoSize = true;
+            this.lblBreedingbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBreedingbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBreedingbtn.ForeColor = System.Drawing.Color.Black;
+            this.lblBreedingbtn.Location = new System.Drawing.Point(56, 0);
+            this.lblBreedingbtn.Name = "lblBreedingbtn";
+            this.lblBreedingbtn.Size = new System.Drawing.Size(89, 20);
+            this.lblBreedingbtn.TabIndex = 0;
+            this.lblBreedingbtn.Text = "Breeding";
+            this.lblBreedingbtn.Click += new System.EventHandler(this.lblBreedingbtn_Click);
+            // 
+            // panelhealth
+            // 
+            this.panelhealth.BackColor = System.Drawing.Color.Transparent;
+            this.panelhealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelhealth.Controls.Add(this.picBoxhealth);
+            this.panelhealth.Controls.Add(this.lblHealthbtn);
+            this.panelhealth.Location = new System.Drawing.Point(6, 117);
+            this.panelhealth.Name = "panelhealth";
+            this.panelhealth.Size = new System.Drawing.Size(192, 25);
+            this.panelhealth.TabIndex = 2;
+            // 
+            // picBoxhealth
+            // 
+            this.picBoxhealth.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxhealth.BackgroundImage")));
+            this.picBoxhealth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxhealth.Location = new System.Drawing.Point(3, -1);
+            this.picBoxhealth.Name = "picBoxhealth";
+            this.picBoxhealth.Size = new System.Drawing.Size(27, 25);
+            this.picBoxhealth.TabIndex = 2;
+            this.picBoxhealth.TabStop = false;
+            // 
+            // lblHealthbtn
+            // 
+            this.lblHealthbtn.AutoSize = true;
+            this.lblHealthbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHealthbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHealthbtn.ForeColor = System.Drawing.Color.Black;
+            this.lblHealthbtn.Location = new System.Drawing.Point(61, 0);
+            this.lblHealthbtn.Name = "lblHealthbtn";
+            this.lblHealthbtn.Size = new System.Drawing.Size(69, 20);
+            this.lblHealthbtn.TabIndex = 0;
+            this.lblHealthbtn.Text = "Health";
+            this.lblHealthbtn.Click += new System.EventHandler(this.lblHealthbtn_Click);
+            // 
+            // panelmilkpro
+            // 
+            this.panelmilkpro.BackColor = System.Drawing.Color.Transparent;
+            this.panelmilkpro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelmilkpro.Controls.Add(this.picBoxmilk);
+            this.panelmilkpro.Controls.Add(this.lblMilkProductionbtn);
+            this.panelmilkpro.Location = new System.Drawing.Point(6, 75);
+            this.panelmilkpro.Name = "panelmilkpro";
+            this.panelmilkpro.Size = new System.Drawing.Size(192, 25);
+            this.panelmilkpro.TabIndex = 2;
+            // 
+            // picBoxmilk
+            // 
+            this.picBoxmilk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxmilk.BackgroundImage")));
+            this.picBoxmilk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxmilk.Location = new System.Drawing.Point(3, -1);
+            this.picBoxmilk.Name = "picBoxmilk";
+            this.picBoxmilk.Size = new System.Drawing.Size(27, 25);
+            this.picBoxmilk.TabIndex = 2;
+            this.picBoxmilk.TabStop = false;
+            // 
+            // lblMilkProductionbtn
+            // 
+            this.lblMilkProductionbtn.AutoSize = true;
+            this.lblMilkProductionbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMilkProductionbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMilkProductionbtn.ForeColor = System.Drawing.Color.Black;
+            this.lblMilkProductionbtn.Location = new System.Drawing.Point(36, -1);
+            this.lblMilkProductionbtn.Name = "lblMilkProductionbtn";
+            this.lblMilkProductionbtn.Size = new System.Drawing.Size(148, 20);
+            this.lblMilkProductionbtn.TabIndex = 0;
+            this.lblMilkProductionbtn.Text = "Milk Production";
+            this.lblMilkProductionbtn.Click += new System.EventHandler(this.lblMilkProductionbtn_Click);
+            // 
             // panelcow
             // 
             this.panelcow.BackColor = System.Drawing.Color.DarkGray;
@@ -127,6 +331,16 @@
             this.panelcow.Name = "panelcow";
             this.panelcow.Size = new System.Drawing.Size(192, 25);
             this.panelcow.TabIndex = 1;
+            // 
+            // picBoxcoww
+            // 
+            this.picBoxcoww.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxcoww.BackgroundImage")));
+            this.picBoxcoww.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxcoww.Location = new System.Drawing.Point(3, -1);
+            this.picBoxcoww.Name = "picBoxcoww";
+            this.picBoxcoww.Size = new System.Drawing.Size(27, 25);
+            this.picBoxcoww.TabIndex = 1;
+            this.picBoxcoww.TabStop = false;
             // 
             // lblcowsbtn
             // 
@@ -228,11 +442,11 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAge.Location = new System.Drawing.Point(495, 140);
+            this.lblAge.Location = new System.Drawing.Point(485, 139);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(29, 15);
+            this.lblAge.Size = new System.Drawing.Size(67, 15);
             this.lblAge.TabIndex = 8;
-            this.lblAge.Text = "Age";
+            this.lblAge.Text = "Age(Years)";
             // 
             // lblWeightatbirth
             // 
@@ -261,6 +475,7 @@
             this.CalenderDateofbirth.Name = "CalenderDateofbirth";
             this.CalenderDateofbirth.Size = new System.Drawing.Size(200, 29);
             this.CalenderDateofbirth.TabIndex = 19;
+            this.CalenderDateofbirth.ValueChanged += new System.EventHandler(this.CalenderDateofbirth_ValueChanged);
             // 
             // btnSave
             // 
@@ -499,6 +714,7 @@
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -508,6 +724,7 @@
             this.btnUpdate.TabIndex = 30;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblCowlist
             // 
@@ -518,13 +735,20 @@
             this.lblCowlist.TabIndex = 31;
             this.lblCowlist.Text = "Cows List";
             // 
-            // dataGridView1
+            // dataGridViewCows
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
-            this.dataGridView1.TabIndex = 32;
+            this.dataGridViewCows.AllowUserToAddRows = false;
+            this.dataGridViewCows.AllowUserToDeleteRows = false;
+            this.dataGridViewCows.AllowUserToResizeColumns = false;
+            this.dataGridViewCows.AllowUserToResizeRows = false;
+            this.dataGridViewCows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCows.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewCows.Location = new System.Drawing.Point(246, 290);
+            this.dataGridViewCows.Name = "dataGridViewCows";
+            this.dataGridViewCows.ReadOnly = true;
+            this.dataGridViewCows.Size = new System.Drawing.Size(531, 150);
+            this.dataGridViewCows.TabIndex = 32;
+            this.dataGridViewCows.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCows_CellContentClick);
             // 
             // lblManagecows
             // 
@@ -535,220 +759,6 @@
             this.lblManagecows.Size = new System.Drawing.Size(92, 19);
             this.lblManagecows.TabIndex = 33;
             this.lblManagecows.Text = "Manage Cows";
-            // 
-            // panelmilkpro
-            // 
-            this.panelmilkpro.BackColor = System.Drawing.Color.Transparent;
-            this.panelmilkpro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelmilkpro.Controls.Add(this.picBoxmilk);
-            this.panelmilkpro.Controls.Add(this.lblMilkProductionbtn);
-            this.panelmilkpro.Location = new System.Drawing.Point(6, 75);
-            this.panelmilkpro.Name = "panelmilkpro";
-            this.panelmilkpro.Size = new System.Drawing.Size(192, 25);
-            this.panelmilkpro.TabIndex = 2;
-            // 
-            // lblMilkProductionbtn
-            // 
-            this.lblMilkProductionbtn.AutoSize = true;
-            this.lblMilkProductionbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMilkProductionbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMilkProductionbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblMilkProductionbtn.Location = new System.Drawing.Point(36, -1);
-            this.lblMilkProductionbtn.Name = "lblMilkProductionbtn";
-            this.lblMilkProductionbtn.Size = new System.Drawing.Size(148, 20);
-            this.lblMilkProductionbtn.TabIndex = 0;
-            this.lblMilkProductionbtn.Text = "Milk Production";
-            this.lblMilkProductionbtn.Click += new System.EventHandler(this.lblMilkProductionbtn_Click);
-            // 
-            // panelhealth
-            // 
-            this.panelhealth.BackColor = System.Drawing.Color.Transparent;
-            this.panelhealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelhealth.Controls.Add(this.picBoxhealth);
-            this.panelhealth.Controls.Add(this.lblHealthbtn);
-            this.panelhealth.Location = new System.Drawing.Point(6, 117);
-            this.panelhealth.Name = "panelhealth";
-            this.panelhealth.Size = new System.Drawing.Size(192, 25);
-            this.panelhealth.TabIndex = 2;
-            // 
-            // lblHealthbtn
-            // 
-            this.lblHealthbtn.AutoSize = true;
-            this.lblHealthbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblHealthbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHealthbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblHealthbtn.Location = new System.Drawing.Point(61, 0);
-            this.lblHealthbtn.Name = "lblHealthbtn";
-            this.lblHealthbtn.Size = new System.Drawing.Size(69, 20);
-            this.lblHealthbtn.TabIndex = 0;
-            this.lblHealthbtn.Text = "Health";
-            this.lblHealthbtn.Click += new System.EventHandler(this.lblHealthbtn_Click);
-            // 
-            // panelbreeding
-            // 
-            this.panelbreeding.BackColor = System.Drawing.Color.Transparent;
-            this.panelbreeding.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelbreeding.Controls.Add(this.picBoxbreeding);
-            this.panelbreeding.Controls.Add(this.lblBreedingbtn);
-            this.panelbreeding.Location = new System.Drawing.Point(6, 159);
-            this.panelbreeding.Name = "panelbreeding";
-            this.panelbreeding.Size = new System.Drawing.Size(192, 25);
-            this.panelbreeding.TabIndex = 3;
-            // 
-            // lblBreedingbtn
-            // 
-            this.lblBreedingbtn.AutoSize = true;
-            this.lblBreedingbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBreedingbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBreedingbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblBreedingbtn.Location = new System.Drawing.Point(56, 0);
-            this.lblBreedingbtn.Name = "lblBreedingbtn";
-            this.lblBreedingbtn.Size = new System.Drawing.Size(89, 20);
-            this.lblBreedingbtn.TabIndex = 0;
-            this.lblBreedingbtn.Text = "Breeding";
-            this.lblBreedingbtn.Click += new System.EventHandler(this.lblBreedingbtn_Click);
-            // 
-            // panelmilkSale
-            // 
-            this.panelmilkSale.BackColor = System.Drawing.Color.Transparent;
-            this.panelmilkSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelmilkSale.Controls.Add(this.picboxSales);
-            this.panelmilkSale.Controls.Add(this.lblMilkSalesbtn);
-            this.panelmilkSale.Location = new System.Drawing.Point(6, 201);
-            this.panelmilkSale.Name = "panelmilkSale";
-            this.panelmilkSale.Size = new System.Drawing.Size(192, 25);
-            this.panelmilkSale.TabIndex = 4;
-            // 
-            // lblMilkSalesbtn
-            // 
-            this.lblMilkSalesbtn.AutoSize = true;
-            this.lblMilkSalesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMilkSalesbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMilkSalesbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblMilkSalesbtn.Location = new System.Drawing.Point(56, 0);
-            this.lblMilkSalesbtn.Name = "lblMilkSalesbtn";
-            this.lblMilkSalesbtn.Size = new System.Drawing.Size(101, 20);
-            this.lblMilkSalesbtn.TabIndex = 0;
-            this.lblMilkSalesbtn.Text = "Milk Sales";
-            this.lblMilkSalesbtn.Click += new System.EventHandler(this.lblMilkSalesbtn_Click);
-            // 
-            // panelFinance
-            // 
-            this.panelFinance.BackColor = System.Drawing.Color.Transparent;
-            this.panelFinance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFinance.Controls.Add(this.picBoxFinance);
-            this.panelFinance.Controls.Add(this.lblFinancebtn);
-            this.panelFinance.Location = new System.Drawing.Point(6, 243);
-            this.panelFinance.Name = "panelFinance";
-            this.panelFinance.Size = new System.Drawing.Size(192, 25);
-            this.panelFinance.TabIndex = 5;
-            // 
-            // lblFinancebtn
-            // 
-            this.lblFinancebtn.AutoSize = true;
-            this.lblFinancebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFinancebtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinancebtn.ForeColor = System.Drawing.Color.Black;
-            this.lblFinancebtn.Location = new System.Drawing.Point(56, -1);
-            this.lblFinancebtn.Name = "lblFinancebtn";
-            this.lblFinancebtn.Size = new System.Drawing.Size(78, 20);
-            this.lblFinancebtn.TabIndex = 0;
-            this.lblFinancebtn.Text = "Finance";
-            this.lblFinancebtn.Click += new System.EventHandler(this.lblFinancebtn_Click);
-            // 
-            // paneldashboard
-            // 
-            this.paneldashboard.BackColor = System.Drawing.Color.Transparent;
-            this.paneldashboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneldashboard.Controls.Add(this.picBoxDashboard);
-            this.paneldashboard.Controls.Add(this.lblDashboardbtn);
-            this.paneldashboard.Location = new System.Drawing.Point(6, 285);
-            this.paneldashboard.Name = "paneldashboard";
-            this.paneldashboard.Size = new System.Drawing.Size(192, 25);
-            this.paneldashboard.TabIndex = 6;
-            // 
-            // lblDashboardbtn
-            // 
-            this.lblDashboardbtn.AutoSize = true;
-            this.lblDashboardbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDashboardbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboardbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblDashboardbtn.Location = new System.Drawing.Point(55, 0);
-            this.lblDashboardbtn.Name = "lblDashboardbtn";
-            this.lblDashboardbtn.Size = new System.Drawing.Size(105, 20);
-            this.lblDashboardbtn.TabIndex = 0;
-            this.lblDashboardbtn.Text = "Dashboard";
-            this.lblDashboardbtn.Click += new System.EventHandler(this.lblDashboardbtn_Click);
-            // 
-            // picBoxcoww
-            // 
-            this.picBoxcoww.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxcoww.BackgroundImage")));
-            this.picBoxcoww.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxcoww.Location = new System.Drawing.Point(3, -1);
-            this.picBoxcoww.Name = "picBoxcoww";
-            this.picBoxcoww.Size = new System.Drawing.Size(27, 25);
-            this.picBoxcoww.TabIndex = 1;
-            this.picBoxcoww.TabStop = false;
-            // 
-            // picBoxmilk
-            // 
-            this.picBoxmilk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxmilk.BackgroundImage")));
-            this.picBoxmilk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxmilk.Location = new System.Drawing.Point(3, -1);
-            this.picBoxmilk.Name = "picBoxmilk";
-            this.picBoxmilk.Size = new System.Drawing.Size(27, 25);
-            this.picBoxmilk.TabIndex = 2;
-            this.picBoxmilk.TabStop = false;
-            // 
-            // picBoxhealth
-            // 
-            this.picBoxhealth.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxhealth.BackgroundImage")));
-            this.picBoxhealth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxhealth.Location = new System.Drawing.Point(3, -1);
-            this.picBoxhealth.Name = "picBoxhealth";
-            this.picBoxhealth.Size = new System.Drawing.Size(27, 25);
-            this.picBoxhealth.TabIndex = 2;
-            this.picBoxhealth.TabStop = false;
-            // 
-            // picBoxbreeding
-            // 
-            this.picBoxbreeding.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxbreeding.BackgroundImage")));
-            this.picBoxbreeding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxbreeding.Location = new System.Drawing.Point(3, -1);
-            this.picBoxbreeding.Name = "picBoxbreeding";
-            this.picBoxbreeding.Size = new System.Drawing.Size(27, 25);
-            this.picBoxbreeding.TabIndex = 2;
-            this.picBoxbreeding.TabStop = false;
-            // 
-            // picboxSales
-            // 
-            this.picboxSales.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxSales.BackgroundImage")));
-            this.picboxSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxSales.Location = new System.Drawing.Point(3, -1);
-            this.picboxSales.Name = "picboxSales";
-            this.picboxSales.Size = new System.Drawing.Size(27, 25);
-            this.picboxSales.TabIndex = 2;
-            this.picboxSales.TabStop = false;
-            // 
-            // picBoxFinance
-            // 
-            this.picBoxFinance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxFinance.BackgroundImage")));
-            this.picBoxFinance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxFinance.Location = new System.Drawing.Point(3, -1);
-            this.picBoxFinance.Name = "picBoxFinance";
-            this.picBoxFinance.Size = new System.Drawing.Size(27, 25);
-            this.picBoxFinance.TabIndex = 2;
-            this.picBoxFinance.TabStop = false;
-            // 
-            // picBoxDashboard
-            // 
-            this.picBoxDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxDashboard.BackgroundImage")));
-            this.picBoxDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxDashboard.Location = new System.Drawing.Point(3, -1);
-            this.picBoxDashboard.Name = "picBoxDashboard";
-            this.picBoxDashboard.Size = new System.Drawing.Size(27, 25);
-            this.picBoxDashboard.TabIndex = 2;
-            this.picBoxDashboard.TabStop = false;
             // 
             // picboxCow
             // 
@@ -778,7 +788,7 @@
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.lblManagecows);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCows);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -805,30 +815,30 @@
             this.Name = "FormEmployeeMenu";
             this.panelLoginFrame.ResumeLayout(false);
             this.panelLoginFrame.PerformLayout();
-            this.panelcow.ResumeLayout(false);
-            this.panelcow.PerformLayout();
-            this.panelEmpMenuTOP.ResumeLayout(false);
-            this.panelEmpMenuTOP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panelmilkpro.ResumeLayout(false);
-            this.panelmilkpro.PerformLayout();
-            this.panelhealth.ResumeLayout(false);
-            this.panelhealth.PerformLayout();
-            this.panelbreeding.ResumeLayout(false);
-            this.panelbreeding.PerformLayout();
-            this.panelmilkSale.ResumeLayout(false);
-            this.panelmilkSale.PerformLayout();
-            this.panelFinance.ResumeLayout(false);
-            this.panelFinance.PerformLayout();
             this.paneldashboard.ResumeLayout(false);
             this.paneldashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxmilk)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxhealth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxbreeding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxSales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDashboard)).EndInit();
+            this.panelFinance.ResumeLayout(false);
+            this.panelFinance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinance)).EndInit();
+            this.panelmilkSale.ResumeLayout(false);
+            this.panelmilkSale.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxSales)).EndInit();
+            this.panelbreeding.ResumeLayout(false);
+            this.panelbreeding.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxbreeding)).EndInit();
+            this.panelhealth.ResumeLayout(false);
+            this.panelhealth.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxhealth)).EndInit();
+            this.panelmilkpro.ResumeLayout(false);
+            this.panelmilkpro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxmilk)).EndInit();
+            this.panelcow.ResumeLayout(false);
+            this.panelcow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).EndInit();
+            this.panelEmpMenuTOP.ResumeLayout(false);
+            this.panelEmpMenuTOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -861,7 +871,7 @@
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroLabel lblCowlist;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCows;
         private MetroFramework.Controls.MetroButton btnempLogout;
         private MetroFramework.Controls.MetroLabel lblManagecows;
         private System.Windows.Forms.Panel panelcow;

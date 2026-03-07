@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMilkProduction));
             this.lblManagecows = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMilk = new System.Windows.Forms.DataGridView();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -77,7 +77,7 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMilk)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
@@ -107,13 +107,20 @@
             this.lblManagecows.TabIndex = 58;
             this.lblManagecows.Text = "Daily Milk Production";
             // 
-            // dataGridView1
+            // dataGridViewMilk
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
-            this.dataGridView1.TabIndex = 57;
+            this.dataGridViewMilk.AllowUserToAddRows = false;
+            this.dataGridViewMilk.AllowUserToDeleteRows = false;
+            this.dataGridViewMilk.AllowUserToResizeColumns = false;
+            this.dataGridViewMilk.AllowUserToResizeRows = false;
+            this.dataGridViewMilk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMilk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewMilk.Location = new System.Drawing.Point(246, 290);
+            this.dataGridViewMilk.Name = "dataGridViewMilk";
+            this.dataGridViewMilk.ReadOnly = true;
+            this.dataGridViewMilk.Size = new System.Drawing.Size(531, 150);
+            this.dataGridViewMilk.TabIndex = 57;
+            this.dataGridViewMilk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMilk_CellClick);
             // 
             // lblCowlist
             // 
@@ -132,6 +139,7 @@
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -141,6 +149,7 @@
             this.btnDelete.TabIndex = 54;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -210,6 +219,7 @@
             this.txtPMmilk.UseSelectable = true;
             this.txtPMmilk.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPMmilk.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPMmilk.TextChanged += new System.EventHandler(this.txtPMmilk_TextChanged);
             // 
             // txtNoonMilk
             // 
@@ -240,6 +250,7 @@
             this.txtNoonMilk.UseSelectable = true;
             this.txtNoonMilk.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNoonMilk.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNoonMilk.TextChanged += new System.EventHandler(this.txtNoonMilk_TextChanged);
             // 
             // txtCowName2
             // 
@@ -300,6 +311,7 @@
             this.txtAMmilk.UseSelectable = true;
             this.txtAMmilk.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAMmilk.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAMmilk.TextChanged += new System.EventHandler(this.txtAMmilk_TextChanged);
             // 
             // btnSave
             // 
@@ -309,6 +321,7 @@
             this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CalenderDate
             // 
@@ -416,6 +429,7 @@
             this.cmbboxCowid.Name = "cmbboxCowid";
             this.cmbboxCowid.Size = new System.Drawing.Size(104, 21);
             this.cmbboxCowid.TabIndex = 59;
+            this.cmbboxCowid.SelectedIndexChanged += new System.EventHandler(this.cmbboxCowid_SelectedIndexChanged);
             // 
             // lblWelcome
             // 
@@ -715,7 +729,7 @@
             this.Controls.Add(this.panelLoginFrame);
             this.Controls.Add(this.cmbboxCowid);
             this.Controls.Add(this.lblManagecows);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewMilk);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -736,7 +750,7 @@
             this.Controls.Add(this.lblCowId);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Name = "FormMilkProduction";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMilk)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
@@ -771,7 +785,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel lblManagecows;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMilk;
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;

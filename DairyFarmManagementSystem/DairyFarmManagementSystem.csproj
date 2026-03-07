@@ -116,6 +116,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBconnection.cs" />
     <Compile Include="Finance.cs">
       <SubType>Form</SubType>
     </Compile>

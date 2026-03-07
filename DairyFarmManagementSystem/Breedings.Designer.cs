@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBreeding));
             this.lblManagecows = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBreedings = new System.Windows.Forms.DataGridView();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -49,11 +49,11 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.cmbBoxCowid = new System.Windows.Forms.ComboBox();
-            this.metroDateTime3 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime4 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime5 = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimePregnancy = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeHeat = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeBreed = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeExcalve = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeCalve = new MetroFramework.Controls.MetroDateTime();
             this.lblRemarks = new System.Windows.Forms.Label();
             this.txtRemarks = new MetroFramework.Controls.MetroTextBox();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -81,7 +81,8 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblsysmsg = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBreedings)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
@@ -111,13 +112,19 @@
             this.lblManagecows.TabIndex = 58;
             this.lblManagecows.Text = "Cow Breeding";
             // 
-            // dataGridView1
+            // dataGridViewBreedings
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
-            this.dataGridView1.TabIndex = 57;
+            this.dataGridViewBreedings.AllowUserToAddRows = false;
+            this.dataGridViewBreedings.AllowUserToDeleteRows = false;
+            this.dataGridViewBreedings.AllowUserToResizeColumns = false;
+            this.dataGridViewBreedings.AllowUserToResizeRows = false;
+            this.dataGridViewBreedings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBreedings.Location = new System.Drawing.Point(246, 290);
+            this.dataGridViewBreedings.Name = "dataGridViewBreedings";
+            this.dataGridViewBreedings.ReadOnly = true;
+            this.dataGridViewBreedings.Size = new System.Drawing.Size(531, 150);
+            this.dataGridViewBreedings.TabIndex = 57;
+            this.dataGridViewBreedings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBreedings_CellClick);
             // 
             // lblCowlist
             // 
@@ -136,6 +143,7 @@
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -145,6 +153,7 @@
             this.btnDelete.TabIndex = 54;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -223,6 +232,7 @@
             this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblCowAge
             // 
@@ -332,56 +342,58 @@
             this.cmbBoxCowid.Name = "cmbBoxCowid";
             this.cmbBoxCowid.Size = new System.Drawing.Size(79, 21);
             this.cmbBoxCowid.TabIndex = 62;
+            this.cmbBoxCowid.SelectedIndexChanged += new System.EventHandler(this.cmbBoxCowid_SelectedIndexChanged);
             // 
-            // metroDateTime3
+            // metroDateTimePregnancy
             // 
-            this.metroDateTime3.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroDateTime3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime3.Location = new System.Drawing.Point(671, 86);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime3.Name = "metroDateTime3";
-            this.metroDateTime3.Size = new System.Drawing.Size(106, 29);
-            this.metroDateTime3.TabIndex = 64;
+            this.metroDateTimePregnancy.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroDateTimePregnancy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimePregnancy.Location = new System.Drawing.Point(671, 86);
+            this.metroDateTimePregnancy.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimePregnancy.Name = "metroDateTimePregnancy";
+            this.metroDateTimePregnancy.Size = new System.Drawing.Size(106, 29);
+            this.metroDateTimePregnancy.TabIndex = 64;
             // 
-            // metroDateTime1
+            // metroDateTimeHeat
             // 
-            this.metroDateTime1.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime1.Location = new System.Drawing.Point(224, 87);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(106, 29);
-            this.metroDateTime1.TabIndex = 65;
+            this.metroDateTimeHeat.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroDateTimeHeat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeHeat.Location = new System.Drawing.Point(224, 87);
+            this.metroDateTimeHeat.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeHeat.Name = "metroDateTimeHeat";
+            this.metroDateTimeHeat.Size = new System.Drawing.Size(106, 29);
+            this.metroDateTimeHeat.TabIndex = 65;
             // 
-            // metroDateTime2
+            // metroDateTimeBreed
             // 
-            this.metroDateTime2.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroDateTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime2.Location = new System.Drawing.Point(346, 87);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(106, 29);
-            this.metroDateTime2.TabIndex = 66;
+            this.metroDateTimeBreed.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroDateTimeBreed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeBreed.Location = new System.Drawing.Point(346, 87);
+            this.metroDateTimeBreed.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeBreed.Name = "metroDateTimeBreed";
+            this.metroDateTimeBreed.Size = new System.Drawing.Size(106, 29);
+            this.metroDateTimeBreed.TabIndex = 66;
+            this.metroDateTimeBreed.ValueChanged += new System.EventHandler(this.metroDateTimeBreed_ValueChanged);
             // 
-            // metroDateTime4
+            // metroDateTimeExcalve
             // 
-            this.metroDateTime4.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroDateTime4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime4.Location = new System.Drawing.Point(224, 165);
-            this.metroDateTime4.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime4.Name = "metroDateTime4";
-            this.metroDateTime4.Size = new System.Drawing.Size(106, 29);
-            this.metroDateTime4.TabIndex = 67;
+            this.metroDateTimeExcalve.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroDateTimeExcalve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeExcalve.Location = new System.Drawing.Point(224, 165);
+            this.metroDateTimeExcalve.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeExcalve.Name = "metroDateTimeExcalve";
+            this.metroDateTimeExcalve.Size = new System.Drawing.Size(106, 29);
+            this.metroDateTimeExcalve.TabIndex = 67;
             // 
-            // metroDateTime5
+            // metroDateTimeCalve
             // 
-            this.metroDateTime5.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroDateTime5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime5.Location = new System.Drawing.Point(356, 165);
-            this.metroDateTime5.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime5.Name = "metroDateTime5";
-            this.metroDateTime5.Size = new System.Drawing.Size(106, 29);
-            this.metroDateTime5.TabIndex = 68;
+            this.metroDateTimeCalve.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroDateTimeCalve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeCalve.Location = new System.Drawing.Point(356, 165);
+            this.metroDateTimeCalve.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeCalve.Name = "metroDateTimeCalve";
+            this.metroDateTimeCalve.Size = new System.Drawing.Size(106, 29);
+            this.metroDateTimeCalve.TabIndex = 68;
             // 
             // lblRemarks
             // 
@@ -711,24 +723,35 @@
             this.btnempLogout.UseSelectable = true;
             this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
+            // lblsysmsg
+            // 
+            this.lblsysmsg.AutoSize = true;
+            this.lblsysmsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsysmsg.Location = new System.Drawing.Point(228, 201);
+            this.lblsysmsg.Name = "lblsysmsg";
+            this.lblsysmsg.Size = new System.Drawing.Size(178, 24);
+            this.lblsysmsg.TabIndex = 76;
+            this.lblsysmsg.Text = "sys automatically calculates ex calve date\r\n((283 days)";
+            // 
             // FormBreeding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsysmsg);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
             this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.lblRemarks);
-            this.Controls.Add(this.metroDateTime5);
-            this.Controls.Add(this.metroDateTime4);
-            this.Controls.Add(this.metroDateTime2);
-            this.Controls.Add(this.metroDateTime1);
-            this.Controls.Add(this.metroDateTime3);
+            this.Controls.Add(this.metroDateTimeCalve);
+            this.Controls.Add(this.metroDateTimeExcalve);
+            this.Controls.Add(this.metroDateTimeBreed);
+            this.Controls.Add(this.metroDateTimeHeat);
+            this.Controls.Add(this.metroDateTimePregnancy);
             this.Controls.Add(this.cmbBoxCowid);
             this.Controls.Add(this.lblManagecows);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBreedings);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -746,7 +769,7 @@
             this.Controls.Add(this.lblHeatDate);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Name = "FormBreeding";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBreedings)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
@@ -781,7 +804,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel lblManagecows;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBreedings;
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
@@ -800,11 +823,11 @@
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private System.Windows.Forms.ComboBox cmbBoxCowid;
-        private MetroFramework.Controls.MetroDateTime metroDateTime3;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
-        private MetroFramework.Controls.MetroDateTime metroDateTime4;
-        private MetroFramework.Controls.MetroDateTime metroDateTime5;
+        private MetroFramework.Controls.MetroDateTime metroDateTimePregnancy;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeHeat;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeBreed;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeExcalve;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeCalve;
         private System.Windows.Forms.Label lblRemarks;
         private MetroFramework.Controls.MetroTextBox txtRemarks;
         private System.Windows.Forms.Label lblWelcome;
@@ -832,5 +855,6 @@
         private System.Windows.Forms.PictureBox picBoxcoww;
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
+        private System.Windows.Forms.Label lblsysmsg;
     }
 }

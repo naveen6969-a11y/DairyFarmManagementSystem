@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHealth));
             this.lblManagecows = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHealth = new System.Windows.Forms.DataGridView();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -77,7 +77,7 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHealth)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
@@ -107,13 +107,19 @@
             this.lblManagecows.TabIndex = 81;
             this.lblManagecows.Text = "Health Report";
             // 
-            // dataGridView1
+            // dataGridViewHealth
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
-            this.dataGridView1.TabIndex = 80;
+            this.dataGridViewHealth.AllowUserToAddRows = false;
+            this.dataGridViewHealth.AllowUserToDeleteRows = false;
+            this.dataGridViewHealth.AllowUserToResizeColumns = false;
+            this.dataGridViewHealth.AllowUserToResizeRows = false;
+            this.dataGridViewHealth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHealth.Location = new System.Drawing.Point(246, 290);
+            this.dataGridViewHealth.Name = "dataGridViewHealth";
+            this.dataGridViewHealth.ReadOnly = true;
+            this.dataGridViewHealth.Size = new System.Drawing.Size(531, 150);
+            this.dataGridViewHealth.TabIndex = 80;
+            this.dataGridViewHealth.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHealth_CellClick);
             // 
             // lblCowlist
             // 
@@ -132,6 +138,7 @@
             this.btnUpdate.TabIndex = 78;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -141,6 +148,7 @@
             this.btnDelete.TabIndex = 77;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -309,6 +317,7 @@
             this.btnSave.TabIndex = 69;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblCostofTreatment
             // 
@@ -408,6 +417,7 @@
             this.cmbBoxCowid.Name = "cmbBoxCowid";
             this.cmbBoxCowid.Size = new System.Drawing.Size(92, 21);
             this.cmbBoxCowid.TabIndex = 82;
+            this.cmbBoxCowid.SelectedIndexChanged += new System.EventHandler(this.cmbBoxCowid_SelectedIndexChanged);
             // 
             // txtVetName
             // 
@@ -716,7 +726,7 @@
             this.Controls.Add(this.txtVetName);
             this.Controls.Add(this.cmbBoxCowid);
             this.Controls.Add(this.lblManagecows);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewHealth);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -736,7 +746,7 @@
             this.Controls.Add(this.lblCowId);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Name = "FormHealth";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHealth)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
@@ -771,7 +781,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel lblManagecows;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewHealth;
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
