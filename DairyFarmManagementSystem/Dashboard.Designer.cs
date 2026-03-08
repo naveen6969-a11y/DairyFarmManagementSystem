@@ -57,6 +57,19 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.lblDashboard = new MetroFramework.Controls.MetroLabel();
+            this.pictureBoxin = new System.Windows.Forms.PictureBox();
+            this.panelFinance2 = new System.Windows.Forms.Panel();
+            this.lblFinance = new System.Windows.Forms.Label();
+            this.pictureBoxEx = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBl = new System.Windows.Forms.PictureBox();
+            this.panelLogistic = new System.Windows.Forms.Panel();
+            this.pictureBoxEmp = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMS = new System.Windows.Forms.PictureBox();
+            this.lblLogistic = new System.Windows.Forms.Label();
+            this.pictureBoxCo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblExDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
             this.paneldashboard.SuspendLayout();
@@ -74,6 +87,16 @@
             this.panelcow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxin)).BeginInit();
+            this.panelFinance2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBl)).BeginInit();
+            this.panelLogistic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -395,11 +418,153 @@
             this.lblDashboard.TabIndex = 105;
             this.lblDashboard.Text = "DashBoard";
             // 
+            // pictureBoxin
+            // 
+            this.pictureBoxin.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxin.Image")));
+            this.pictureBoxin.Location = new System.Drawing.Point(3, 18);
+            this.pictureBoxin.Name = "pictureBoxin";
+            this.pictureBoxin.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxin.TabIndex = 106;
+            this.pictureBoxin.TabStop = false;
+            // 
+            // panelFinance2
+            // 
+            this.panelFinance2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelFinance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFinance2.Controls.Add(this.lblExDate);
+            this.panelFinance2.Controls.Add(this.pictureBoxBl);
+            this.panelFinance2.Controls.Add(this.pictureBoxEx);
+            this.panelFinance2.Controls.Add(this.lblFinance);
+            this.panelFinance2.Controls.Add(this.pictureBoxin);
+            this.panelFinance2.Location = new System.Drawing.Point(228, 80);
+            this.panelFinance2.Name = "panelFinance2";
+            this.panelFinance2.Size = new System.Drawing.Size(271, 206);
+            this.panelFinance2.TabIndex = 107;
+            // 
+            // lblFinance
+            // 
+            this.lblFinance.AutoSize = true;
+            this.lblFinance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinance.Location = new System.Drawing.Point(107, -1);
+            this.lblFinance.Name = "lblFinance";
+            this.lblFinance.Size = new System.Drawing.Size(62, 16);
+            this.lblFinance.TabIndex = 91;
+            this.lblFinance.Text = "Finance";
+            // 
+            // pictureBoxEx
+            // 
+            this.pictureBoxEx.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEx.Image")));
+            this.pictureBoxEx.Location = new System.Drawing.Point(144, 18);
+            this.pictureBoxEx.Name = "pictureBoxEx";
+            this.pictureBoxEx.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxEx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEx.TabIndex = 107;
+            this.pictureBoxEx.TabStop = false;
+            // 
+            // pictureBoxBl
+            // 
+            this.pictureBoxBl.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBl.Image")));
+            this.pictureBoxBl.Location = new System.Drawing.Point(73, 106);
+            this.pictureBoxBl.Name = "pictureBoxBl";
+            this.pictureBoxBl.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxBl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBl.TabIndex = 108;
+            this.pictureBoxBl.TabStop = false;
+            // 
+            // panelLogistic
+            // 
+            this.panelLogistic.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelLogistic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogistic.Controls.Add(this.pictureBoxEmp);
+            this.panelLogistic.Controls.Add(this.pictureBoxMS);
+            this.panelLogistic.Controls.Add(this.lblLogistic);
+            this.panelLogistic.Controls.Add(this.pictureBoxCo);
+            this.panelLogistic.Location = new System.Drawing.Point(516, 80);
+            this.panelLogistic.Name = "panelLogistic";
+            this.panelLogistic.Size = new System.Drawing.Size(271, 206);
+            this.panelLogistic.TabIndex = 108;
+            // 
+            // pictureBoxEmp
+            // 
+            this.pictureBoxEmp.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEmp.Image")));
+            this.pictureBoxEmp.Location = new System.Drawing.Point(73, 106);
+            this.pictureBoxEmp.Name = "pictureBoxEmp";
+            this.pictureBoxEmp.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEmp.TabIndex = 108;
+            this.pictureBoxEmp.TabStop = false;
+            // 
+            // pictureBoxMS
+            // 
+            this.pictureBoxMS.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMS.Image")));
+            this.pictureBoxMS.Location = new System.Drawing.Point(144, 18);
+            this.pictureBoxMS.Name = "pictureBoxMS";
+            this.pictureBoxMS.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxMS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMS.TabIndex = 107;
+            this.pictureBoxMS.TabStop = false;
+            // 
+            // lblLogistic
+            // 
+            this.lblLogistic.AutoSize = true;
+            this.lblLogistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogistic.Location = new System.Drawing.Point(107, -1);
+            this.lblLogistic.Name = "lblLogistic";
+            this.lblLogistic.Size = new System.Drawing.Size(61, 16);
+            this.lblLogistic.TabIndex = 91;
+            this.lblLogistic.Text = "Logistic";
+            // 
+            // pictureBoxCo
+            // 
+            this.pictureBoxCo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCo.Image")));
+            this.pictureBoxCo.Location = new System.Drawing.Point(3, 18);
+            this.pictureBoxCo.Name = "pictureBoxCo";
+            this.pictureBoxCo.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxCo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCo.TabIndex = 106;
+            this.pictureBoxCo.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(291, 313);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(131, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 109;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(579, 313);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 114);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 110;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblExDate
+            // 
+            this.lblExDate.AutoSize = true;
+            this.lblExDate.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblExDate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblExDate.Location = new System.Drawing.Point(50, 32);
+            this.lblExDate.Name = "lblExDate";
+            this.lblExDate.Size = new System.Drawing.Size(32, 15);
+            this.lblExDate.TabIndex = 109;
+            this.lblExDate.Text = "Date";
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelLogistic);
+            this.Controls.Add(this.panelFinance2);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.lblWelcome);
@@ -433,6 +598,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxin)).EndInit();
+            this.panelFinance2.ResumeLayout(false);
+            this.panelFinance2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBl)).EndInit();
+            this.panelLogistic.ResumeLayout(false);
+            this.panelLogistic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +645,18 @@
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private MetroFramework.Controls.MetroLabel lblDashboard;
+        private System.Windows.Forms.PictureBox pictureBoxin;
+        private System.Windows.Forms.Panel panelFinance2;
+        private System.Windows.Forms.PictureBox pictureBoxBl;
+        private System.Windows.Forms.PictureBox pictureBoxEx;
+        private System.Windows.Forms.Label lblFinance;
+        private System.Windows.Forms.Panel panelLogistic;
+        private System.Windows.Forms.PictureBox pictureBoxEmp;
+        private System.Windows.Forms.PictureBox pictureBoxMS;
+        private System.Windows.Forms.Label lblLogistic;
+        private System.Windows.Forms.PictureBox pictureBoxCo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblExDate;
     }
 }

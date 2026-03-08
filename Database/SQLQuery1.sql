@@ -28,6 +28,10 @@ CREATE TABLE Employee (
     Phone       VARCHAR(50),
     Address     VARCHAR(50)
 );
+ALTER TABLE Employee
+ADD Username VARCHAR(50),
+    Password VARCHAR(50),
+    Role      VARCHAR(50) 
 
 -- 3. MILK TABLE
 CREATE TABLE Milk (
@@ -119,3 +123,8 @@ INSERT INTO Health (CowId, RepDate, Event, Diagnosis, Treatment, Cost, VetName) 
 (9, '2025-05-18', 'Injury', 'Leg Wound', 'Bandage and Cleaning', 2700, 'Dr. Fernando'),
 (10, '2025-06-01', 'Parasite', 'Tick Infestation', 'Anti-tick Spray', 1600, 'Dr. Jayasinghe'),
 (11, '2025-06-15', 'Illness', 'Respiratory Infection', 'Antibiotics', 3900, 'Dr. Silva');
+
+INSERT INTO Employee (EmpName, EmpDob, Gender, Phone, Address, Username, Password, Role) VALUES
+('Nimal Perera', '1990-05-12', 'Male', '0771234567', 'Kalutara', 'admin', '1234', 'Admin'),
+('Saman Silva', '1988-11-03', 'Male', '0712345678', 'Panadura', 'Employee', '1234', 'Employee')
+;
