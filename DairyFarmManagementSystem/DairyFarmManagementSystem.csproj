@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <EmbeddedResource Include="Breedings.resx">
       <DependentUpon>Breedings.cs</DependentUpon>
     </EmbeddedResource>

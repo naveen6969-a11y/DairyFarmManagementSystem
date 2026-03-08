@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMilkSales));
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblMilkSales = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSales = new System.Windows.Forms.DataGridView();
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -49,7 +48,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
-            this.CalenderDate = new MetroFramework.Controls.MetroDateTime();
+            this.CalenderDateSales = new MetroFramework.Controls.MetroDateTime();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.picboxCow = new System.Windows.Forms.PictureBox();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
@@ -75,7 +74,8 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtTotal = new MetroFramework.Controls.MetroTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
@@ -95,13 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxcoww)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(561, 176);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 106;
-            // 
             // lblMilkSales
             // 
             this.lblMilkSales.AutoSize = true;
@@ -112,13 +105,20 @@
             this.lblMilkSales.TabIndex = 104;
             this.lblMilkSales.Text = "MilkSales";
             // 
-            // dataGridView1
+            // dataGridViewSales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(246, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 150);
-            this.dataGridView1.TabIndex = 103;
+            this.dataGridViewSales.AllowUserToAddRows = false;
+            this.dataGridViewSales.AllowUserToDeleteRows = false;
+            this.dataGridViewSales.AllowUserToResizeColumns = false;
+            this.dataGridViewSales.AllowUserToResizeRows = false;
+            this.dataGridViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSales.Location = new System.Drawing.Point(246, 290);
+            this.dataGridViewSales.Name = "dataGridViewSales";
+            this.dataGridViewSales.ReadOnly = true;
+            this.dataGridViewSales.Size = new System.Drawing.Size(531, 150);
+            this.dataGridViewSales.TabIndex = 103;
+            this.dataGridViewSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSales_CellClick);
+            this.dataGridViewSales.Click += new System.EventHandler(this.dataGridViewSales_Click);
             // 
             // lblCowlist
             // 
@@ -137,6 +137,7 @@
             this.btnUpdate.TabIndex = 101;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -146,6 +147,7 @@
             this.btnDelete.TabIndex = 100;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -231,7 +233,7 @@
             this.txtPrice.CustomButton.UseSelectable = true;
             this.txtPrice.CustomButton.Visible = false;
             this.txtPrice.Lines = new string[0];
-            this.txtPrice.Location = new System.Drawing.Point(451, 104);
+            this.txtPrice.Location = new System.Drawing.Point(574, 105);
             this.txtPrice.MaxLength = 32767;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
@@ -245,6 +247,7 @@
             this.txtPrice.UseSelectable = true;
             this.txtPrice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // txtClientName
             // 
@@ -261,7 +264,7 @@
             this.txtClientName.CustomButton.UseSelectable = true;
             this.txtClientName.CustomButton.Visible = false;
             this.txtClientName.Lines = new string[0];
-            this.txtClientName.Location = new System.Drawing.Point(574, 104);
+            this.txtClientName.Location = new System.Drawing.Point(697, 105);
             this.txtClientName.MaxLength = 32767;
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.PasswordChar = '\0';
@@ -284,6 +287,7 @@
             this.btnSave.TabIndex = 93;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblQuantity
             // 
@@ -319,7 +323,7 @@
             // 
             this.lblClientName.AutoSize = true;
             this.lblClientName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblClientName.Location = new System.Drawing.Point(576, 71);
+            this.lblClientName.Location = new System.Drawing.Point(699, 72);
             this.lblClientName.Name = "lblClientName";
             this.lblClientName.Size = new System.Drawing.Size(73, 15);
             this.lblClientName.TabIndex = 88;
@@ -329,7 +333,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(460, 71);
+            this.lblPrice.Location = new System.Drawing.Point(583, 72);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(35, 15);
             this.lblPrice.TabIndex = 87;
@@ -339,7 +343,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDate.Location = new System.Drawing.Point(257, 71);
+            this.lblDate.Location = new System.Drawing.Point(380, 72);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(32, 15);
             this.lblDate.TabIndex = 86;
@@ -366,13 +370,13 @@
             this.lblSoftwareNameShort.TabIndex = 3;
             this.lblSoftwareNameShort.Text = "D F M S";
             // 
-            // CalenderDate
+            // CalenderDateSales
             // 
-            this.CalenderDate.Location = new System.Drawing.Point(221, 98);
-            this.CalenderDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.CalenderDate.Name = "CalenderDate";
-            this.CalenderDate.Size = new System.Drawing.Size(200, 29);
-            this.CalenderDate.TabIndex = 107;
+            this.CalenderDateSales.Location = new System.Drawing.Point(344, 99);
+            this.CalenderDateSales.MinimumSize = new System.Drawing.Size(0, 29);
+            this.CalenderDateSales.Name = "CalenderDateSales";
+            this.CalenderDateSales.Size = new System.Drawing.Size(200, 29);
+            this.CalenderDateSales.TabIndex = 107;
             // 
             // lblWelcome
             // 
@@ -662,18 +666,48 @@
             this.btnempLogout.UseSelectable = true;
             this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
+            // txtTotal
+            // 
+            // 
+            // 
+            // 
+            this.txtTotal.CustomButton.Image = null;
+            this.txtTotal.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txtTotal.CustomButton.Name = "";
+            this.txtTotal.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTotal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTotal.CustomButton.TabIndex = 1;
+            this.txtTotal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTotal.CustomButton.UseSelectable = true;
+            this.txtTotal.CustomButton.Visible = false;
+            this.txtTotal.Lines = new string[0];
+            this.txtTotal.Location = new System.Drawing.Point(574, 175);
+            this.txtTotal.MaxLength = 32767;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionLength = 0;
+            this.txtTotal.SelectionStart = 0;
+            this.txtTotal.ShortcutsEnabled = true;
+            this.txtTotal.Size = new System.Drawing.Size(75, 23);
+            this.txtTotal.TabIndex = 111;
+            this.txtTotal.UseSelectable = true;
+            this.txtTotal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTotal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // FormMilkSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
-            this.Controls.Add(this.CalenderDate);
-            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.CalenderDateSales);
             this.Controls.Add(this.lblMilkSales);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewSales);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -691,7 +725,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Name = "FormMilkSales";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
@@ -724,10 +758,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTotal;
         private MetroFramework.Controls.MetroLabel lblMilkSales;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSales;
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
@@ -745,7 +777,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
-        private MetroFramework.Controls.MetroDateTime CalenderDate;
+        private MetroFramework.Controls.MetroDateTime CalenderDateSales;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox picboxCow;
         private System.Windows.Forms.Panel panelLoginFrame;
@@ -771,5 +803,6 @@
         private System.Windows.Forms.PictureBox picBoxcoww;
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
+        private MetroFramework.Controls.MetroTextBox txtTotal;
     }
 }

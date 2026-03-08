@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFinance));
             this.lblFarmFinances = new MetroFramework.Controls.MetroLabel();
-            this.TableEx = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEx = new System.Windows.Forms.DataGridView();
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnExSave = new MetroFramework.Controls.MetroButton();
             this.cmbBoxPurpose = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEX = new System.Windows.Forms.DateTimePicker();
             this.lblExDate = new System.Windows.Forms.Label();
             this.lblPurpose = new System.Windows.Forms.Label();
             this.txtExAmount = new MetroFramework.Controls.MetroTextBox();
@@ -47,13 +47,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnInSave = new MetroFramework.Controls.MetroButton();
             this.cmbBoxType = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerIN = new System.Windows.Forms.DateTimePicker();
             this.lblInDate = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.txtInAmount = new MetroFramework.Controls.MetroTextBox();
             this.lblInAmount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TableIn = new System.Windows.Forms.DataGridView();
+            this.dataGridViewIn = new System.Windows.Forms.DataGridView();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.picboxCow = new System.Windows.Forms.PictureBox();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
@@ -79,11 +79,13 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.TableEx)).BeginInit();
+            this.btnDeleteEx = new MetroFramework.Controls.MetroButton();
+            this.btnDeletein = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TableIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
             this.paneldashboard.SuspendLayout();
@@ -112,13 +114,19 @@
             this.lblFarmFinances.TabIndex = 91;
             this.lblFarmFinances.Text = "Farm Finances";
             // 
-            // TableEx
+            // dataGridViewEx
             // 
-            this.TableEx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableEx.Location = new System.Drawing.Point(307, 19);
-            this.TableEx.Name = "TableEx";
-            this.TableEx.Size = new System.Drawing.Size(244, 135);
-            this.TableEx.TabIndex = 90;
+            this.dataGridViewEx.AllowUserToAddRows = false;
+            this.dataGridViewEx.AllowUserToDeleteRows = false;
+            this.dataGridViewEx.AllowUserToResizeColumns = false;
+            this.dataGridViewEx.AllowUserToResizeRows = false;
+            this.dataGridViewEx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEx.Location = new System.Drawing.Point(307, 19);
+            this.dataGridViewEx.Name = "dataGridViewEx";
+            this.dataGridViewEx.ReadOnly = true;
+            this.dataGridViewEx.Size = new System.Drawing.Size(254, 140);
+            this.dataGridViewEx.TabIndex = 90;
+            this.dataGridViewEx.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEx_CellClick);
             // 
             // panelEmpMenuTOP
             // 
@@ -145,16 +153,17 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnDeleteEx);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnExSave);
             this.panel1.Controls.Add(this.cmbBoxPurpose);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dateTimePickerEX);
             this.panel1.Controls.Add(this.lblExDate);
             this.panel1.Controls.Add(this.lblPurpose);
             this.panel1.Controls.Add(this.txtExAmount);
             this.panel1.Controls.Add(this.lblExAmount);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.TableEx);
+            this.panel1.Controls.Add(this.dataGridViewEx);
             this.panel1.Location = new System.Drawing.Point(231, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 164);
@@ -178,6 +187,7 @@
             this.btnExSave.TabIndex = 98;
             this.btnExSave.Text = "Save";
             this.btnExSave.UseSelectable = true;
+            this.btnExSave.Click += new System.EventHandler(this.btnExSave_Click);
             // 
             // cmbBoxPurpose
             // 
@@ -187,13 +197,13 @@
             this.cmbBoxPurpose.Size = new System.Drawing.Size(75, 21);
             this.cmbBoxPurpose.TabIndex = 97;
             // 
-            // dateTimePicker1
+            // dateTimePickerEX
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(90, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(75, 20);
-            this.dateTimePicker1.TabIndex = 96;
+            this.dateTimePickerEX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEX.Location = new System.Drawing.Point(90, 35);
+            this.dateTimePickerEX.Name = "dateTimePickerEX";
+            this.dateTimePickerEX.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePickerEX.TabIndex = 96;
             // 
             // lblExDate
             // 
@@ -269,16 +279,17 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnDeletein);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnInSave);
             this.panel2.Controls.Add(this.cmbBoxType);
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.dateTimePickerIN);
             this.panel2.Controls.Add(this.lblInDate);
             this.panel2.Controls.Add(this.lblType);
             this.panel2.Controls.Add(this.txtInAmount);
             this.panel2.Controls.Add(this.lblInAmount);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.TableIn);
+            this.panel2.Controls.Add(this.dataGridViewIn);
             this.panel2.Location = new System.Drawing.Point(231, 253);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(566, 164);
@@ -302,6 +313,7 @@
             this.btnInSave.TabIndex = 98;
             this.btnInSave.Text = "Save";
             this.btnInSave.UseSelectable = true;
+            this.btnInSave.Click += new System.EventHandler(this.btnInSave_Click);
             // 
             // cmbBoxType
             // 
@@ -311,13 +323,13 @@
             this.cmbBoxType.Size = new System.Drawing.Size(75, 21);
             this.cmbBoxType.TabIndex = 97;
             // 
-            // dateTimePicker2
+            // dateTimePickerIN
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(92, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(75, 20);
-            this.dateTimePicker2.TabIndex = 96;
+            this.dateTimePickerIN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerIN.Location = new System.Drawing.Point(92, 28);
+            this.dateTimePickerIN.Name = "dateTimePickerIN";
+            this.dateTimePickerIN.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePickerIN.TabIndex = 96;
             // 
             // lblInDate
             // 
@@ -389,13 +401,19 @@
             this.label8.TabIndex = 91;
             this.label8.Text = "Incomes";
             // 
-            // TableIn
+            // dataGridViewIn
             // 
-            this.TableIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableIn.Location = new System.Drawing.Point(307, 19);
-            this.TableIn.Name = "TableIn";
-            this.TableIn.Size = new System.Drawing.Size(244, 135);
-            this.TableIn.TabIndex = 90;
+            this.dataGridViewIn.AllowUserToAddRows = false;
+            this.dataGridViewIn.AllowUserToDeleteRows = false;
+            this.dataGridViewIn.AllowUserToResizeColumns = false;
+            this.dataGridViewIn.AllowUserToResizeRows = false;
+            this.dataGridViewIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIn.Location = new System.Drawing.Point(307, 19);
+            this.dataGridViewIn.Name = "dataGridViewIn";
+            this.dataGridViewIn.ReadOnly = true;
+            this.dataGridViewIn.Size = new System.Drawing.Size(254, 140);
+            this.dataGridViewIn.TabIndex = 90;
+            this.dataGridViewIn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIn_CellClick);
             // 
             // lblWelcome
             // 
@@ -685,6 +703,26 @@
             this.btnempLogout.UseSelectable = true;
             this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
+            // btnDeleteEx
+            // 
+            this.btnDeleteEx.Location = new System.Drawing.Point(190, 131);
+            this.btnDeleteEx.Name = "btnDeleteEx";
+            this.btnDeleteEx.Size = new System.Drawing.Size(115, 23);
+            this.btnDeleteEx.TabIndex = 100;
+            this.btnDeleteEx.Text = "Delete";
+            this.btnDeleteEx.UseSelectable = true;
+            this.btnDeleteEx.Click += new System.EventHandler(this.btnDeleteEx_Click);
+            // 
+            // btnDeletein
+            // 
+            this.btnDeletein.Location = new System.Drawing.Point(190, 129);
+            this.btnDeletein.Name = "btnDeletein";
+            this.btnDeletein.Size = new System.Drawing.Size(115, 23);
+            this.btnDeletein.TabIndex = 101;
+            this.btnDeletein.Text = "Delete";
+            this.btnDeletein.UseSelectable = true;
+            this.btnDeletein.Click += new System.EventHandler(this.btnDeletein_Click);
+            // 
             // FormFinance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,14 +736,14 @@
             this.Controls.Add(this.lblFarmFinances);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Name = "FormFinance";
-            ((System.ComponentModel.ISupportInitialize)(this.TableEx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TableIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
             this.panelLoginFrame.ResumeLayout(false);
             this.panelLoginFrame.PerformLayout();
@@ -737,7 +775,7 @@
 
         #endregion
         private MetroFramework.Controls.MetroLabel lblFarmFinances;
-        private System.Windows.Forms.DataGridView TableEx;
+        private System.Windows.Forms.DataGridView dataGridViewEx;
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private System.Windows.Forms.Panel panel1;
@@ -747,20 +785,20 @@
         private System.Windows.Forms.Label lblExAmount;
         private System.Windows.Forms.Label lblExDate;
         private System.Windows.Forms.ComboBox cmbBoxPurpose;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEX;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroButton btnExSave;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroButton btnInSave;
         private System.Windows.Forms.ComboBox cmbBoxType;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerIN;
         private System.Windows.Forms.Label lblInDate;
         private System.Windows.Forms.Label lblType;
         private MetroFramework.Controls.MetroTextBox txtInAmount;
         private System.Windows.Forms.Label lblInAmount;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView TableIn;
+        private System.Windows.Forms.DataGridView dataGridViewIn;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox picboxCow;
         private System.Windows.Forms.Panel panelLoginFrame;
@@ -786,5 +824,7 @@
         private System.Windows.Forms.PictureBox picBoxcoww;
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
+        private MetroFramework.Controls.MetroButton btnDeleteEx;
+        private MetroFramework.Controls.MetroButton btnDeletein;
     }
 }
