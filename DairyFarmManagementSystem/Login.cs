@@ -21,6 +21,46 @@ namespace DairyFarmManagementSystem
             this.Movable = false;
            
             cmbBoxRole.SelectedIndex = -1;
+
+            this.BackColor = Color.FromArgb(245, 245, 245);
+
+            // ── PASSWORD HIDDEN ──
+            txtPassword.PasswordChar = '●';
+
+            // ── USERNAME TEXTBOX ──
+            txtUsername.Font = new Font("Segoe UI", 10);
+            //txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtUsername.BackColor = Color.White;
+            txtUsername.ForeColor = Color.FromArgb(50, 50, 50);
+            txtUsername.Height = 30;
+
+            // ── PASSWORD TEXTBOX ──
+            txtPassword.Font = new Font("Segoe UI", 10);
+            //txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.BackColor = Color.White;
+            txtPassword.ForeColor = Color.FromArgb(50, 50, 50);
+            txtPassword.Height = 30;
+
+            // ── COMBOBOX ──
+            cmbBoxRole.Font = new Font("Segoe UI", 10);
+            cmbBoxRole.BackColor = Color.White;
+            cmbBoxRole.ForeColor = Color.FromArgb(50, 50, 50);
+            cmbBoxRole.FlatStyle = FlatStyle.Flat;
+            
+           
+
+            // ── LOGIN BUTTON ──
+            btnLogin.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btnLogin.BackColor = Color.SteelBlue;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.Height = 40;
+            btnLogin.Cursor = Cursors.Hand;
+
+            // ── HOVER EFFECT ON BUTTON ──
+            btnLogin.MouseEnter += (s, ev) => btnLogin.BackColor = Color.FromArgb(30, 100, 180);
+            btnLogin.MouseLeave += (s, ev) => btnLogin.BackColor = Color.SteelBlue;
         }
 
 

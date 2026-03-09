@@ -97,6 +97,7 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Gray;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Location = new System.Drawing.Point(432, 253);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(142, 20);
@@ -105,6 +106,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Gray;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(432, 302);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(142, 20);
@@ -130,7 +132,6 @@
             this.cmbBoxRole.Name = "cmbBoxRole";
             this.cmbBoxRole.Size = new System.Drawing.Size(121, 21);
             this.cmbBoxRole.TabIndex = 10;
-            this.cmbBoxRole.Text = "Select Role";
             // 
             // btnLogin
             // 
