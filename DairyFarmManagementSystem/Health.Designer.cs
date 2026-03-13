@@ -34,7 +34,6 @@
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.txtCostofTreatment = new MetroFramework.Controls.MetroTextBox();
             this.txtTreatment = new MetroFramework.Controls.MetroTextBox();
             this.txtDiagnosis = new MetroFramework.Controls.MetroTextBox();
@@ -51,7 +50,6 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.cmbBoxCowid = new System.Windows.Forms.ComboBox();
-            this.txtVetName = new System.Windows.Forms.TextBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.picboxCow = new System.Windows.Forms.PictureBox();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
@@ -78,6 +76,7 @@
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.lblsessioninfo = new System.Windows.Forms.Label();
+            this.txtVetName = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHealth)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
@@ -133,9 +132,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(635, 238);
+            this.btnUpdate.Location = new System.Drawing.Point(616, 233);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
             this.btnUpdate.TabIndex = 78;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
@@ -143,22 +142,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(533, 238);
+            this.btnDelete.Location = new System.Drawing.Point(455, 233);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(115, 23);
             this.btnDelete.TabIndex = 77;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(436, 238);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 76;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseSelectable = true;
             // 
             // txtCostofTreatment
             // 
@@ -175,7 +165,7 @@
             this.txtCostofTreatment.CustomButton.UseSelectable = true;
             this.txtCostofTreatment.CustomButton.Visible = false;
             this.txtCostofTreatment.Lines = new string[0];
-            this.txtCostofTreatment.Location = new System.Drawing.Point(440, 176);
+            this.txtCostofTreatment.Location = new System.Drawing.Point(484, 173);
             this.txtCostofTreatment.MaxLength = 32767;
             this.txtCostofTreatment.Name = "txtCostofTreatment";
             this.txtCostofTreatment.PasswordChar = '\0';
@@ -205,7 +195,7 @@
             this.txtTreatment.CustomButton.UseSelectable = true;
             this.txtTreatment.CustomButton.Visible = false;
             this.txtTreatment.Lines = new string[0];
-            this.txtTreatment.Location = new System.Drawing.Point(286, 176);
+            this.txtTreatment.Location = new System.Drawing.Point(330, 173);
             this.txtTreatment.MaxLength = 32767;
             this.txtTreatment.Name = "txtTreatment";
             this.txtTreatment.PasswordChar = '\0';
@@ -235,7 +225,7 @@
             this.txtDiagnosis.CustomButton.UseSelectable = true;
             this.txtDiagnosis.CustomButton.Visible = false;
             this.txtDiagnosis.Lines = new string[0];
-            this.txtDiagnosis.Location = new System.Drawing.Point(606, 98);
+            this.txtDiagnosis.Location = new System.Drawing.Point(650, 95);
             this.txtDiagnosis.MaxLength = 32767;
             this.txtDiagnosis.Name = "txtDiagnosis";
             this.txtDiagnosis.PasswordChar = '\0';
@@ -265,7 +255,7 @@
             this.txtCowName.CustomButton.UseSelectable = true;
             this.txtCowName.CustomButton.Visible = false;
             this.txtCowName.Lines = new string[0];
-            this.txtCowName.Location = new System.Drawing.Point(360, 98);
+            this.txtCowName.Location = new System.Drawing.Point(404, 95);
             this.txtCowName.MaxLength = 32767;
             this.txtCowName.Name = "txtCowName";
             this.txtCowName.PasswordChar = '\0';
@@ -295,7 +285,7 @@
             this.txtEvent.CustomButton.UseSelectable = true;
             this.txtEvent.CustomButton.Visible = false;
             this.txtEvent.Lines = new string[0];
-            this.txtEvent.Location = new System.Drawing.Point(457, 98);
+            this.txtEvent.Location = new System.Drawing.Point(501, 95);
             this.txtEvent.MaxLength = 32767;
             this.txtEvent.Name = "txtEvent";
             this.txtEvent.PasswordChar = '\0';
@@ -312,9 +302,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(274, 238);
+            this.btnSave.Location = new System.Drawing.Point(294, 233);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(136, 23);
+            this.btnSave.Size = new System.Drawing.Size(115, 23);
             this.btnSave.TabIndex = 69;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
@@ -324,7 +314,7 @@
             // 
             this.lblCostofTreatment.AutoSize = true;
             this.lblCostofTreatment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCostofTreatment.Location = new System.Drawing.Point(433, 145);
+            this.lblCostofTreatment.Location = new System.Drawing.Point(477, 142);
             this.lblCostofTreatment.Name = "lblCostofTreatment";
             this.lblCostofTreatment.Size = new System.Drawing.Size(98, 15);
             this.lblCostofTreatment.TabIndex = 67;
@@ -334,7 +324,7 @@
             // 
             this.lblTreatment.AutoSize = true;
             this.lblTreatment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblTreatment.Location = new System.Drawing.Point(293, 145);
+            this.lblTreatment.Location = new System.Drawing.Point(337, 142);
             this.lblTreatment.Name = "lblTreatment";
             this.lblTreatment.Size = new System.Drawing.Size(59, 15);
             this.lblTreatment.TabIndex = 66;
@@ -344,7 +334,7 @@
             // 
             this.lblVetName.AutoSize = true;
             this.lblVetName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblVetName.Location = new System.Drawing.Point(594, 145);
+            this.lblVetName.Location = new System.Drawing.Point(638, 142);
             this.lblVetName.Name = "lblVetName";
             this.lblVetName.Size = new System.Drawing.Size(60, 15);
             this.lblVetName.TabIndex = 65;
@@ -354,7 +344,7 @@
             // 
             this.lblDiagnosis.AutoSize = true;
             this.lblDiagnosis.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDiagnosis.Location = new System.Drawing.Point(622, 71);
+            this.lblDiagnosis.Location = new System.Drawing.Point(666, 68);
             this.lblDiagnosis.Name = "lblDiagnosis";
             this.lblDiagnosis.Size = new System.Drawing.Size(59, 15);
             this.lblDiagnosis.TabIndex = 64;
@@ -364,7 +354,7 @@
             // 
             this.lblEvent.AutoSize = true;
             this.lblEvent.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEvent.Location = new System.Drawing.Point(475, 71);
+            this.lblEvent.Location = new System.Drawing.Point(519, 68);
             this.lblEvent.Name = "lblEvent";
             this.lblEvent.Size = new System.Drawing.Size(36, 15);
             this.lblEvent.TabIndex = 63;
@@ -374,7 +364,7 @@
             // 
             this.lblCowName.AutoSize = true;
             this.lblCowName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCowName.Location = new System.Drawing.Point(372, 71);
+            this.lblCowName.Location = new System.Drawing.Point(416, 68);
             this.lblCowName.Name = "lblCowName";
             this.lblCowName.Size = new System.Drawing.Size(66, 15);
             this.lblCowName.TabIndex = 62;
@@ -384,7 +374,7 @@
             // 
             this.lblCowId.AutoSize = true;
             this.lblCowId.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCowId.Location = new System.Drawing.Point(262, 71);
+            this.lblCowId.Location = new System.Drawing.Point(306, 68);
             this.lblCowId.Name = "lblCowId";
             this.lblCowId.Size = new System.Drawing.Size(43, 15);
             this.lblCowId.TabIndex = 61;
@@ -414,18 +404,11 @@
             // cmbBoxCowid
             // 
             this.cmbBoxCowid.FormattingEnabled = true;
-            this.cmbBoxCowid.Location = new System.Drawing.Point(250, 98);
+            this.cmbBoxCowid.Location = new System.Drawing.Point(294, 95);
             this.cmbBoxCowid.Name = "cmbBoxCowid";
             this.cmbBoxCowid.Size = new System.Drawing.Size(92, 21);
             this.cmbBoxCowid.TabIndex = 82;
             this.cmbBoxCowid.SelectedIndexChanged += new System.EventHandler(this.cmbBoxCowid_SelectedIndexChanged);
-            // 
-            // txtVetName
-            // 
-            this.txtVetName.Location = new System.Drawing.Point(566, 176);
-            this.txtVetName.Name = "txtVetName";
-            this.txtVetName.Size = new System.Drawing.Size(100, 20);
-            this.txtVetName.TabIndex = 83;
             // 
             // lblWelcome
             // 
@@ -727,23 +710,52 @@
             this.lblsessioninfo.TabIndex = 87;
             this.lblsessioninfo.Text = "label1";
             // 
+            // txtVetName
+            // 
+            // 
+            // 
+            // 
+            this.txtVetName.CustomButton.Image = null;
+            this.txtVetName.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txtVetName.CustomButton.Name = "";
+            this.txtVetName.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtVetName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtVetName.CustomButton.TabIndex = 1;
+            this.txtVetName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtVetName.CustomButton.UseSelectable = true;
+            this.txtVetName.CustomButton.Visible = false;
+            this.txtVetName.Lines = new string[0];
+            this.txtVetName.Location = new System.Drawing.Point(623, 173);
+            this.txtVetName.MaxLength = 32767;
+            this.txtVetName.Name = "txtVetName";
+            this.txtVetName.PasswordChar = '\0';
+            this.txtVetName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtVetName.SelectedText = "";
+            this.txtVetName.SelectionLength = 0;
+            this.txtVetName.SelectionStart = 0;
+            this.txtVetName.ShortcutsEnabled = true;
+            this.txtVetName.Size = new System.Drawing.Size(75, 23);
+            this.txtVetName.TabIndex = 88;
+            this.txtVetName.UseSelectable = true;
+            this.txtVetName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtVetName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // FormHealth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtVetName);
             this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
-            this.Controls.Add(this.txtVetName);
             this.Controls.Add(this.cmbBoxCowid);
             this.Controls.Add(this.lblManagecows);
             this.Controls.Add(this.dataGridViewHealth);
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtCostofTreatment);
             this.Controls.Add(this.txtTreatment);
             this.Controls.Add(this.txtDiagnosis);
@@ -800,7 +812,6 @@
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
-        private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroTextBox txtCostofTreatment;
         private MetroFramework.Controls.MetroTextBox txtTreatment;
         private MetroFramework.Controls.MetroTextBox txtDiagnosis;
@@ -817,7 +828,6 @@
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private System.Windows.Forms.ComboBox cmbBoxCowid;
-        private System.Windows.Forms.TextBox txtVetName;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox picboxCow;
         private System.Windows.Forms.Panel panelLoginFrame;
@@ -844,5 +854,6 @@
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
         private System.Windows.Forms.Label lblsessioninfo;
+        private MetroFramework.Controls.MetroTextBox txtVetName;
     }
 }

@@ -34,7 +34,6 @@
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.txtCowAge = new MetroFramework.Controls.MetroTextBox();
             this.txtCowName = new MetroFramework.Controls.MetroTextBox();
             this.btnSave = new MetroFramework.Controls.MetroButton();
@@ -138,9 +137,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(645, 236);
+            this.btnUpdate.Location = new System.Drawing.Point(616, 233);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
@@ -148,22 +147,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(543, 236);
+            this.btnDelete.Location = new System.Drawing.Point(455, 233);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(115, 23);
             this.btnDelete.TabIndex = 54;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(446, 236);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 53;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseSelectable = true;
             // 
             // txtCowAge
             // 
@@ -227,9 +217,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(284, 236);
+            this.btnSave.Location = new System.Drawing.Point(294, 233);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(136, 23);
+            this.btnSave.Size = new System.Drawing.Size(115, 23);
             this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
@@ -769,7 +759,6 @@
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtCowAge);
             this.Controls.Add(this.txtCowName);
             this.Controls.Add(this.btnSave);
@@ -824,7 +813,6 @@
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
-        private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroTextBox txtCowAge;
         private MetroFramework.Controls.MetroTextBox txtCowName;
         private MetroFramework.Controls.MetroButton btnSave;

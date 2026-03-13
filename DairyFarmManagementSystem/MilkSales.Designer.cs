@@ -34,7 +34,6 @@
             this.lblCowlist = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.txtQuantity = new MetroFramework.Controls.MetroTextBox();
             this.txtClientPhone = new MetroFramework.Controls.MetroTextBox();
             this.txtPrice = new MetroFramework.Controls.MetroTextBox();
@@ -132,9 +131,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(630, 238);
+            this.btnUpdate.Location = new System.Drawing.Point(616, 233);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
             this.btnUpdate.TabIndex = 101;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
@@ -142,22 +141,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(528, 238);
+            this.btnDelete.Location = new System.Drawing.Point(455, 233);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(115, 23);
             this.btnDelete.TabIndex = 100;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(431, 238);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 99;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseSelectable = true;
             // 
             // txtQuantity
             // 
@@ -174,7 +164,7 @@
             this.txtQuantity.CustomButton.UseSelectable = true;
             this.txtQuantity.CustomButton.Visible = false;
             this.txtQuantity.Lines = new string[0];
-            this.txtQuantity.Location = new System.Drawing.Point(435, 176);
+            this.txtQuantity.Location = new System.Drawing.Point(451, 176);
             this.txtQuantity.MaxLength = 32767;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PasswordChar = '\0';
@@ -204,7 +194,7 @@
             this.txtClientPhone.CustomButton.UseSelectable = true;
             this.txtClientPhone.CustomButton.Visible = false;
             this.txtClientPhone.Lines = new string[0];
-            this.txtClientPhone.Location = new System.Drawing.Point(281, 176);
+            this.txtClientPhone.Location = new System.Drawing.Point(297, 176);
             this.txtClientPhone.MaxLength = 32767;
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.PasswordChar = '\0';
@@ -234,7 +224,7 @@
             this.txtPrice.CustomButton.UseSelectable = true;
             this.txtPrice.CustomButton.Visible = false;
             this.txtPrice.Lines = new string[0];
-            this.txtPrice.Location = new System.Drawing.Point(574, 105);
+            this.txtPrice.Location = new System.Drawing.Point(507, 105);
             this.txtPrice.MaxLength = 32767;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
@@ -265,7 +255,7 @@
             this.txtClientName.CustomButton.UseSelectable = true;
             this.txtClientName.CustomButton.Visible = false;
             this.txtClientName.Lines = new string[0];
-            this.txtClientName.Location = new System.Drawing.Point(697, 105);
+            this.txtClientName.Location = new System.Drawing.Point(630, 105);
             this.txtClientName.MaxLength = 32767;
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.PasswordChar = '\0';
@@ -282,9 +272,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(269, 238);
+            this.btnSave.Location = new System.Drawing.Point(294, 233);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(136, 23);
+            this.btnSave.Size = new System.Drawing.Size(115, 23);
             this.btnSave.TabIndex = 93;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
@@ -294,7 +284,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblQuantity.Location = new System.Drawing.Point(441, 145);
+            this.lblQuantity.Location = new System.Drawing.Point(457, 145);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(65, 15);
             this.lblQuantity.TabIndex = 92;
@@ -304,7 +294,7 @@
             // 
             this.lblClientPhone.AutoSize = true;
             this.lblClientPhone.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblClientPhone.Location = new System.Drawing.Point(288, 145);
+            this.lblClientPhone.Location = new System.Drawing.Point(304, 145);
             this.lblClientPhone.Name = "lblClientPhone";
             this.lblClientPhone.Size = new System.Drawing.Size(76, 15);
             this.lblClientPhone.TabIndex = 91;
@@ -314,7 +304,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotal.Location = new System.Drawing.Point(589, 145);
+            this.lblTotal.Location = new System.Drawing.Point(605, 145);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(32, 15);
             this.lblTotal.TabIndex = 90;
@@ -324,7 +314,7 @@
             // 
             this.lblClientName.AutoSize = true;
             this.lblClientName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblClientName.Location = new System.Drawing.Point(699, 72);
+            this.lblClientName.Location = new System.Drawing.Point(632, 72);
             this.lblClientName.Name = "lblClientName";
             this.lblClientName.Size = new System.Drawing.Size(73, 15);
             this.lblClientName.TabIndex = 88;
@@ -334,7 +324,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(583, 72);
+            this.lblPrice.Location = new System.Drawing.Point(516, 72);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(35, 15);
             this.lblPrice.TabIndex = 87;
@@ -344,7 +334,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDate.Location = new System.Drawing.Point(380, 72);
+            this.lblDate.Location = new System.Drawing.Point(313, 72);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(32, 15);
             this.lblDate.TabIndex = 86;
@@ -373,7 +363,7 @@
             // 
             // CalenderDateSales
             // 
-            this.CalenderDateSales.Location = new System.Drawing.Point(344, 99);
+            this.CalenderDateSales.Location = new System.Drawing.Point(277, 99);
             this.CalenderDateSales.MinimumSize = new System.Drawing.Size(0, 29);
             this.CalenderDateSales.Name = "CalenderDateSales";
             this.CalenderDateSales.Size = new System.Drawing.Size(200, 29);
@@ -682,7 +672,7 @@
             this.txtTotal.CustomButton.UseSelectable = true;
             this.txtTotal.CustomButton.Visible = false;
             this.txtTotal.Lines = new string[0];
-            this.txtTotal.Location = new System.Drawing.Point(574, 175);
+            this.txtTotal.Location = new System.Drawing.Point(590, 175);
             this.txtTotal.MaxLength = 32767;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -724,7 +714,6 @@
             this.Controls.Add(this.lblCowlist);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtClientPhone);
             this.Controls.Add(this.txtPrice);
@@ -778,7 +767,6 @@
         private MetroFramework.Controls.MetroLabel lblCowlist;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
-        private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroTextBox txtQuantity;
         private MetroFramework.Controls.MetroTextBox txtClientPhone;
         private MetroFramework.Controls.MetroTextBox txtPrice;
