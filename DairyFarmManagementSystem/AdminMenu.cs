@@ -71,9 +71,32 @@ namespace DairyFarmManagementSystem
             }
         }
 
+        private string GetGreeting()
+        {
+            int hour = DateTime.Now.Hour;
+            if (hour < 12)
+                return "🌅 Good Morning";
+            else if (hour < 17)
+                return "☀️ Good Afternoon";
+            else
+                return "🌙 Good Evening";
+        }
+
         public FormAdminMenu()
         {
+            
             InitializeComponent();
+
+            lblDate.Text = "📅 " + DateTime.Today.ToString("dddd, dd MMMM yyyy");
+            //lblDate.Font = new Font("Segoe UI", 9);
+            //lblDate.ForeColor = Color.FromArgb(100, 100, 100);
+
+            lblGreeting.Text = GetGreeting() + "" + "!";
+            lblGreeting.Font = new Font("Segoe UI", 11, FontStyle.Italic);
+            lblGreeting.ForeColor = Color.FromArgb(80, 80, 80);
+
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
+
             if (Session.Role != "Admin")
             {
                 MessageBox.Show("Access Denied! Admins only.", "Access Denied",
@@ -81,7 +104,7 @@ namespace DairyFarmManagementSystem
                 this.Close();
                 return;
             }
-
+           
             // ── GENDER COMBOBOX ──
             cmbBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBoxGender.Items.Add("Male");
@@ -101,6 +124,8 @@ namespace DairyFarmManagementSystem
             CalenderDateofbirth.ValueChanged += CalenderDateofbirth_ValueChanged;
 
             LoadEmployees();
+            txtName.Select();
+
         }
 
         private void CalenderDateofbirth_ValueChanged(object sender, EventArgs e)

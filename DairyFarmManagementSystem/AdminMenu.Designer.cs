@@ -54,21 +54,25 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
-            this.lblMilkSalesbtn = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.cmbBoxGender = new System.Windows.Forms.ComboBox();
             this.cmbBoxRole = new System.Windows.Forms.ComboBox();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblGreeting = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             this.panelLoginFrame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(72, 23);
+            this.lblWelcome.Location = new System.Drawing.Point(82, 20);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(112, 25);
             this.lblWelcome.TabIndex = 62;
@@ -78,7 +82,7 @@
             // 
             this.picboxCow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxCow.BackgroundImage")));
             this.picboxCow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxCow.Location = new System.Drawing.Point(16, 13);
+            this.picboxCow.Location = new System.Drawing.Point(26, 10);
             this.picboxCow.Name = "picboxCow";
             this.picboxCow.Size = new System.Drawing.Size(56, 50);
             this.picboxCow.TabIndex = 61;
@@ -88,7 +92,7 @@
             // 
             this.lblManagecows.AutoSize = true;
             this.lblManagecows.BackColor = System.Drawing.Color.Transparent;
-            this.lblManagecows.Location = new System.Drawing.Point(450, 44);
+            this.lblManagecows.Location = new System.Drawing.Point(460, 41);
             this.lblManagecows.Name = "lblManagecows";
             this.lblManagecows.Size = new System.Drawing.Size(72, 19);
             this.lblManagecows.TabIndex = 60;
@@ -102,7 +106,7 @@
             this.dataGridViewEmp.AllowUserToResizeRows = false;
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridViewEmp.Location = new System.Drawing.Point(236, 293);
+            this.dataGridViewEmp.Location = new System.Drawing.Point(246, 290);
             this.dataGridViewEmp.Name = "dataGridViewEmp";
             this.dataGridViewEmp.ReadOnly = true;
             this.dataGridViewEmp.Size = new System.Drawing.Size(531, 150);
@@ -114,9 +118,9 @@
             this.lblEmployeeList.AutoSize = true;
             this.lblEmployeeList.Location = new System.Drawing.Point(450, 271);
             this.lblEmployeeList.Name = "lblEmployeeList";
-            this.lblEmployeeList.Size = new System.Drawing.Size(62, 19);
+            this.lblEmployeeList.Size = new System.Drawing.Size(94, 19);
             this.lblEmployeeList.TabIndex = 58;
-            this.lblEmployeeList.Text = "Cows List";
+            this.lblEmployeeList.Text = "Employees List";
             // 
             // btnUpdate
             // 
@@ -392,7 +396,7 @@
             this.panelEmpMenuTOP.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panelEmpMenuTOP.Controls.Add(this.lblSoftwareNameShort);
             this.panelEmpMenuTOP.ForeColor = System.Drawing.SystemColors.Control;
-            this.panelEmpMenuTOP.Location = new System.Drawing.Point(218, 7);
+            this.panelEmpMenuTOP.Location = new System.Drawing.Point(228, 4);
             this.panelEmpMenuTOP.Name = "panelEmpMenuTOP";
             this.panelEmpMenuTOP.Size = new System.Drawing.Size(572, 32);
             this.panelEmpMenuTOP.TabIndex = 37;
@@ -411,7 +415,9 @@
             // panelLoginFrame
             // 
             this.panelLoginFrame.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panelLoginFrame.Controls.Add(this.lblMilkSalesbtn);
+            this.panelLoginFrame.Controls.Add(this.lblGreeting);
+            this.panelLoginFrame.Controls.Add(this.pictureBox1);
+            this.panelLoginFrame.Controls.Add(this.lblDate);
             this.panelLoginFrame.Controls.Add(this.btnempLogout);
             this.panelLoginFrame.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLoginFrame.ForeColor = System.Drawing.Color.White;
@@ -420,17 +426,17 @@
             this.panelLoginFrame.Size = new System.Drawing.Size(198, 370);
             this.panelLoginFrame.TabIndex = 36;
             // 
-            // lblMilkSalesbtn
+            // lblDate
             // 
-            this.lblMilkSalesbtn.AutoSize = true;
-            this.lblMilkSalesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMilkSalesbtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMilkSalesbtn.ForeColor = System.Drawing.Color.Black;
-            this.lblMilkSalesbtn.Location = new System.Drawing.Point(36, 52);
-            this.lblMilkSalesbtn.Name = "lblMilkSalesbtn";
-            this.lblMilkSalesbtn.Size = new System.Drawing.Size(101, 20);
-            this.lblMilkSalesbtn.TabIndex = 0;
-            this.lblMilkSalesbtn.Text = "Milk Sales";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDate.Location = new System.Drawing.Point(22, 230);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(85, 16);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "todays date";
             // 
             // btnempLogout
             // 
@@ -467,11 +473,45 @@
             this.cmbBoxRole.Size = new System.Drawing.Size(107, 21);
             this.cmbBoxRole.TabIndex = 64;
             // 
+            // lblsessioninfo
+            // 
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 1;
+            this.lblsessioninfo.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(37, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblGreeting
+            // 
+            this.lblGreeting.AutoSize = true;
+            this.lblGreeting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblGreeting.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreeting.ForeColor = System.Drawing.Color.Black;
+            this.lblGreeting.Location = new System.Drawing.Point(22, 184);
+            this.lblGreeting.Name = "lblGreeting";
+            this.lblGreeting.Size = new System.Drawing.Size(56, 15);
+            this.lblGreeting.TabIndex = 2;
+            this.lblGreeting.Text = "Greeting";
+            // 
             // FormAdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.cmbBoxRole);
             this.Controls.Add(this.cmbBoxGender);
             this.Controls.Add(this.lblWelcome);
@@ -498,13 +538,16 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.panelLoginFrame);
+            this.Movable = false;
             this.Name = "FormAdminMenu";
+            this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
             this.panelLoginFrame.ResumeLayout(false);
             this.panelLoginFrame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,9 +580,12 @@
         private System.Windows.Forms.Panel panelEmpMenuTOP;
         private System.Windows.Forms.Label lblSoftwareNameShort;
         private System.Windows.Forms.Panel panelLoginFrame;
-        private System.Windows.Forms.Label lblMilkSalesbtn;
+        private System.Windows.Forms.Label lblDate;
         private MetroFramework.Controls.MetroButton btnempLogout;
         private System.Windows.Forms.ComboBox cmbBoxGender;
         private System.Windows.Forms.ComboBox cmbBoxRole;
+        private System.Windows.Forms.Label lblsessioninfo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblGreeting;
     }
 }

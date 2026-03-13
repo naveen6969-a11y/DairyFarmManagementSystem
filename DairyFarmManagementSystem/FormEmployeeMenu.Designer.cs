@@ -79,6 +79,7 @@
             this.lblManagecows = new MetroFramework.Controls.MetroLabel();
             this.picboxCow = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
             this.panelLoginFrame.SuspendLayout();
             this.paneldashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDashboard)).BeginInit();
@@ -780,11 +781,23 @@
             this.lblWelcome.TabIndex = 35;
             this.lblWelcome.Text = "Welcome !";
             // 
+            // lblsessioninfo
+            // 
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 7;
+            this.lblsessioninfo.Text = "label1";
+            // 
             // FormEmployeeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.lblManagecows);
@@ -812,7 +825,9 @@
             this.Controls.Add(this.lblCowname);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.panelLoginFrame);
+            this.Movable = false;
             this.Name = "FormEmployeeMenu";
+            this.Resizable = false;
             this.panelLoginFrame.ResumeLayout(false);
             this.panelLoginFrame.PerformLayout();
             this.paneldashboard.ResumeLayout(false);
@@ -897,5 +912,6 @@
         private System.Windows.Forms.PictureBox picBoxmilk;
         private System.Windows.Forms.PictureBox picboxCow;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblsessioninfo;
     }
 }

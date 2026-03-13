@@ -34,6 +34,7 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDeleteEx = new MetroFramework.Controls.MetroButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnExSave = new MetroFramework.Controls.MetroButton();
             this.cmbBoxPurpose = new System.Windows.Forms.ComboBox();
@@ -44,6 +45,7 @@
             this.lblExAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDeletein = new MetroFramework.Controls.MetroButton();
             this.label4 = new System.Windows.Forms.Label();
             this.btnInSave = new MetroFramework.Controls.MetroButton();
             this.cmbBoxType = new System.Windows.Forms.ComboBox();
@@ -79,8 +81,7 @@
             this.picBoxcoww = new System.Windows.Forms.PictureBox();
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
-            this.btnDeleteEx = new MetroFramework.Controls.MetroButton();
-            this.btnDeletein = new MetroFramework.Controls.MetroButton();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -169,6 +170,16 @@
             this.panel1.Size = new System.Drawing.Size(566, 164);
             this.panel1.TabIndex = 92;
             // 
+            // btnDeleteEx
+            // 
+            this.btnDeleteEx.Location = new System.Drawing.Point(190, 132);
+            this.btnDeleteEx.Name = "btnDeleteEx";
+            this.btnDeleteEx.Size = new System.Drawing.Size(115, 23);
+            this.btnDeleteEx.TabIndex = 100;
+            this.btnDeleteEx.Text = "Delete";
+            this.btnDeleteEx.UseSelectable = true;
+            this.btnDeleteEx.Click += new System.EventHandler(this.btnDeleteEx_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -183,7 +194,7 @@
             // 
             this.btnExSave.Location = new System.Drawing.Point(48, 132);
             this.btnExSave.Name = "btnExSave";
-            this.btnExSave.Size = new System.Drawing.Size(136, 23);
+            this.btnExSave.Size = new System.Drawing.Size(115, 23);
             this.btnExSave.TabIndex = 98;
             this.btnExSave.Text = "Save";
             this.btnExSave.UseSelectable = true;
@@ -194,7 +205,7 @@
             this.cmbBoxPurpose.FormattingEnabled = true;
             this.cmbBoxPurpose.Location = new System.Drawing.Point(90, 73);
             this.cmbBoxPurpose.Name = "cmbBoxPurpose";
-            this.cmbBoxPurpose.Size = new System.Drawing.Size(75, 21);
+            this.cmbBoxPurpose.Size = new System.Drawing.Size(94, 21);
             this.cmbBoxPurpose.TabIndex = 97;
             // 
             // dateTimePickerEX
@@ -202,7 +213,7 @@
             this.dateTimePickerEX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerEX.Location = new System.Drawing.Point(90, 35);
             this.dateTimePickerEX.Name = "dateTimePickerEX";
-            this.dateTimePickerEX.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePickerEX.Size = new System.Drawing.Size(94, 20);
             this.dateTimePickerEX.TabIndex = 96;
             // 
             // lblExDate
@@ -249,7 +260,7 @@
             this.txtExAmount.SelectionLength = 0;
             this.txtExAmount.SelectionStart = 0;
             this.txtExAmount.ShortcutsEnabled = true;
-            this.txtExAmount.Size = new System.Drawing.Size(75, 23);
+            this.txtExAmount.Size = new System.Drawing.Size(94, 23);
             this.txtExAmount.TabIndex = 93;
             this.txtExAmount.UseSelectable = true;
             this.txtExAmount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -295,6 +306,16 @@
             this.panel2.Size = new System.Drawing.Size(566, 164);
             this.panel2.TabIndex = 93;
             // 
+            // btnDeletein
+            // 
+            this.btnDeletein.Location = new System.Drawing.Point(190, 132);
+            this.btnDeletein.Name = "btnDeletein";
+            this.btnDeletein.Size = new System.Drawing.Size(115, 23);
+            this.btnDeletein.TabIndex = 101;
+            this.btnDeletein.Text = "Delete";
+            this.btnDeletein.UseSelectable = true;
+            this.btnDeletein.Click += new System.EventHandler(this.btnDeletein_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -309,7 +330,7 @@
             // 
             this.btnInSave.Location = new System.Drawing.Point(48, 132);
             this.btnInSave.Name = "btnInSave";
-            this.btnInSave.Size = new System.Drawing.Size(136, 23);
+            this.btnInSave.Size = new System.Drawing.Size(115, 23);
             this.btnInSave.TabIndex = 98;
             this.btnInSave.Text = "Save";
             this.btnInSave.UseSelectable = true;
@@ -320,7 +341,7 @@
             this.cmbBoxType.FormattingEnabled = true;
             this.cmbBoxType.Location = new System.Drawing.Point(92, 69);
             this.cmbBoxType.Name = "cmbBoxType";
-            this.cmbBoxType.Size = new System.Drawing.Size(75, 21);
+            this.cmbBoxType.Size = new System.Drawing.Size(92, 21);
             this.cmbBoxType.TabIndex = 97;
             // 
             // dateTimePickerIN
@@ -328,7 +349,7 @@
             this.dateTimePickerIN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerIN.Location = new System.Drawing.Point(92, 28);
             this.dateTimePickerIN.Name = "dateTimePickerIN";
-            this.dateTimePickerIN.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePickerIN.Size = new System.Drawing.Size(92, 20);
             this.dateTimePickerIN.TabIndex = 96;
             // 
             // lblInDate
@@ -375,7 +396,7 @@
             this.txtInAmount.SelectionLength = 0;
             this.txtInAmount.SelectionStart = 0;
             this.txtInAmount.ShortcutsEnabled = true;
-            this.txtInAmount.Size = new System.Drawing.Size(75, 23);
+            this.txtInAmount.Size = new System.Drawing.Size(94, 23);
             this.txtInAmount.TabIndex = 93;
             this.txtInAmount.UseSelectable = true;
             this.txtInAmount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -703,31 +724,23 @@
             this.btnempLogout.UseSelectable = true;
             this.btnempLogout.Click += new System.EventHandler(this.btnempLogout_Click);
             // 
-            // btnDeleteEx
+            // lblsessioninfo
             // 
-            this.btnDeleteEx.Location = new System.Drawing.Point(190, 131);
-            this.btnDeleteEx.Name = "btnDeleteEx";
-            this.btnDeleteEx.Size = new System.Drawing.Size(115, 23);
-            this.btnDeleteEx.TabIndex = 100;
-            this.btnDeleteEx.Text = "Delete";
-            this.btnDeleteEx.UseSelectable = true;
-            this.btnDeleteEx.Click += new System.EventHandler(this.btnDeleteEx_Click);
-            // 
-            // btnDeletein
-            // 
-            this.btnDeletein.Location = new System.Drawing.Point(190, 129);
-            this.btnDeletein.Name = "btnDeletein";
-            this.btnDeletein.Size = new System.Drawing.Size(115, 23);
-            this.btnDeletein.TabIndex = 101;
-            this.btnDeletein.Text = "Delete";
-            this.btnDeletein.UseSelectable = true;
-            this.btnDeletein.Click += new System.EventHandler(this.btnDeletein_Click);
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 97;
+            this.lblsessioninfo.Text = "label1";
             // 
             // FormFinance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
@@ -735,7 +748,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFarmFinances);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Movable = false;
             this.Name = "FormFinance";
+            this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
@@ -826,5 +841,6 @@
         private MetroFramework.Controls.MetroButton btnempLogout;
         private MetroFramework.Controls.MetroButton btnDeleteEx;
         private MetroFramework.Controls.MetroButton btnDeletein;
+        private System.Windows.Forms.Label lblsessioninfo;
     }
 }

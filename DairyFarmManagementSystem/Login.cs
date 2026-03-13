@@ -19,10 +19,16 @@ namespace DairyFarmManagementSystem
             this.ControlBox = false;
             this.Resizable = false;
             this.Movable = false;
-           
-            cmbBoxRole.SelectedIndex = -1;
+
+            cmbBoxRole.SelectedIndex = 1;
+            cmbBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
+
 
             this.BackColor = Color.FromArgb(245, 245, 245);
+
+           
+
+            txtUsername.Select();
 
             // ── PASSWORD HIDDEN ──
             txtPassword.PasswordChar = '●';
@@ -45,7 +51,7 @@ namespace DairyFarmManagementSystem
             cmbBoxRole.Font = new Font("Segoe UI", 10);
             cmbBoxRole.BackColor = Color.White;
             cmbBoxRole.ForeColor = Color.FromArgb(50, 50, 50);
-            cmbBoxRole.FlatStyle = FlatStyle.Flat;
+           cmbBoxRole.FlatStyle = FlatStyle.Flat;
             
            
 
@@ -55,7 +61,7 @@ namespace DairyFarmManagementSystem
             btnLogin.ForeColor = Color.White;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.Height = 40;
+           
             btnLogin.Cursor = Cursors.Hand;
 
             // ── HOVER EFFECT ON BUTTON ──
@@ -110,7 +116,7 @@ namespace DairyFarmManagementSystem
                     reader.Close();
                     conn.Close();
 
-                    MessageBox.Show("Welcome, " + Session.EmpName + "!");
+                    //MessageBox.Show("Welcome, " + Session.EmpName + "!");
 
                     // ── OPEN FORM BASED ON ROLE ──
                     if (Session.Role == "Admin")

@@ -82,6 +82,7 @@
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.lblsysmsg = new System.Windows.Forms.Label();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBreedings)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
@@ -394,6 +395,7 @@
             this.metroDateTimeCalve.Name = "metroDateTimeCalve";
             this.metroDateTimeCalve.Size = new System.Drawing.Size(106, 29);
             this.metroDateTimeCalve.TabIndex = 68;
+            this.metroDateTimeCalve.ValueChanged += new System.EventHandler(this.metroDateTimeCalve_ValueChanged);
             // 
             // lblRemarks
             // 
@@ -733,11 +735,23 @@
             this.lblsysmsg.TabIndex = 76;
             this.lblsysmsg.Text = "sys automatically calculates ex calve date\r\n((283 days)";
             // 
+            // lblsessioninfo
+            // 
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 77;
+            this.lblsessioninfo.Text = "label1";
+            // 
             // FormBreeding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblsysmsg);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
@@ -768,7 +782,9 @@
             this.Controls.Add(this.lblBreeddate);
             this.Controls.Add(this.lblHeatDate);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Movable = false;
             this.Name = "FormBreeding";
+            this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBreedings)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
@@ -856,5 +872,6 @@
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
         private System.Windows.Forms.Label lblsysmsg;
+        private System.Windows.Forms.Label lblsessioninfo;
     }
 }

@@ -59,32 +59,33 @@
             this.lblDashboard = new MetroFramework.Controls.MetroLabel();
             this.pictureBoxin = new System.Windows.Forms.PictureBox();
             this.panelFinance2 = new System.Windows.Forms.Panel();
-            this.lblFinance = new System.Windows.Forms.Label();
-            this.pictureBoxEx = new System.Windows.Forms.PictureBox();
+            this.lblBalanceAmount = new System.Windows.Forms.Label();
+            this.lblExAmount = new System.Windows.Forms.Label();
+            this.lblincomeAmount = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblEx = new System.Windows.Forms.Label();
+            this.lblIncome = new System.Windows.Forms.Label();
             this.pictureBoxBl = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEx = new System.Windows.Forms.PictureBox();
+            this.lblFinance = new System.Windows.Forms.Label();
             this.panelLogistic = new System.Windows.Forms.Panel();
+            this.lblEmpCount = new System.Windows.Forms.Label();
+            this.lblMilkStockCount = new System.Windows.Forms.Label();
+            this.lblCowsCount = new System.Windows.Forms.Label();
+            this.lblEmployees = new System.Windows.Forms.Label();
+            this.lblMilkstock = new System.Windows.Forms.Label();
+            this.lblCows = new System.Windows.Forms.Label();
             this.pictureBoxEmp = new System.Windows.Forms.PictureBox();
             this.pictureBoxMS = new System.Windows.Forms.PictureBox();
             this.lblLogistic = new System.Windows.Forms.Label();
             this.pictureBoxCo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblIncome = new System.Windows.Forms.Label();
-            this.lblEx = new System.Windows.Forms.Label();
-            this.lblBalance = new System.Windows.Forms.Label();
-            this.lblCows = new System.Windows.Forms.Label();
-            this.lblMilkstock = new System.Windows.Forms.Label();
-            this.lblEmployees = new System.Windows.Forms.Label();
             this.lblHighestSale = new System.Windows.Forms.Label();
             this.lblHighestEx = new System.Windows.Forms.Label();
-            this.lblincomeAmount = new System.Windows.Forms.Label();
-            this.lblExAmount = new System.Windows.Forms.Label();
-            this.lblBalanceAmount = new System.Windows.Forms.Label();
-            this.lblCowsCount = new System.Windows.Forms.Label();
-            this.lblMilkStockCount = new System.Windows.Forms.Label();
-            this.lblEmpCount = new System.Windows.Forms.Label();
             this.lblhighestsaleAmount = new System.Windows.Forms.Label();
             this.lblHighestExpenditureAmount = new System.Windows.Forms.Label();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             this.panelLoginFrame.SuspendLayout();
             this.paneldashboard.SuspendLayout();
@@ -104,8 +105,8 @@
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxin)).BeginInit();
             this.panelFinance2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).BeginInit();
             this.panelLogistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMS)).BeginInit();
@@ -462,15 +463,81 @@
             this.panelFinance2.Size = new System.Drawing.Size(271, 206);
             this.panelFinance2.TabIndex = 107;
             // 
-            // lblFinance
+            // lblBalanceAmount
             // 
-            this.lblFinance.AutoSize = true;
-            this.lblFinance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinance.Location = new System.Drawing.Point(107, -1);
-            this.lblFinance.Name = "lblFinance";
-            this.lblFinance.Size = new System.Drawing.Size(62, 16);
-            this.lblFinance.TabIndex = 91;
-            this.lblFinance.Text = "Finance";
+            this.lblBalanceAmount.AutoSize = true;
+            this.lblBalanceAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblBalanceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceAmount.Location = new System.Drawing.Point(94, 149);
+            this.lblBalanceAmount.Name = "lblBalanceAmount";
+            this.lblBalanceAmount.Size = new System.Drawing.Size(70, 25);
+            this.lblBalanceAmount.TabIndex = 114;
+            this.lblBalanceAmount.Text = "label3";
+            // 
+            // lblExAmount
+            // 
+            this.lblExAmount.AutoSize = true;
+            this.lblExAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblExAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExAmount.Location = new System.Drawing.Point(161, 60);
+            this.lblExAmount.Name = "lblExAmount";
+            this.lblExAmount.Size = new System.Drawing.Size(70, 25);
+            this.lblExAmount.TabIndex = 113;
+            this.lblExAmount.Text = "label2";
+            // 
+            // lblincomeAmount
+            // 
+            this.lblincomeAmount.AutoSize = true;
+            this.lblincomeAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblincomeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblincomeAmount.Location = new System.Drawing.Point(16, 60);
+            this.lblincomeAmount.Name = "lblincomeAmount";
+            this.lblincomeAmount.Size = new System.Drawing.Size(70, 25);
+            this.lblincomeAmount.TabIndex = 112;
+            this.lblincomeAmount.Text = "label1";
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblBalance.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblBalance.Location = new System.Drawing.Point(107, 120);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(52, 15);
+            this.lblBalance.TabIndex = 111;
+            this.lblBalance.Text = "Balance";
+            // 
+            // lblEx
+            // 
+            this.lblEx.AutoSize = true;
+            this.lblEx.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblEx.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEx.Location = new System.Drawing.Point(172, 32);
+            this.lblEx.Name = "lblEx";
+            this.lblEx.Size = new System.Drawing.Size(71, 15);
+            this.lblEx.TabIndex = 110;
+            this.lblEx.Text = "Expenditure";
+            // 
+            // lblIncome
+            // 
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblIncome.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblIncome.Location = new System.Drawing.Point(40, 32);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(46, 15);
+            this.lblIncome.TabIndex = 109;
+            this.lblIncome.Text = "Income";
+            // 
+            // pictureBoxBl
+            // 
+            this.pictureBoxBl.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBl.Image")));
+            this.pictureBoxBl.Location = new System.Drawing.Point(73, 106);
+            this.pictureBoxBl.Name = "pictureBoxBl";
+            this.pictureBoxBl.Size = new System.Drawing.Size(120, 99);
+            this.pictureBoxBl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBl.TabIndex = 108;
+            this.pictureBoxBl.TabStop = false;
             // 
             // pictureBoxEx
             // 
@@ -482,15 +549,15 @@
             this.pictureBoxEx.TabIndex = 107;
             this.pictureBoxEx.TabStop = false;
             // 
-            // pictureBoxBl
+            // lblFinance
             // 
-            this.pictureBoxBl.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBl.Image")));
-            this.pictureBoxBl.Location = new System.Drawing.Point(73, 106);
-            this.pictureBoxBl.Name = "pictureBoxBl";
-            this.pictureBoxBl.Size = new System.Drawing.Size(120, 99);
-            this.pictureBoxBl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBl.TabIndex = 108;
-            this.pictureBoxBl.TabStop = false;
+            this.lblFinance.AutoSize = true;
+            this.lblFinance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinance.Location = new System.Drawing.Point(107, -1);
+            this.lblFinance.Name = "lblFinance";
+            this.lblFinance.Size = new System.Drawing.Size(62, 16);
+            this.lblFinance.TabIndex = 91;
+            this.lblFinance.Text = "Finance";
             // 
             // panelLogistic
             // 
@@ -510,6 +577,72 @@
             this.panelLogistic.Name = "panelLogistic";
             this.panelLogistic.Size = new System.Drawing.Size(271, 206);
             this.panelLogistic.TabIndex = 108;
+            // 
+            // lblEmpCount
+            // 
+            this.lblEmpCount.AutoSize = true;
+            this.lblEmpCount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblEmpCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpCount.Location = new System.Drawing.Point(114, 149);
+            this.lblEmpCount.Name = "lblEmpCount";
+            this.lblEmpCount.Size = new System.Drawing.Size(70, 25);
+            this.lblEmpCount.TabIndex = 115;
+            this.lblEmpCount.Text = "label6";
+            // 
+            // lblMilkStockCount
+            // 
+            this.lblMilkStockCount.AutoSize = true;
+            this.lblMilkStockCount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblMilkStockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMilkStockCount.Location = new System.Drawing.Point(171, 60);
+            this.lblMilkStockCount.Name = "lblMilkStockCount";
+            this.lblMilkStockCount.Size = new System.Drawing.Size(70, 25);
+            this.lblMilkStockCount.TabIndex = 114;
+            this.lblMilkStockCount.Text = "label5";
+            // 
+            // lblCowsCount
+            // 
+            this.lblCowsCount.AutoSize = true;
+            this.lblCowsCount.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblCowsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCowsCount.Location = new System.Drawing.Point(31, 60);
+            this.lblCowsCount.Name = "lblCowsCount";
+            this.lblCowsCount.Size = new System.Drawing.Size(70, 25);
+            this.lblCowsCount.TabIndex = 113;
+            this.lblCowsCount.Text = "label4";
+            // 
+            // lblEmployees
+            // 
+            this.lblEmployees.AutoSize = true;
+            this.lblEmployees.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblEmployees.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEmployees.Location = new System.Drawing.Point(104, 120);
+            this.lblEmployees.Name = "lblEmployees";
+            this.lblEmployees.Size = new System.Drawing.Size(64, 15);
+            this.lblEmployees.TabIndex = 112;
+            this.lblEmployees.Text = "Employees";
+            // 
+            // lblMilkstock
+            // 
+            this.lblMilkstock.AutoSize = true;
+            this.lblMilkstock.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblMilkstock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblMilkstock.Location = new System.Drawing.Point(173, 32);
+            this.lblMilkstock.Name = "lblMilkstock";
+            this.lblMilkstock.Size = new System.Drawing.Size(61, 15);
+            this.lblMilkstock.TabIndex = 111;
+            this.lblMilkstock.Text = "Milk Stock";
+            // 
+            // lblCows
+            // 
+            this.lblCows.AutoSize = true;
+            this.lblCows.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblCows.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCows.Location = new System.Drawing.Point(48, 32);
+            this.lblCows.Name = "lblCows";
+            this.lblCows.Size = new System.Drawing.Size(36, 15);
+            this.lblCows.TabIndex = 110;
+            this.lblCows.Text = "Cows";
             // 
             // pictureBoxEmp
             // 
@@ -571,72 +704,6 @@
             this.pictureBox2.TabIndex = 110;
             this.pictureBox2.TabStop = false;
             // 
-            // lblIncome
-            // 
-            this.lblIncome.AutoSize = true;
-            this.lblIncome.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblIncome.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblIncome.Location = new System.Drawing.Point(40, 32);
-            this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(46, 15);
-            this.lblIncome.TabIndex = 109;
-            this.lblIncome.Text = "Income";
-            // 
-            // lblEx
-            // 
-            this.lblEx.AutoSize = true;
-            this.lblEx.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblEx.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEx.Location = new System.Drawing.Point(172, 32);
-            this.lblEx.Name = "lblEx";
-            this.lblEx.Size = new System.Drawing.Size(71, 15);
-            this.lblEx.TabIndex = 110;
-            this.lblEx.Text = "Expenditure";
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblBalance.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblBalance.Location = new System.Drawing.Point(107, 120);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(52, 15);
-            this.lblBalance.TabIndex = 111;
-            this.lblBalance.Text = "Balance";
-            // 
-            // lblCows
-            // 
-            this.lblCows.AutoSize = true;
-            this.lblCows.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblCows.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCows.Location = new System.Drawing.Point(48, 32);
-            this.lblCows.Name = "lblCows";
-            this.lblCows.Size = new System.Drawing.Size(36, 15);
-            this.lblCows.TabIndex = 110;
-            this.lblCows.Text = "Cows";
-            // 
-            // lblMilkstock
-            // 
-            this.lblMilkstock.AutoSize = true;
-            this.lblMilkstock.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblMilkstock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblMilkstock.Location = new System.Drawing.Point(173, 32);
-            this.lblMilkstock.Name = "lblMilkstock";
-            this.lblMilkstock.Size = new System.Drawing.Size(61, 15);
-            this.lblMilkstock.TabIndex = 111;
-            this.lblMilkstock.Text = "Milk Stock";
-            // 
-            // lblEmployees
-            // 
-            this.lblEmployees.AutoSize = true;
-            this.lblEmployees.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblEmployees.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEmployees.Location = new System.Drawing.Point(104, 120);
-            this.lblEmployees.Name = "lblEmployees";
-            this.lblEmployees.Size = new System.Drawing.Size(64, 15);
-            this.lblEmployees.TabIndex = 112;
-            this.lblEmployees.Text = "Employees";
-            // 
             // lblHighestSale
             // 
             this.lblHighestSale.AutoSize = true;
@@ -658,72 +725,6 @@
             this.lblHighestEx.Size = new System.Drawing.Size(114, 15);
             this.lblHighestEx.TabIndex = 112;
             this.lblHighestEx.Text = "Highest Expenditure";
-            // 
-            // lblincomeAmount
-            // 
-            this.lblincomeAmount.AutoSize = true;
-            this.lblincomeAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblincomeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblincomeAmount.Location = new System.Drawing.Point(16, 60);
-            this.lblincomeAmount.Name = "lblincomeAmount";
-            this.lblincomeAmount.Size = new System.Drawing.Size(70, 25);
-            this.lblincomeAmount.TabIndex = 112;
-            this.lblincomeAmount.Text = "label1";
-            // 
-            // lblExAmount
-            // 
-            this.lblExAmount.AutoSize = true;
-            this.lblExAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblExAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExAmount.Location = new System.Drawing.Point(161, 60);
-            this.lblExAmount.Name = "lblExAmount";
-            this.lblExAmount.Size = new System.Drawing.Size(70, 25);
-            this.lblExAmount.TabIndex = 113;
-            this.lblExAmount.Text = "label2";
-            // 
-            // lblBalanceAmount
-            // 
-            this.lblBalanceAmount.AutoSize = true;
-            this.lblBalanceAmount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblBalanceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalanceAmount.Location = new System.Drawing.Point(94, 149);
-            this.lblBalanceAmount.Name = "lblBalanceAmount";
-            this.lblBalanceAmount.Size = new System.Drawing.Size(70, 25);
-            this.lblBalanceAmount.TabIndex = 114;
-            this.lblBalanceAmount.Text = "label3";
-            // 
-            // lblCowsCount
-            // 
-            this.lblCowsCount.AutoSize = true;
-            this.lblCowsCount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblCowsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCowsCount.Location = new System.Drawing.Point(31, 60);
-            this.lblCowsCount.Name = "lblCowsCount";
-            this.lblCowsCount.Size = new System.Drawing.Size(70, 25);
-            this.lblCowsCount.TabIndex = 113;
-            this.lblCowsCount.Text = "label4";
-            // 
-            // lblMilkStockCount
-            // 
-            this.lblMilkStockCount.AutoSize = true;
-            this.lblMilkStockCount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblMilkStockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMilkStockCount.Location = new System.Drawing.Point(171, 60);
-            this.lblMilkStockCount.Name = "lblMilkStockCount";
-            this.lblMilkStockCount.Size = new System.Drawing.Size(70, 25);
-            this.lblMilkStockCount.TabIndex = 114;
-            this.lblMilkStockCount.Text = "label5";
-            // 
-            // lblEmpCount
-            // 
-            this.lblEmpCount.AutoSize = true;
-            this.lblEmpCount.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblEmpCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpCount.Location = new System.Drawing.Point(114, 149);
-            this.lblEmpCount.Name = "lblEmpCount";
-            this.lblEmpCount.Size = new System.Drawing.Size(70, 25);
-            this.lblEmpCount.TabIndex = 115;
-            this.lblEmpCount.Text = "label6";
             // 
             // lblhighestsaleAmount
             // 
@@ -747,11 +748,23 @@
             this.lblHighestExpenditureAmount.TabIndex = 114;
             this.lblHighestExpenditureAmount.Text = "label8";
             // 
+            // lblsessioninfo
+            // 
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 115;
+            this.lblsessioninfo.Text = "label1";
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblHighestExpenditureAmount);
             this.Controls.Add(this.lblhighestsaleAmount);
             this.Controls.Add(this.lblHighestEx);
@@ -765,6 +778,7 @@
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
+            this.Movable = false;
             this.Name = "FormDashboard";
             this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).EndInit();
@@ -796,8 +810,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxin)).EndInit();
             this.panelFinance2.ResumeLayout(false);
             this.panelFinance2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEx)).EndInit();
             this.panelLogistic.ResumeLayout(false);
             this.panelLogistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).EndInit();
@@ -868,5 +882,6 @@
         private System.Windows.Forms.Label lblCowsCount;
         private System.Windows.Forms.Label lblhighestsaleAmount;
         private System.Windows.Forms.Label lblHighestExpenditureAmount;
+        private System.Windows.Forms.Label lblsessioninfo;
     }
 }

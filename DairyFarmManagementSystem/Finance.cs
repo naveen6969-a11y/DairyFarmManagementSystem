@@ -117,6 +117,11 @@ namespace DairyFarmManagementSystem
         public FormFinance()
         {
             InitializeComponent();
+
+            cmbBoxPurpose.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
             // ── EXPENDITURE PURPOSES ──
             cmbBoxPurpose.Items.Add("Animal Feed");
             cmbBoxPurpose.Items.Add("Veterinary Services");

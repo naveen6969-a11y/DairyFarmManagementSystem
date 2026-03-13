@@ -72,6 +72,7 @@ namespace DairyFarmManagementSystem
         {
             InitializeComponent();
             LoadDashboard();
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
         }
 
         private void lblcowsbtn_Click(object sender, EventArgs e)

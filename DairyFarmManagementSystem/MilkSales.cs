@@ -78,6 +78,8 @@ namespace DairyFarmManagementSystem
             LoadSales();
             txtQuantity.TextChanged += txtPrice_TextChanged;
             txtTotal.ReadOnly = true;
+            this.ActiveControl = CalenderDateSales;
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
         }
 
         private void lblcowsbtn_Click(object sender, EventArgs e)

@@ -122,7 +122,9 @@
             this.Controls.Add(this.picBoxCow);
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Movable = false;
             this.Name = "FormLoading";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxYogurt)).EndInit();

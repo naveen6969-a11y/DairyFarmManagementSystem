@@ -75,6 +75,7 @@
             this.lblcowsbtn = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.txtTotal = new MetroFramework.Controls.MetroTextBox();
+            this.lblsessioninfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
@@ -696,11 +697,23 @@
             this.txtTotal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTotal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // lblsessioninfo
+            // 
+            this.lblsessioninfo.AutoSize = true;
+            this.lblsessioninfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblsessioninfo.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsessioninfo.Location = new System.Drawing.Point(89, 45);
+            this.lblsessioninfo.Name = "lblsessioninfo";
+            this.lblsessioninfo.Size = new System.Drawing.Size(38, 13);
+            this.lblsessioninfo.TabIndex = 112;
+            this.lblsessioninfo.Text = "label1";
+            // 
             // FormMilkSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
@@ -724,7 +737,9 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Movable = false;
             this.Name = "FormMilkSales";
+            this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).EndInit();
             this.panelEmpMenuTOP.ResumeLayout(false);
             this.panelEmpMenuTOP.PerformLayout();
@@ -804,5 +819,6 @@
         private System.Windows.Forms.Label lblcowsbtn;
         private MetroFramework.Controls.MetroButton btnempLogout;
         private MetroFramework.Controls.MetroTextBox txtTotal;
+        private System.Windows.Forms.Label lblsessioninfo;
     }
 }

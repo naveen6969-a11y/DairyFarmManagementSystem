@@ -110,6 +110,10 @@ namespace DairyFarmManagementSystem
             InitializeComponent();
             LoadCowCombobox();
             LoadHealth();
+            cmbBoxCowid.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.ActiveControl = cmbBoxCowid;
+            txtCowName.ReadOnly = true;
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
         }
 
         private void lblcowsbtn_Click(object sender, EventArgs e)

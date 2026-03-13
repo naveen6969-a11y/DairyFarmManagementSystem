@@ -110,6 +110,11 @@ namespace DairyFarmManagementSystem
             InitializeComponent();
             LoadCowCombobox();
             LoadBreedings();
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
+            this.ActiveControl = cmbBoxCowid;
+            cmbBoxCowid.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtCowName.ReadOnly = true;
+            txtCowAge.ReadOnly = true;
         }
 
         private void lblcowsbtn_Click(object sender, EventArgs e)
@@ -343,6 +348,17 @@ namespace DairyFarmManagementSystem
         private void metroDateTimeBreed_ValueChanged(object sender, EventArgs e)
         {
             metroDateTimeExcalve.Value = metroDateTimeBreed.Value.AddDays(283);
+        }
+
+        private void metroDateTimeCalve_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime calvedDate = metroDateTimeCalve.Value;
+            DateTime today = DateTime.Today;
+
+            int age = today.Year - calvedDate.Year;
+            if (calvedDate.Date > today.AddYears(-age)) age--;
+
+            txtCowAge.Text = age.ToString();
         }
     }
 }

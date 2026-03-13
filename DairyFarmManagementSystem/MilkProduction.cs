@@ -94,6 +94,10 @@ namespace DairyFarmManagementSystem
             InitializeComponent();
             LoadMilkProduction();
             LoadCowCombobox();
+            cmbboxCowid.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.ActiveControl = cmbboxCowid;
+            txtCowName2.ReadOnly = true;
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
         }
 
         private void btnempLogout_Click(object sender, EventArgs e)

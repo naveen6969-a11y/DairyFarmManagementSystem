@@ -61,6 +61,9 @@ namespace DairyFarmManagementSystem
             this.Resizable = false;
             this.Movable = false;
             LoadCows();
+            txtCowname.Select();
+            txtAge.ReadOnly = true;
+            lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
 
         }
 
