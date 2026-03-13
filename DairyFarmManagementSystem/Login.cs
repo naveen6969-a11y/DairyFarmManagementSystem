@@ -112,10 +112,19 @@ namespace DairyFarmManagementSystem
 
                     MessageBox.Show("Welcome, " + Session.EmpName + "!");
 
-                    // ── OPEN MAIN FORM ──
-                    FormEmployeeMenu mainForm = new FormEmployeeMenu();
-                    mainForm.Show();
-                    this.Hide();
+                    // ── OPEN FORM BASED ON ROLE ──
+                    if (Session.Role == "Admin")
+                    {
+                        FormAdminMenu adminForm = new FormAdminMenu();
+                        adminForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        FormEmployeeMenu empForm = new FormEmployeeMenu();
+                        empForm.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
