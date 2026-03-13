@@ -112,6 +112,7 @@
             this.dataGridViewSales.AllowUserToResizeColumns = false;
             this.dataGridViewSales.AllowUserToResizeRows = false;
             this.dataGridViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewSales.Location = new System.Drawing.Point(246, 290);
             this.dataGridViewSales.Name = "dataGridViewSales";
             this.dataGridViewSales.ReadOnly = true;
@@ -125,9 +126,9 @@
             this.lblCowlist.AutoSize = true;
             this.lblCowlist.Location = new System.Drawing.Point(451, 268);
             this.lblCowlist.Name = "lblCowlist";
-            this.lblCowlist.Size = new System.Drawing.Size(83, 19);
+            this.lblCowlist.Size = new System.Drawing.Size(88, 19);
             this.lblCowlist.TabIndex = 102;
-            this.lblCowlist.Text = "Sales Report";
+            this.lblCowlist.Text = "Sales Reports";
             // 
             // btnUpdate
             // 

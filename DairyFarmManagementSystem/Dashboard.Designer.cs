@@ -182,9 +182,9 @@
             this.lblDashboardbtn.ForeColor = System.Drawing.Color.Black;
             this.lblDashboardbtn.Location = new System.Drawing.Point(55, 0);
             this.lblDashboardbtn.Name = "lblDashboardbtn";
-            this.lblDashboardbtn.Size = new System.Drawing.Size(105, 20);
+            this.lblDashboardbtn.Size = new System.Drawing.Size(119, 20);
             this.lblDashboardbtn.TabIndex = 0;
-            this.lblDashboardbtn.Text = "Dashboard";
+            this.lblDashboardbtn.Text = "Dashboard  ";
             // 
             // panelFinance
             // 
@@ -215,9 +215,9 @@
             this.lblFinancebtn.ForeColor = System.Drawing.Color.Black;
             this.lblFinancebtn.Location = new System.Drawing.Point(56, -1);
             this.lblFinancebtn.Name = "lblFinancebtn";
-            this.lblFinancebtn.Size = new System.Drawing.Size(78, 20);
+            this.lblFinancebtn.Size = new System.Drawing.Size(113, 20);
             this.lblFinancebtn.TabIndex = 0;
-            this.lblFinancebtn.Text = "Finance";
+            this.lblFinancebtn.Text = "Finance     ";
             this.lblFinancebtn.Click += new System.EventHandler(this.lblFinancebtn_Click);
             // 
             // panelmilkSale
@@ -249,9 +249,9 @@
             this.lblMilkSalesbtn.ForeColor = System.Drawing.Color.Black;
             this.lblMilkSalesbtn.Location = new System.Drawing.Point(56, 0);
             this.lblMilkSalesbtn.Name = "lblMilkSalesbtn";
-            this.lblMilkSalesbtn.Size = new System.Drawing.Size(101, 20);
+            this.lblMilkSalesbtn.Size = new System.Drawing.Size(122, 20);
             this.lblMilkSalesbtn.TabIndex = 0;
-            this.lblMilkSalesbtn.Text = "Milk Sales";
+            this.lblMilkSalesbtn.Text = "Milk Sales   ";
             this.lblMilkSalesbtn.Click += new System.EventHandler(this.lblMilkSalesbtn_Click);
             // 
             // panelbreeding
@@ -283,9 +283,9 @@
             this.lblBreedingbtn.ForeColor = System.Drawing.Color.Black;
             this.lblBreedingbtn.Location = new System.Drawing.Point(56, 0);
             this.lblBreedingbtn.Name = "lblBreedingbtn";
-            this.lblBreedingbtn.Size = new System.Drawing.Size(89, 20);
+            this.lblBreedingbtn.Size = new System.Drawing.Size(131, 20);
             this.lblBreedingbtn.TabIndex = 0;
-            this.lblBreedingbtn.Text = "Breeding";
+            this.lblBreedingbtn.Text = "Breeding      ";
             this.lblBreedingbtn.Click += new System.EventHandler(this.lblBreedingbtn_Click);
             // 
             // panelhealth
@@ -317,9 +317,9 @@
             this.lblHealthbtn.ForeColor = System.Drawing.Color.Black;
             this.lblHealthbtn.Location = new System.Drawing.Point(61, 0);
             this.lblHealthbtn.Name = "lblHealthbtn";
-            this.lblHealthbtn.Size = new System.Drawing.Size(69, 20);
+            this.lblHealthbtn.Size = new System.Drawing.Size(118, 20);
             this.lblHealthbtn.TabIndex = 0;
-            this.lblHealthbtn.Text = "Health";
+            this.lblHealthbtn.Text = "Health       ";
             this.lblHealthbtn.Click += new System.EventHandler(this.lblHealthbtn_Click);
             // 
             // panelmilkpro
@@ -385,9 +385,9 @@
             this.lblcowsbtn.ForeColor = System.Drawing.Color.Black;
             this.lblcowsbtn.Location = new System.Drawing.Point(67, -1);
             this.lblcowsbtn.Name = "lblcowsbtn";
-            this.lblcowsbtn.Size = new System.Drawing.Size(56, 20);
+            this.lblcowsbtn.Size = new System.Drawing.Size(126, 20);
             this.lblcowsbtn.TabIndex = 0;
-            this.lblcowsbtn.Text = "Cows";
+            this.lblcowsbtn.Text = "Cows          ";
             this.lblcowsbtn.Click += new System.EventHandler(this.lblcowsbtn_Click);
             // 
             // btnempLogout

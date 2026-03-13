@@ -429,7 +429,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
             this.lblDate.Location = new System.Drawing.Point(22, 230);
@@ -497,7 +497,7 @@
             // lblGreeting
             // 
             this.lblGreeting.AutoSize = true;
-            this.lblGreeting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblGreeting.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblGreeting.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGreeting.ForeColor = System.Drawing.Color.Black;
             this.lblGreeting.Location = new System.Drawing.Point(22, 184);

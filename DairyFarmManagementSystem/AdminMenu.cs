@@ -107,14 +107,10 @@ namespace DairyFarmManagementSystem
            
             // ── GENDER COMBOBOX ──
             cmbBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBoxGender.Items.Add("Male");
-            cmbBoxGender.Items.Add("Female");
             cmbBoxGender.SelectedIndex = -1;
 
             // ── ROLE COMBOBOX ──
             cmbBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBoxRole.Items.Add("Admin");
-            cmbBoxRole.Items.Add("Employee");
             cmbBoxRole.SelectedIndex = -1;
 
             // ── HIDE PASSWORD ──

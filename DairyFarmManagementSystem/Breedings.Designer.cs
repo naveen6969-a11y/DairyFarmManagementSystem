@@ -119,6 +119,7 @@
             this.dataGridViewBreedings.AllowUserToResizeColumns = false;
             this.dataGridViewBreedings.AllowUserToResizeRows = false;
             this.dataGridViewBreedings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBreedings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewBreedings.Location = new System.Drawing.Point(246, 290);
             this.dataGridViewBreedings.Name = "dataGridViewBreedings";
             this.dataGridViewBreedings.ReadOnly = true;
@@ -131,9 +132,9 @@
             this.lblCowlist.AutoSize = true;
             this.lblCowlist.Location = new System.Drawing.Point(450, 271);
             this.lblCowlist.Name = "lblCowlist";
-            this.lblCowlist.Size = new System.Drawing.Size(62, 19);
+            this.lblCowlist.Size = new System.Drawing.Size(119, 19);
             this.lblCowlist.TabIndex = 56;
-            this.lblCowlist.Text = "Cows List";
+            this.lblCowlist.Text = "Cows Breeding List";
             // 
             // btnUpdate
             // 

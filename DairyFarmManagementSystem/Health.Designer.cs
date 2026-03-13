@@ -114,6 +114,7 @@
             this.dataGridViewHealth.AllowUserToResizeColumns = false;
             this.dataGridViewHealth.AllowUserToResizeRows = false;
             this.dataGridViewHealth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHealth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewHealth.Location = new System.Drawing.Point(246, 290);
             this.dataGridViewHealth.Name = "dataGridViewHealth";
             this.dataGridViewHealth.ReadOnly = true;

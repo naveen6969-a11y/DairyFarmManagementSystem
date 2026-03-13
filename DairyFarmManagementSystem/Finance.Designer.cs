@@ -122,6 +122,7 @@
             this.dataGridViewEx.AllowUserToResizeColumns = false;
             this.dataGridViewEx.AllowUserToResizeRows = false;
             this.dataGridViewEx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewEx.Location = new System.Drawing.Point(307, 19);
             this.dataGridViewEx.Name = "dataGridViewEx";
             this.dataGridViewEx.ReadOnly = true;
@@ -429,6 +430,7 @@
             this.dataGridViewIn.AllowUserToResizeColumns = false;
             this.dataGridViewIn.AllowUserToResizeRows = false;
             this.dataGridViewIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewIn.Location = new System.Drawing.Point(307, 19);
             this.dataGridViewIn.Name = "dataGridViewIn";
             this.dataGridViewIn.ReadOnly = true;
