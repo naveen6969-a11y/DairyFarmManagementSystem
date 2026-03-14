@@ -751,6 +751,7 @@
             this.Controls.Add(this.lblCowName2);
             this.Controls.Add(this.lblCowId);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormMilkProduction";
             this.Resizable = false;

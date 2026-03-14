@@ -171,6 +171,11 @@ namespace DairyFarmManagementSystem
                 MessageBox.Show("Please select a Cow.");
                 return;
             }
+            if (CalenderDate.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Production date cannot be a future date!");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(txtAMmilk.Text) || !int.TryParse(txtAMmilk.Text, out int amMilk))
             {
                 MessageBox.Show("Please enter a valid Morning Milk amount.");
@@ -237,6 +242,11 @@ namespace DairyFarmManagementSystem
             if (cmbboxCowid.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a Cow.");
+                return;
+            }
+            if (CalenderDate.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Production date cannot be a future date!");
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtAMmilk.Text) || !int.TryParse(txtAMmilk.Text, out int amMilk))

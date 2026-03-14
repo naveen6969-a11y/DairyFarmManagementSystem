@@ -778,6 +778,7 @@
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.picboxCow);
             this.Controls.Add(this.panelLoginFrame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormDashboard";
             this.Resizable = false;

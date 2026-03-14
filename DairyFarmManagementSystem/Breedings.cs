@@ -28,6 +28,8 @@ namespace DairyFarmManagementSystem
             metroDateTimePregnancy.Value = DateTime.Today;
             metroDateTimeExcalve.Value = DateTime.Today;
             metroDateTimeCalve.Value = DateTime.Today;
+            chkCalved.Checked = false;
+           
         }
         private void LoadCowCombobox()
         {
@@ -115,6 +117,8 @@ namespace DairyFarmManagementSystem
             cmbBoxCowid.DropDownStyle = ComboBoxStyle.DropDownList;
             txtCowName.ReadOnly = true;
             txtCowAge.ReadOnly = true;
+            metroDateTimeCalve.Enabled = false;
+            chkCalved.CheckedChanged += chkCalved_CheckedChanged;
         }
 
         private void lblcowsbtn_Click(object sender, EventArgs e)
@@ -192,6 +196,16 @@ namespace DairyFarmManagementSystem
             txtCowAge.Text = row.Cells["CowAge"].Value == DBNull.Value ? "" : row.Cells["CowAge"].Value?.ToString();
             txtRemarks.Text = row.Cells["Remarks"].Value == DBNull.Value ? "" : row.Cells["Remarks"].Value?.ToString();
 
+            if (row.Cells["DateCalved"].Value != null && row.Cells["DateCalved"].Value != DBNull.Value)
+            {
+                chkCalved.Checked = true;
+                metroDateTimeCalve.Value = Convert.ToDateTime(row.Cells["DateCalved"].Value);
+            }
+            else
+            {
+                chkCalved.Checked = false;
+            }
+
             if (row.Cells["HeatDate"].Value != null && row.Cells["HeatDate"].Value != DBNull.Value)
                 metroDateTimeHeat.Value = Convert.ToDateTime(row.Cells["HeatDate"].Value);
 
@@ -210,12 +224,20 @@ namespace DairyFarmManagementSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (cmbBoxCowid.SelectedValue == null)
             {
                 MessageBox.Show("Please select a Cow.");
                 return;
             }
 
+            int ageCheck = string.IsNullOrWhiteSpace(txtCowAge.Text) ? 0 : int.Parse(txtCowAge.Text);
+
+            if (ageCheck > 0 && metroDateTimeCalve.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Date calved cannot be a future date!");
+                return;
+            }
             try
             {
                 DBconnection db = new DBconnection();
@@ -231,9 +253,12 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@BreedDate", metroDateTimeBreed.Value.Date);
                 cmd.Parameters.AddWithValue("@PregDate", metroDateTimePregnancy.Value.Date);
                 cmd.Parameters.AddWithValue("@ExpDateCalve", metroDateTimeExcalve.Value.Date);
-                int cowAge = string.IsNullOrWhiteSpace(txtCowAge.Text) ? 0 : int.Parse(txtCowAge.Text);
+                int cowAge = chkCalved.Checked ?
+    (string.IsNullOrWhiteSpace(txtCowAge.Text) ? 0 : int.Parse(txtCowAge.Text)) : 0;
                 cmd.Parameters.AddWithValue("@CowAge", cowAge);
-                cmd.Parameters.AddWithValue("@DateCalved", cowAge == 0 ? (object)DBNull.Value : metroDateTimeCalve.Value.Date);
+                cmd.Parameters.AddWithValue("@DateCalved",
+    chkCalved.Checked ? (object)metroDateTimeCalve.Value.Date : DBNull.Value);
+    
                 cmd.Parameters.AddWithValue("@Remarks", txtRemarks.Text.Trim());
 
                 cmd.ExecuteNonQuery();
@@ -286,9 +311,12 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@BreedDate", metroDateTimeBreed.Value.Date);
                 cmd.Parameters.AddWithValue("@PregDate", metroDateTimePregnancy.Value.Date);
                 cmd.Parameters.AddWithValue("@ExpDateCalve", metroDateTimeExcalve.Value.Date);
-                int cowAge = string.IsNullOrWhiteSpace(txtCowAge.Text) ? 0 : int.Parse(txtCowAge.Text);
+                int cowAge = chkCalved.Checked ?
+    (string.IsNullOrWhiteSpace(txtCowAge.Text) ? 0 : int.Parse(txtCowAge.Text)) : 0;
                 cmd.Parameters.AddWithValue("@CowAge", cowAge);
-                cmd.Parameters.AddWithValue("@DateCalved", cowAge == 0 ? (object)DBNull.Value : metroDateTimeCalve.Value.Date);
+                
+                cmd.Parameters.AddWithValue("@DateCalved",
+    chkCalved.Checked ? (object)metroDateTimeCalve.Value.Date : DBNull.Value);
                 cmd.Parameters.AddWithValue("@Remarks", txtRemarks.Text.Trim());
 
                 cmd.ExecuteNonQuery();
@@ -359,6 +387,17 @@ namespace DairyFarmManagementSystem
             if (calvedDate.Date > today.AddYears(-age)) age--;
 
             txtCowAge.Text = age.ToString();
+        }
+
+        private void chkCalved_CheckedChanged(object sender, EventArgs e)
+        {
+            metroDateTimeCalve.Enabled = chkCalved.Checked;
+
+            if (!chkCalved.Checked)
+            {
+                metroDateTimeCalve.Value = DateTime.Today;
+                txtCowAge.Text = "0";
+            }
         }
     }
 }

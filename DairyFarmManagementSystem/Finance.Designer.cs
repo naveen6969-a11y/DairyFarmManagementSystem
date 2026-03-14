@@ -243,7 +243,7 @@
             // 
             // 
             this.txtExAmount.CustomButton.Image = null;
-            this.txtExAmount.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txtExAmount.CustomButton.Location = new System.Drawing.Point(72, 1);
             this.txtExAmount.CustomButton.Name = "";
             this.txtExAmount.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtExAmount.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -379,7 +379,7 @@
             // 
             // 
             this.txtInAmount.CustomButton.Image = null;
-            this.txtInAmount.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txtInAmount.CustomButton.Location = new System.Drawing.Point(72, 1);
             this.txtInAmount.CustomButton.Name = "";
             this.txtInAmount.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInAmount.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -750,6 +750,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFarmFinances);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormFinance";
             this.Resizable = false;

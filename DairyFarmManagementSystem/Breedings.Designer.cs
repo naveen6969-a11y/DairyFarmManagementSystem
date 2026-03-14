@@ -82,6 +82,7 @@
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.lblsysmsg = new System.Windows.Forms.Label();
             this.lblsessioninfo = new System.Windows.Forms.Label();
+            this.chkCalved = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBreedings)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
@@ -171,7 +172,7 @@
             this.txtCowAge.CustomButton.UseSelectable = true;
             this.txtCowAge.CustomButton.Visible = false;
             this.txtCowAge.Lines = new string[0];
-            this.txtCowAge.Location = new System.Drawing.Point(494, 171);
+            this.txtCowAge.Location = new System.Drawing.Point(574, 171);
             this.txtCowAge.MaxLength = 32767;
             this.txtCowAge.Name = "txtCowAge";
             this.txtCowAge.PasswordChar = '\0';
@@ -230,7 +231,7 @@
             // 
             this.lblCowAge.AutoSize = true;
             this.lblCowAge.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCowAge.Location = new System.Drawing.Point(501, 140);
+            this.lblCowAge.Location = new System.Drawing.Point(581, 140);
             this.lblCowAge.Name = "lblCowAge";
             this.lblCowAge.Size = new System.Drawing.Size(56, 15);
             this.lblCowAge.TabIndex = 43;
@@ -240,7 +241,7 @@
             // 
             this.lblDateCalved.AutoSize = true;
             this.lblDateCalved.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDateCalved.Location = new System.Drawing.Point(379, 140);
+            this.lblDateCalved.Location = new System.Drawing.Point(459, 140);
             this.lblDateCalved.Name = "lblDateCalved";
             this.lblDateCalved.Size = new System.Drawing.Size(73, 15);
             this.lblDateCalved.TabIndex = 42;
@@ -381,7 +382,7 @@
             // 
             this.metroDateTimeCalve.CalendarFont = new System.Drawing.Font("Microsoft Yi Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroDateTimeCalve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTimeCalve.Location = new System.Drawing.Point(356, 165);
+            this.metroDateTimeCalve.Location = new System.Drawing.Point(436, 165);
             this.metroDateTimeCalve.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeCalve.Name = "metroDateTimeCalve";
             this.metroDateTimeCalve.Size = new System.Drawing.Size(106, 29);
@@ -392,7 +393,7 @@
             // 
             this.lblRemarks.AutoSize = true;
             this.lblRemarks.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRemarks.Location = new System.Drawing.Point(575, 174);
+            this.lblRemarks.Location = new System.Drawing.Point(700, 145);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(52, 15);
             this.lblRemarks.TabIndex = 71;
@@ -404,7 +405,7 @@
             // 
             // 
             this.txtRemarks.CustomButton.Image = null;
-            this.txtRemarks.CustomButton.Location = new System.Drawing.Point(130, 1);
+            this.txtRemarks.CustomButton.Location = new System.Drawing.Point(84, 1);
             this.txtRemarks.CustomButton.Name = "";
             this.txtRemarks.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtRemarks.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -413,7 +414,7 @@
             this.txtRemarks.CustomButton.UseSelectable = true;
             this.txtRemarks.CustomButton.Visible = false;
             this.txtRemarks.Lines = new string[0];
-            this.txtRemarks.Location = new System.Drawing.Point(625, 171);
+            this.txtRemarks.Location = new System.Drawing.Point(671, 171);
             this.txtRemarks.MaxLength = 32767;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.PasswordChar = '\0';
@@ -422,7 +423,7 @@
             this.txtRemarks.SelectionLength = 0;
             this.txtRemarks.SelectionStart = 0;
             this.txtRemarks.ShortcutsEnabled = true;
-            this.txtRemarks.Size = new System.Drawing.Size(152, 23);
+            this.txtRemarks.Size = new System.Drawing.Size(106, 23);
             this.txtRemarks.TabIndex = 72;
             this.txtRemarks.UseSelectable = true;
             this.txtRemarks.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -737,11 +738,23 @@
             this.lblsessioninfo.TabIndex = 77;
             this.lblsessioninfo.Text = "label1";
             // 
+            // chkCalved
+            // 
+            this.chkCalved.AutoSize = true;
+            this.chkCalved.Location = new System.Drawing.Point(346, 171);
+            this.chkCalved.Name = "chkCalved";
+            this.chkCalved.Size = new System.Drawing.Size(82, 15);
+            this.chkCalved.TabIndex = 78;
+            this.chkCalved.Text = "Has Calved";
+            this.chkCalved.UseSelectable = true;
+            this.chkCalved.CheckedChanged += new System.EventHandler(this.chkCalved_CheckedChanged);
+            // 
             // FormBreeding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkCalved);
             this.Controls.Add(this.lblsessioninfo);
             this.Controls.Add(this.lblsysmsg);
             this.Controls.Add(this.lblWelcome);
@@ -772,6 +785,7 @@
             this.Controls.Add(this.lblBreeddate);
             this.Controls.Add(this.lblHeatDate);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormBreeding";
             this.Resizable = false;
@@ -862,5 +876,6 @@
         private MetroFramework.Controls.MetroButton btnempLogout;
         private System.Windows.Forms.Label lblsysmsg;
         private System.Windows.Forms.Label lblsessioninfo;
+        private MetroFramework.Controls.MetroCheckBox chkCalved;
     }
 }

@@ -78,6 +78,8 @@ CREATE TABLE Expenditure (
     ExpAmount   INT,
     EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId)
 );
+ALTER TABLE Expenditure
+ADD HealthId INT NULL FOREIGN KEY REFERENCES Health(RepId)
 
 -- 7. INCOME TABLE
 CREATE TABLE Income (
@@ -87,6 +89,8 @@ CREATE TABLE Income (
     IncAmount   INT,
     EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId)
 );
+ALTER TABLE Income
+ADD SaleId INT NULL FOREIGN KEY REFERENCES MilkSales(SId)
 
 -- 8. BREED TABLE
 CREATE TABLE Breed (
@@ -128,3 +132,11 @@ INSERT INTO Employee (EmpName, EmpDob, Gender, Phone, Address, Username, Passwor
 ('Nimal Perera', '1990-05-12', 'Male', '0771234567', 'Kalutara', 'admin', '1234', 'Admin'),
 ('Saman Silva', '1988-11-03', 'Male', '0712345678', 'Panadura', 'Employee', '1234', 'Employee')
 ;
+
+
+INSERT INTO Breed (CowId, HeatDate, BreedDate, PregDate, ExpDateCalve, DateCalved, CowAge, Remarks) VALUES
+(7, '2024-06-01', '2024-06-02', '2024-06-20', '2025-03-12', '2025-03-14', 3, 'Normal delivery'),
+(9, '2024-07-10', '2024-07-11', '2024-07-25', '2025-04-20', '2025-04-22', 4, 'Normal delivery'),
+(3, '2024-08-05', '2024-08-06', '2024-08-20', '2025-05-15', NULL, 2, 'Expected soon'),
+(4, '2024-09-01', '2024-09-02', '2024-09-18', '2025-06-10', NULL, 5, 'Awaiting calving'),
+(5, '2024-10-15', '2024-10-16', '2024-11-01', '2025-07-24', NULL, 3, 'Awaiting calving');

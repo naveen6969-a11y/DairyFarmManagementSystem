@@ -54,13 +54,13 @@
             this.panelEmpMenuTOP = new System.Windows.Forms.Panel();
             this.lblSoftwareNameShort = new System.Windows.Forms.Label();
             this.panelLoginFrame = new System.Windows.Forms.Panel();
+            this.lblGreeting = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.btnempLogout = new MetroFramework.Controls.MetroButton();
             this.cmbBoxGender = new System.Windows.Forms.ComboBox();
             this.cmbBoxRole = new System.Windows.Forms.ComboBox();
             this.lblsessioninfo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblGreeting = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.panelEmpMenuTOP.SuspendLayout();
@@ -426,13 +426,35 @@
             this.panelLoginFrame.Size = new System.Drawing.Size(198, 370);
             this.panelLoginFrame.TabIndex = 36;
             // 
+            // lblGreeting
+            // 
+            this.lblGreeting.AutoSize = true;
+            this.lblGreeting.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblGreeting.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreeting.ForeColor = System.Drawing.Color.Black;
+            this.lblGreeting.Location = new System.Drawing.Point(22, 184);
+            this.lblGreeting.Name = "lblGreeting";
+            this.lblGreeting.Size = new System.Drawing.Size(56, 15);
+            this.lblGreeting.TabIndex = 2;
+            this.lblGreeting.Text = "Greeting";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(37, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(22, 230);
+            this.lblDate.Location = new System.Drawing.Point(3, 230);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(85, 16);
             this.lblDate.TabIndex = 0;
@@ -484,28 +506,6 @@
             this.lblsessioninfo.TabIndex = 1;
             this.lblsessioninfo.Text = "label1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblGreeting
-            // 
-            this.lblGreeting.AutoSize = true;
-            this.lblGreeting.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblGreeting.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreeting.ForeColor = System.Drawing.Color.Black;
-            this.lblGreeting.Location = new System.Drawing.Point(22, 184);
-            this.lblGreeting.Name = "lblGreeting";
-            this.lblGreeting.Size = new System.Drawing.Size(56, 15);
-            this.lblGreeting.TabIndex = 2;
-            this.lblGreeting.Text = "Greeting";
-            // 
             // FormAdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +538,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.panelLoginFrame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormAdminMenu";
             this.Resizable = false;

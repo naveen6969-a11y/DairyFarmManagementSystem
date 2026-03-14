@@ -485,7 +485,7 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
-            this.btnSave.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtCowname
             // 
@@ -814,6 +814,7 @@
             this.Controls.Add(this.lblCowname);
             this.Controls.Add(this.panelEmpMenuTOP);
             this.Controls.Add(this.panelLoginFrame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormEmployeeMenu";
             this.Resizable = false;

@@ -67,7 +67,7 @@ namespace DairyFarmManagementSystem
 
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             // ── VALIDATION ──
             if (string.IsNullOrWhiteSpace(txtCowname.Text))
@@ -79,7 +79,19 @@ namespace DairyFarmManagementSystem
             {
                 MessageBox.Show("Please enter Ear Tag.");
                 return;
+
             }
+            if (CalenderDateofbirth.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Date of Birth cannot be a future date!");
+                return;
+            }
+            if (int.Parse(txtAge.Text) < 0)
+            {
+                MessageBox.Show("Date of Birth cannot be a future date!");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtAge.Text) || !int.TryParse(txtAge.Text, out int age))
             {
                 MessageBox.Show("Please enter a valid Age.");
@@ -231,6 +243,16 @@ namespace DairyFarmManagementSystem
             if (string.IsNullOrWhiteSpace(txtCowname.Text))
             {
                 MessageBox.Show("Please enter Cow Name.");
+                return;
+            }
+            if (CalenderDateofbirth.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Date of Birth cannot be a future date!");
+                return;
+            }
+            if (int.Parse(txtAge.Text) < 0)
+            {
+                MessageBox.Show("Date of Birth cannot be a future date!");
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtEartag.Text))

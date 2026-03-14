@@ -327,9 +327,9 @@
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblPrice.Location = new System.Drawing.Point(516, 72);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(35, 15);
+            this.lblPrice.Size = new System.Drawing.Size(66, 15);
             this.lblPrice.TabIndex = 87;
-            this.lblPrice.Text = "Price";
+            this.lblPrice.Text = "Price(perL)";
             // 
             // lblDate
             // 
@@ -727,6 +727,7 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.panelEmpMenuTOP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "FormMilkSales";
             this.Resizable = false;

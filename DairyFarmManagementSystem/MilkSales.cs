@@ -174,6 +174,11 @@ namespace DairyFarmManagementSystem
                 MessageBox.Show("Please enter Client Phone.");
                 return;
             }
+            if (CalenderDateSales.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Sale date cannot be a future date!");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(txtPrice.Text) || !int.TryParse(txtPrice.Text, out int price))
             {
                 MessageBox.Show("Please enter a valid Unit Price.");
@@ -191,7 +196,8 @@ namespace DairyFarmManagementSystem
                 SqlConnection conn = db.GetConnection();
 
                 string query = @"INSERT INTO MilkSales (SaleDate, UPrice, ClientName, ClientPhone, EmpId, Quantity)
-                         VALUES (@SaleDate, @UPrice, @ClientName, @ClientPhone, @EmpId, @Quantity)";
+                         VALUES (@SaleDate, @UPrice, @ClientName, @ClientPhone, @EmpId, @Quantity);
+                         SELECT SCOPE_IDENTITY();";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -202,7 +208,21 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); // ← auto from session!
                 cmd.Parameters.AddWithValue("@Quantity", quantity);
 
-                cmd.ExecuteNonQuery();
+                
+                int lastSaleId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // ── AUTO ADD TO INCOME TABLE ──
+                string incomeQuery = @"INSERT INTO Income (IncDate, IncType, IncAmount, EmpId, SaleId)
+                               VALUES (@IncDate, @IncType, @IncAmount, @EmpId, @SaleId)";
+
+                SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
+                incomeCmd.Parameters.AddWithValue("@IncDate", CalenderDateSales.Value.Date);
+                incomeCmd.Parameters.AddWithValue("@IncType", "Milk Sales");
+                incomeCmd.Parameters.AddWithValue("@IncAmount", price * quantity);
+                incomeCmd.Parameters.AddWithValue("@EmpId", Session.EmpId);
+                incomeCmd.Parameters.AddWithValue("@SaleId", lastSaleId);
+                incomeCmd.ExecuteNonQuery();
+
                 conn.Close();
 
                 MessageBox.Show("Sale saved successfully!");
@@ -225,6 +245,11 @@ namespace DairyFarmManagementSystem
             if (string.IsNullOrWhiteSpace(txtPrice.Text) || !int.TryParse(txtPrice.Text, out int price))
             {
                 MessageBox.Show("Please enter a valid Unit Price.");
+                return;
+            }
+            if (CalenderDateSales.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Sale date cannot be a future date!");
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtQuantity.Text) || !int.TryParse(txtQuantity.Text, out int quantity))
@@ -256,12 +281,48 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@Quantity", quantity);
 
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                
+
+               
+
+                // ── UPDATE INCOME TABLE TOO ──
+                string checkQuery = "SELECT COUNT(*) FROM Income WHERE SaleId = @SaleId";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                checkCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);
+                int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (exists > 0)
+                {
+                    // update existing
+                    string incomeQuery = @"UPDATE Income SET
+                                IncDate   = @IncDate,
+                                IncAmount = @IncAmount
+                           WHERE SaleId = @SaleId";
+                    SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
+                    incomeCmd.Parameters.AddWithValue("@IncDate", CalenderDateSales.Value.Date);
+                    incomeCmd.Parameters.AddWithValue("@IncAmount", price * quantity);
+                    incomeCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);
+                    incomeCmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // insert new one
+                    string incomeQuery = @"INSERT INTO Income (IncDate, IncType, IncAmount, EmpId, SaleId)
+                           VALUES (@IncDate, @IncType, @IncAmount, @EmpId, @SaleId)";
+                    SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
+                    incomeCmd.Parameters.AddWithValue("@IncDate", CalenderDateSales.Value.Date);
+                    incomeCmd.Parameters.AddWithValue("@IncType", "Milk Sales");
+                    incomeCmd.Parameters.AddWithValue("@IncAmount", price * quantity);
+                    incomeCmd.Parameters.AddWithValue("@EmpId", Session.EmpId);
+                    incomeCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);
+                    incomeCmd.ExecuteNonQuery();
+                }
 
                 MessageBox.Show("Sale updated successfully!");
                 selectedSaleId = 0;
                 LoadSales();
                 ClearFields();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -291,17 +352,27 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
+                // ── DELETE FROM INCOME TABLE TOO ──
+                string incomeQuery = "DELETE FROM Income WHERE SaleId = @SaleId";
+                SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
+                incomeCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);
+                incomeCmd.ExecuteNonQuery();
+
                 string query = "DELETE FROM MilkSales WHERE SId = @SId";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SId", selectedSaleId);
 
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                
 
                 MessageBox.Show("Sale deleted successfully!");
                 selectedSaleId = 0;
                 LoadSales();
                 ClearFields();
+
+               
+
+                conn.Close();
             }
             catch (Exception ex)
             {

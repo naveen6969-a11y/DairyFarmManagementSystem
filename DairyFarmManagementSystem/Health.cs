@@ -224,8 +224,11 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
+                // ── INSERT AND GET LAST ID IN ONE QUERY ──
                 string query = @"INSERT INTO Health (CowId, RepDate, Event, Diagnosis, Treatment, Cost, VetName)
-                         VALUES (@CowId, @RepDate, @Event, @Diagnosis, @Treatment, @Cost, @VetName)";
+                 VALUES (@CowId, @RepDate, @Event, @Diagnosis, @Treatment, @Cost, @VetName);
+                 SELECT SCOPE_IDENTITY();";
+
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -237,12 +240,30 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@Cost", cost);
                 cmd.Parameters.AddWithValue("@VetName", txtVetName.Text.Trim());
 
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                int lastHealthId = Convert.ToInt32(cmd.ExecuteScalar());
+
 
                 MessageBox.Show("Health record saved successfully!");
                 LoadHealth();
                 ClearFields();
+
+                
+
+                // ── AUTO ADD TO EXPENDITURE TABLE ──
+                if (cost > 0)
+                {
+                    string expQuery = @"INSERT INTO Expenditure (ExpDate, ExpPurpose, ExpAmount, EmpId, HealthId)
+                        VALUES (@ExpDate, @ExpPurpose, @ExpAmount, @EmpId, @HealthId)";
+
+                    SqlCommand expCmd = new SqlCommand(expQuery, conn);
+                    expCmd.Parameters.AddWithValue("@ExpDate", DateTime.Today);
+                    expCmd.Parameters.AddWithValue("@ExpPurpose", "Veterinary - " + txtCowName.Text);
+                    expCmd.Parameters.AddWithValue("@ExpAmount", cost);
+                    expCmd.Parameters.AddWithValue("@EmpId", Session.EmpId);
+                    expCmd.Parameters.AddWithValue("@HealthId", lastHealthId);
+                    expCmd.ExecuteNonQuery();
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -274,16 +295,15 @@ namespace DairyFarmManagementSystem
                 SqlConnection conn = db.GetConnection();
 
                 string query = @"UPDATE Health SET
-                            CowId     = @CowId,
-                            Event     = @Event,
-                            Diagnosis = @Diagnosis,
-                            Treatment = @Treatment,
-                            Cost      = @Cost,
-                            VetName   = @VetName
-                         WHERE RepId = @RepId";
+                        CowId     = @CowId,
+                        Event     = @Event,
+                        Diagnosis = @Diagnosis,
+                        Treatment = @Treatment,
+                        Cost      = @Cost,
+                        VetName   = @VetName
+                     WHERE RepId = @RepId";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
-
                 cmd.Parameters.AddWithValue("@RepId", selectedRepId);
                 cmd.Parameters.AddWithValue("@CowId", cmbBoxCowid.SelectedValue);
                 cmd.Parameters.AddWithValue("@Event", txtEvent.Text.Trim());
@@ -291,12 +311,51 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@Treatment", txtTreatment.Text.Trim());
                 cmd.Parameters.AddWithValue("@Cost", cost);
                 cmd.Parameters.AddWithValue("@VetName", txtVetName.Text.Trim());
-
                 cmd.ExecuteNonQuery();
+
+                // ── UPDATE EXPENDITURE TABLE TOO ──
+                // ── UPDATE OR INSERT EXPENDITURE ──
+                if (cost > 0)
+                {
+                    // check if expenditure record exists for this health record
+                    string checkQuery = "SELECT COUNT(*) FROM Expenditure WHERE HealthId = @HealthId";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@HealthId", selectedRepId);
+                    int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (exists > 0)
+                    {
+                        // update existing
+                        string expQuery = @"UPDATE Expenditure SET
+                                ExpDate   = @ExpDate,
+                                ExpAmount = @ExpAmount
+                            WHERE HealthId = @HealthId";
+                        SqlCommand expCmd = new SqlCommand(expQuery, conn);
+                        expCmd.Parameters.AddWithValue("@ExpDate", DateTime.Today);
+                        expCmd.Parameters.AddWithValue("@ExpAmount", cost);
+                        expCmd.Parameters.AddWithValue("@HealthId", selectedRepId);
+                        expCmd.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        // insert new one
+                        string expQuery = @"INSERT INTO Expenditure (ExpDate, ExpPurpose, ExpAmount, EmpId, HealthId)
+                            VALUES (@ExpDate, @ExpPurpose, @ExpAmount, @EmpId, @HealthId)";
+                        SqlCommand expCmd = new SqlCommand(expQuery, conn);
+                        expCmd.Parameters.AddWithValue("@ExpDate", DateTime.Today);
+                        expCmd.Parameters.AddWithValue("@ExpPurpose", "Veterinary - " + txtCowName.Text);
+                        expCmd.Parameters.AddWithValue("@ExpAmount", cost);
+                        expCmd.Parameters.AddWithValue("@EmpId", Session.EmpId);
+                        expCmd.Parameters.AddWithValue("@HealthId", selectedRepId);
+                        expCmd.ExecuteNonQuery();
+                    }
+                }
+
                 conn.Close();
 
+                // ── THESE GO LAST ──
                 MessageBox.Show("Health record updated successfully!");
-                selectedRepId = 0;
+                selectedRepId = 0; // ← reset AFTER everything is done
                 LoadHealth();
                 ClearFields();
             }
@@ -328,17 +387,26 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
+                // ── DELETE FROM EXPENDITURE TABLE TOO ──
+                string expQuery = "DELETE FROM Expenditure WHERE HealthId = @HealthId";
+                SqlCommand expCmd = new SqlCommand(expQuery, conn);
+                expCmd.Parameters.AddWithValue("@HealthId", selectedRepId);
+                expCmd.ExecuteNonQuery();
+
                 string query = "DELETE FROM Health WHERE RepId = @RepId";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@RepId", selectedRepId);
 
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                
 
                 MessageBox.Show("Health record deleted successfully!");
                 selectedRepId = 0;
                 LoadHealth();
                 ClearFields();
+                
+
+                conn.Close();
             }
             catch (Exception ex)
             {
