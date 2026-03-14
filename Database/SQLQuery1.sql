@@ -1,10 +1,9 @@
 Create Database DairyFarmDB;
 
--- =============================================
--- DAIRY FARM MANAGEMENT SYSTEM - TABLE CREATION
--- =============================================
 
--- 1. COW TABLE (Create first - referenced by others)
+
+
+
 CREATE TABLE Cow (
     CowId       INT PRIMARY KEY IDENTITY(1,1),
     CowName     VARCHAR(50),
@@ -19,7 +18,7 @@ CREATE TABLE Cow (
 ALTER TABLE Cow
 ADD DateOfBirth DATE;
 
--- 2. EMPLOYEE TABLE
+
 CREATE TABLE Employee (
     EmpId       INT PRIMARY KEY IDENTITY(1,1),
     EmpName     VARCHAR(50),
@@ -33,23 +32,18 @@ ADD Username VARCHAR(50),
     Password VARCHAR(50),
     Role      VARCHAR(50) 
 
--- 3. MILK TABLE
 CREATE TABLE Milk (
     MilkId      INT PRIMARY KEY IDENTITY(1,1),
     CowId       INT FOREIGN KEY REFERENCES Cow(CowId),
-    -- CowName is intentionally excluded here; retrieve via JOIN from Cow table
     AmMilk      INT,
     NoonMilk    INT,
     PmMilk      INT,
-    TotalMilk   AS (AmMilk + NoonMilk + PmMilk),  -- Computed automatically
+    TotalMilk   AS (AmMilk + NoonMilk + PmMilk), 
     DateProd    DATE
 );
-
--- 4. HEALTH TABLE
 CREATE TABLE Health (
     RepId       INT PRIMARY KEY IDENTITY(1,1),
     CowId       INT FOREIGN KEY REFERENCES Cow(CowId),
-    -- CowName retrieved via JOIN from Cow table
     RepDate     DATE,
     Event       VARCHAR(50),
     Diagnosis   VARCHAR(50),
@@ -57,8 +51,6 @@ CREATE TABLE Health (
     Cost        INT,
     VetName     VARCHAR(50)
 );
-
--- 5. MILK SALES TABLE
 CREATE TABLE MilkSales (
     SId         INT PRIMARY KEY IDENTITY(1,1),
     SaleDate    DATE,
@@ -67,10 +59,9 @@ CREATE TABLE MilkSales (
     ClientPhone VARCHAR(50),
     EmpId       INT FOREIGN KEY REFERENCES Employee(EmpId),
     Quantity    INT,
-    Amount      AS (UPrice * Quantity)  -- Computed automatically
+    Amount      AS (UPrice * Quantity)  
 );
 
--- 6. EXPENDITURE TABLE
 CREATE TABLE Expenditure (
     ExpId       INT PRIMARY KEY IDENTITY(1,1),
     ExpDate     DATE,
@@ -81,7 +72,6 @@ CREATE TABLE Expenditure (
 ALTER TABLE Expenditure
 ADD HealthId INT NULL FOREIGN KEY REFERENCES Health(RepId)
 
--- 7. INCOME TABLE
 CREATE TABLE Income (
     IncId       INT PRIMARY KEY IDENTITY(1,1),
     IncDate     DATE,
@@ -92,13 +82,11 @@ CREATE TABLE Income (
 ALTER TABLE Income
 ADD SaleId INT NULL FOREIGN KEY REFERENCES MilkSales(SId)
 
--- 8. BREED TABLE
 CREATE TABLE Breed (
     BreedId         INT PRIMARY KEY IDENTITY(1,1),
     HeatDate        DATE,
     BreedDate       DATE,
     CowId           INT FOREIGN KEY REFERENCES Cow(CowId),
-    -- CowName retrieved via JOIN from Cow table
     PregDate        DATE,
     ExpDateCalve    DATE,
     DateCalved      DATE,
