@@ -137,6 +137,8 @@ namespace DairyFarmManagementSystem
                     reader.Close();
                     conn.Close();
                     MessageBox.Show("Invalid Username, Password or Role!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPassword.Text= "";
+                    txtUsername.Text = "";
                 }
             }
             catch (Exception ex)

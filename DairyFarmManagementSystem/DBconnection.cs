@@ -9,7 +9,7 @@ namespace DairyFarmManagementSystem
 {
     internal class DBconnection
     {
-        public string connectionstring = @"Data Source = NAVEENR;
+        public string connectionstring = @"Data Source = localhost;
                                     Initial Catalog = DairyFarmDB; Integrated Security = True";
         public SqlConnection GetConnection()
         {
