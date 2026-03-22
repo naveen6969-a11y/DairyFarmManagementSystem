@@ -34,7 +34,7 @@ namespace DairyFarmManagementSystem
         {
             if (progressBarLoading.Value < 100)
             {
-                progressBarLoading.Value += 1; // increase slowly
+                progressBarLoading.Value += 1;
             }
             else
             {
@@ -43,10 +43,7 @@ namespace DairyFarmManagementSystem
                 FormLogin frmlog=new FormLogin();
                 frmlog.Show();
                 this.Hide();
-                // here you can open the next form if you want
-                // MainForm mf = new MainForm();
-                // mf.Show();
-                // this.Hide();
+                
             }
         }
     }

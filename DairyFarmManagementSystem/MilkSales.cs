@@ -205,13 +205,13 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@UPrice", price);
                 cmd.Parameters.AddWithValue("@ClientName", txtClientName.Text.Trim());
                 cmd.Parameters.AddWithValue("@ClientPhone", txtClientPhone.Text.Trim());
-                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); // ← auto from session!
+                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); 
                 cmd.Parameters.AddWithValue("@Quantity", quantity);
 
                 
                 int lastSaleId = Convert.ToInt32(cmd.ExecuteScalar());
 
-                // ── AUTO ADD TO INCOME TABLE ──
+                
                 string incomeQuery = @"INSERT INTO Income (IncDate, IncType, IncAmount, EmpId, SaleId)
                                VALUES (@IncDate, @IncType, @IncAmount, @EmpId, @SaleId)";
 
@@ -285,7 +285,7 @@ namespace DairyFarmManagementSystem
 
                
 
-                // ── UPDATE INCOME TABLE TOO ──
+                
                 string checkQuery = "SELECT COUNT(*) FROM Income WHERE SaleId = @SaleId";
                 SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
                 checkCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);
@@ -293,7 +293,7 @@ namespace DairyFarmManagementSystem
 
                 if (exists > 0)
                 {
-                    // update existing
+                    
                     string incomeQuery = @"UPDATE Income SET
                                 IncDate   = @IncDate,
                                 IncAmount = @IncAmount
@@ -306,7 +306,7 @@ namespace DairyFarmManagementSystem
                 }
                 else
                 {
-                    // insert new one
+                    
                     string incomeQuery = @"INSERT INTO Income (IncDate, IncType, IncAmount, EmpId, SaleId)
                            VALUES (@IncDate, @IncType, @IncAmount, @EmpId, @SaleId)";
                     SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
@@ -352,7 +352,7 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
-                // ── DELETE FROM INCOME TABLE TOO ──
+                
                 string incomeQuery = "DELETE FROM Income WHERE SaleId = @SaleId";
                 SqlCommand incomeCmd = new SqlCommand(incomeQuery, conn);
                 incomeCmd.Parameters.AddWithValue("@SaleId", selectedSaleId);

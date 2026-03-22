@@ -88,8 +88,7 @@ namespace DairyFarmManagementSystem
             InitializeComponent();
 
             lblDate.Text = "📅 " + DateTime.Today.ToString("dddd, dd MMMM yyyy");
-            //lblDate.Font = new Font("Segoe UI", 9);
-            //lblDate.ForeColor = Color.FromArgb(100, 100, 100);
+            
 
             lblGreeting.Text = GetGreeting() + "" + "!";
             lblGreeting.Font = new Font("Segoe UI", 11, FontStyle.Italic);
@@ -105,18 +104,18 @@ namespace DairyFarmManagementSystem
                 return;
             }
            
-            // ── GENDER COMBOBOX ──
+            
             cmbBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBoxGender.SelectedIndex = -1;
 
-            // ── ROLE COMBOBOX ──
+            
             cmbBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBoxRole.SelectedIndex = -1;
 
-            // ── HIDE PASSWORD ──
+            
             txtPassword.PasswordChar = '●';
 
-            // ── AUTO CALCULATE AGE ──
+            
             CalenderDateofbirth.ValueChanged += CalenderDateofbirth_ValueChanged;
 
             LoadEmployees();
@@ -142,7 +141,7 @@ namespace DairyFarmManagementSystem
             txtPhone.Text = row.Cells["Phone"].Value == DBNull.Value ? "" : row.Cells["Phone"].Value?.ToString();
             txtAddress.Text = row.Cells["Address"].Value == DBNull.Value ? "" : row.Cells["Address"].Value?.ToString();
             txtUsername.Text = row.Cells["Username"].Value == DBNull.Value ? "" : row.Cells["Username"].Value?.ToString();
-            txtPassword.Text = ""; // never fill password for security
+            txtPassword.Text = ""; 
 
             cmbBoxGender.Text = row.Cells["Gender"].Value?.ToString();
             cmbBoxRole.Text = row.Cells["Role"].Value?.ToString();
@@ -249,7 +248,7 @@ namespace DairyFarmManagementSystem
                 string query;
                 SqlCommand cmd;
 
-                // ── ONLY UPDATE PASSWORD IF USER TYPED A NEW ONE ──
+                
                 if (!string.IsNullOrWhiteSpace(txtPassword.Text))
                 {
                     query = @"UPDATE Employee SET
@@ -310,7 +309,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── PREVENT ADMIN FROM DELETING THEMSELVES ──
+            
             if (selectedEmpId == Session.EmpId)
             {
                 MessageBox.Show("You cannot delete your own account!", "Error",

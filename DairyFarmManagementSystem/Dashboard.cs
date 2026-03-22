@@ -20,15 +20,15 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
-                // ── TOTAL INCOME ──
+                
                 SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(IncAmount), 0) FROM Income", conn);
                 lblincomeAmount.Text = "Rs. " + cmd.ExecuteScalar().ToString();
 
-                // ── TOTAL EXPENDITURE ──
+                
                 cmd = new SqlCommand("SELECT ISNULL(SUM(ExpAmount), 0) FROM Expenditure", conn);
                 lblExAmount.Text = "Rs. " + cmd.ExecuteScalar().ToString();
 
-                // ── BALANCE ──
+                
                 cmd = new SqlCommand("SELECT ISNULL(SUM(IncAmount), 0) FROM Income", conn);
                 int totalIncome = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -38,26 +38,26 @@ namespace DairyFarmManagementSystem
                 int balance = totalIncome - totalExp;
                 lblBalanceAmount.Text = "Rs. " + balance.ToString();
 
-                // change color based on balance
+                
                 lblBalanceAmount.ForeColor = balance >= 0 ? Color.Green : Color.Red;
 
-                // ── TOTAL COWS ──
+                
                 cmd = new SqlCommand("SELECT COUNT(*) FROM Cow", conn);
                 lblCowsCount.Text = cmd.ExecuteScalar().ToString();
 
-                // ── TOTAL MILK STOCK ──
+                
                 cmd = new SqlCommand("SELECT ISNULL(SUM(TotalMilk), 0) FROM Milk", conn);
                 lblMilkStockCount.Text = cmd.ExecuteScalar().ToString() + " L";
 
-                // ── TOTAL EMPLOYEES ──
+               
                 cmd = new SqlCommand("SELECT COUNT(*) FROM Employee", conn);
                 lblEmpCount.Text = cmd.ExecuteScalar().ToString();
 
-                // ── HIGHEST SALE AMOUNT ──
+                
                 cmd = new SqlCommand("SELECT ISNULL(MAX(Amount), 0) FROM MilkSales", conn);
                 lblhighestsaleAmount.Text = "Rs. " + cmd.ExecuteScalar().ToString();
 
-                // ── HIGHEST EXPENDITURE ──
+                
                 cmd = new SqlCommand("SELECT ISNULL(MAX(ExpAmount), 0) FROM Expenditure", conn);
                 lblHighestExpenditureAmount.Text = "Rs. " + cmd.ExecuteScalar().ToString();
 

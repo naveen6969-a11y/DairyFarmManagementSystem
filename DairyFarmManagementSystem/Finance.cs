@@ -122,7 +122,7 @@ namespace DairyFarmManagementSystem
             cmbBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
 
             lblsessioninfo.Text = "Logged in as : " + Session.EmpName;
-            // ── EXPENDITURE PURPOSES ──
+            
             cmbBoxPurpose.Items.Add("Animal Feed");
             cmbBoxPurpose.Items.Add("Veterinary Services");
             cmbBoxPurpose.Items.Add("Medicine & Vaccines");
@@ -135,7 +135,7 @@ namespace DairyFarmManagementSystem
             cmbBoxPurpose.Items.Add("Other");
             cmbBoxPurpose.SelectedIndex = -1;
 
-            // ── INCOME TYPES ──
+            
             cmbBoxType.Items.Add("Cow Sales");
             cmbBoxType.Items.Add("Manure Sales");
             cmbBoxType.Items.Add("Calf Sales");
@@ -255,7 +255,7 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@ExpDate", dateTimePickerEX.Value.Date);
                 cmd.Parameters.AddWithValue("@ExpPurpose", cmbBoxPurpose.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@ExpAmount", expAmount);
-                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); // ← auto from session!
+                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -296,7 +296,7 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@IncDate", dateTimePickerIN.Value.Date);
                 cmd.Parameters.AddWithValue("@IncType", cmbBoxType.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@IncAmount", incAmount);
-                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); // ← auto from session!
+                cmd.Parameters.AddWithValue("@EmpId", Session.EmpId); 
 
                 cmd.ExecuteNonQuery();
                 conn.Close();

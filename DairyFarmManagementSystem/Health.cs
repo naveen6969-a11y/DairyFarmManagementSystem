@@ -224,7 +224,7 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
-                // ── INSERT AND GET LAST ID IN ONE QUERY ──
+                
                 string query = @"INSERT INTO Health (CowId, RepDate, Event, Diagnosis, Treatment, Cost, VetName)
                  VALUES (@CowId, @RepDate, @Event, @Diagnosis, @Treatment, @Cost, @VetName);
                  SELECT SCOPE_IDENTITY();";
@@ -233,7 +233,7 @@ namespace DairyFarmManagementSystem
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@CowId", cmbBoxCowid.SelectedValue);
-                cmd.Parameters.AddWithValue("@RepDate", DateTime.Today);  // system date auto
+                cmd.Parameters.AddWithValue("@RepDate", DateTime.Today); 
                 cmd.Parameters.AddWithValue("@Event", txtEvent.Text.Trim());
                 cmd.Parameters.AddWithValue("@Diagnosis", txtDiagnosis.Text.Trim());
                 cmd.Parameters.AddWithValue("@Treatment", txtTreatment.Text.Trim());
@@ -249,7 +249,7 @@ namespace DairyFarmManagementSystem
 
                 
 
-                // ── AUTO ADD TO EXPENDITURE TABLE ──
+                
                 if (cost > 0)
                 {
                     string expQuery = @"INSERT INTO Expenditure (ExpDate, ExpPurpose, ExpAmount, EmpId, HealthId)
@@ -313,11 +313,10 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@VetName", txtVetName.Text.Trim());
                 cmd.ExecuteNonQuery();
 
-                // ── UPDATE EXPENDITURE TABLE TOO ──
-                // ── UPDATE OR INSERT EXPENDITURE ──
+                
                 if (cost > 0)
                 {
-                    // check if expenditure record exists for this health record
+                    
                     string checkQuery = "SELECT COUNT(*) FROM Expenditure WHERE HealthId = @HealthId";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
                     checkCmd.Parameters.AddWithValue("@HealthId", selectedRepId);
@@ -325,7 +324,7 @@ namespace DairyFarmManagementSystem
 
                     if (exists > 0)
                     {
-                        // update existing
+                        
                         string expQuery = @"UPDATE Expenditure SET
                                 ExpDate   = @ExpDate,
                                 ExpAmount = @ExpAmount
@@ -338,7 +337,7 @@ namespace DairyFarmManagementSystem
                     }
                     else
                     {
-                        // insert new one
+                        
                         string expQuery = @"INSERT INTO Expenditure (ExpDate, ExpPurpose, ExpAmount, EmpId, HealthId)
                             VALUES (@ExpDate, @ExpPurpose, @ExpAmount, @EmpId, @HealthId)";
                         SqlCommand expCmd = new SqlCommand(expQuery, conn);
@@ -353,9 +352,9 @@ namespace DairyFarmManagementSystem
 
                 conn.Close();
 
-                // ── THESE GO LAST ──
+                
                 MessageBox.Show("Health record updated successfully!");
-                selectedRepId = 0; // ← reset AFTER everything is done
+                selectedRepId = 0;
                 LoadHealth();
                 ClearFields();
             }
@@ -387,7 +386,7 @@ namespace DairyFarmManagementSystem
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
 
-                // ── DELETE FROM EXPENDITURE TABLE TOO ──
+                
                 string expQuery = "DELETE FROM Expenditure WHERE HealthId = @HealthId";
                 SqlCommand expCmd = new SqlCommand(expQuery, conn);
                 expCmd.Parameters.AddWithValue("@HealthId", selectedRepId);

@@ -39,7 +39,7 @@ namespace DairyFarmManagementSystem
                 dataGridViewCows.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
                 dataGridViewCows.DefaultCellStyle.Font = new Font("Segoe UI", 9);
                 dataGridViewCows.GridColor = Color.LightSteelBlue;
-                //dataGridViewCows.BorderStyle = BorderStyle.None;
+                
                 dataGridViewCows.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
                 dataGridViewCows.EnableHeadersVisualStyles = false;
 
@@ -69,7 +69,7 @@ namespace DairyFarmManagementSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // ── VALIDATION ──
+            
             if (string.IsNullOrWhiteSpace(txtCowname.Text))
             {
                 MessageBox.Show("Please enter Cow Name.");
@@ -103,7 +103,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── SAVE ──
+            
             try
             {
                 DBconnection db = new DBconnection();
@@ -121,14 +121,14 @@ namespace DairyFarmManagementSystem
                 cmd.Parameters.AddWithValue("@Age", age);
                 cmd.Parameters.AddWithValue("@WeightAtBirth", weight);
                 cmd.Parameters.AddWithValue("@Pasture", txtPasture.Text.Trim());
-                // add this with the other parameters
+                
                 cmd.Parameters.AddWithValue("@DateOfBirth", CalenderDateofbirth.Value.Date);
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
                 MessageBox.Show("Cow saved successfully!");
                 LoadCows();
-                // ── CLEAR FIELDS ──
+                
                 txtCowname.Text = "";
                 txtEartag.Text = "";
                 txtColor.Text = "";
@@ -199,7 +199,7 @@ namespace DairyFarmManagementSystem
 
             int age = today.Year - dob.Year;
 
-            // check if birthday hasn't occurred yet this year
+            
             if (dob.Date > today.AddYears(-age))
                 age--;
 
@@ -221,25 +221,25 @@ namespace DairyFarmManagementSystem
             txtPasture.Text = row.Cells["Pasture"].Value == DBNull.Value ? "" : row.Cells["Pasture"].Value?.ToString();
 
 
-            // calendar needs special handling
+            
             if (row.Cells["DateOfBirth"].Value != null && row.Cells["DateOfBirth"].Value != DBNull.Value)
                 CalenderDateofbirth.Value = Convert.ToDateTime(row.Cells["DateOfBirth"].Value);
             else
-                CalenderDateofbirth.Value = DateTime.Today; // default to today if null
+                CalenderDateofbirth.Value = DateTime.Today;
 
             selectedCowId = Convert.ToInt32(row.Cells["CowId"].Value);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // check if a row is selected
+            
             if (selectedCowId == 0)
             {
                 MessageBox.Show("Please select a cow from the table first.");
                 return;
             }
 
-            // ── VALIDATION ──
+            
             if (string.IsNullOrWhiteSpace(txtCowname.Text))
             {
                 MessageBox.Show("Please enter Cow Name.");
@@ -271,7 +271,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── UPDATE ──
+            
             try
             {
                 DBconnection db = new DBconnection();
@@ -315,14 +315,14 @@ namespace DairyFarmManagementSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // check if a row is selected
+            
             if (selectedCowId == 0)
             {
                 MessageBox.Show("Please select a cow from the table first.");
                 return;
             }
 
-            // ── CONFIRM BEFORE DELETE ──
+            
             DialogResult confirm = MessageBox.Show(
                 "Are you sure you want to delete " + txtCowname.Text + "?",
                 "Confirm Delete",
@@ -332,7 +332,7 @@ namespace DairyFarmManagementSystem
 
             if (confirm == DialogResult.No) return;
 
-            // ── DELETE ──
+           
             try
             {
                 DBconnection db = new DBconnection();
@@ -349,7 +349,7 @@ namespace DairyFarmManagementSystem
                 selectedCowId = 0;
                 LoadCows();
 
-                // ── CLEAR FIELDS ──
+                
                 txtCowname.Text = "";
                 txtEartag.Text = "";
                 txtColor.Text = "";

@@ -30,24 +30,24 @@ namespace DairyFarmManagementSystem
 
             txtUsername.Select();
 
-            // ── PASSWORD HIDDEN ──
+            
             txtPassword.PasswordChar = '●';
 
-            // ── USERNAME TEXTBOX ──
+            
             txtUsername.Font = new Font("Segoe UI", 10);
-            //txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            
             txtUsername.BackColor = Color.White;
             txtUsername.ForeColor = Color.FromArgb(50, 50, 50);
             txtUsername.Height = 30;
 
-            // ── PASSWORD TEXTBOX ──
+            
             txtPassword.Font = new Font("Segoe UI", 10);
-            //txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            
             txtPassword.BackColor = Color.White;
             txtPassword.ForeColor = Color.FromArgb(50, 50, 50);
             txtPassword.Height = 30;
 
-            // ── COMBOBOX ──
+            
             cmbBoxRole.Font = new Font("Segoe UI", 10);
             cmbBoxRole.BackColor = Color.White;
             cmbBoxRole.ForeColor = Color.FromArgb(50, 50, 50);
@@ -55,7 +55,7 @@ namespace DairyFarmManagementSystem
             
            
 
-            // ── LOGIN BUTTON ──
+          
             btnLogin.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             btnLogin.BackColor = Color.SteelBlue;
             btnLogin.ForeColor = Color.White;
@@ -64,7 +64,7 @@ namespace DairyFarmManagementSystem
            
             btnLogin.Cursor = Cursors.Hand;
 
-            // ── HOVER EFFECT ON BUTTON ──
+            
             btnLogin.MouseEnter += (s, ev) => btnLogin.BackColor = Color.FromArgb(30, 100, 180);
             btnLogin.MouseLeave += (s, ev) => btnLogin.BackColor = Color.SteelBlue;
         }
@@ -88,7 +88,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── LOGIN ──
+            
             try
             {
                 DBconnection db = new DBconnection();
@@ -108,7 +108,7 @@ namespace DairyFarmManagementSystem
 
                 if (reader.Read())
                 {
-                    // ── SET SESSION ──
+                    
                     Session.EmpId = Convert.ToInt32(reader["EmpId"]);
                     Session.EmpName = reader["EmpName"].ToString();
                     Session.Role = reader["Role"].ToString();
@@ -116,9 +116,9 @@ namespace DairyFarmManagementSystem
                     reader.Close();
                     conn.Close();
 
-                    //MessageBox.Show("Welcome, " + Session.EmpName + "!");
+                    
 
-                    // ── OPEN FORM BASED ON ROLE ──
+                    
                     if (Session.Role == "Admin")
                     {
                         FormAdminMenu adminForm = new FormAdminMenu();

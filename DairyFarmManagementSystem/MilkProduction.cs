@@ -13,13 +13,13 @@ namespace DairyFarmManagementSystem
 {
     public partial class FormMilkProduction : MetroFramework.Forms.MetroForm
     {
-        private bool isLoading = false;  // add this at the top of your form class
-        private int selectedMilkId = 0; // add this at the top of your form class
+        private bool isLoading = false;  
+        private int selectedMilkId = 0; 
         private void LoadCowCombobox()
         {
             try
             {
-                isLoading = true;  // ← stop the event from firing
+                isLoading = true; 
 
                 DBconnection db = new DBconnection();
                 SqlConnection conn = db.GetConnection();
@@ -35,7 +35,7 @@ namespace DairyFarmManagementSystem
                 cmbboxCowid.ValueMember = "CowId";
                 cmbboxCowid.SelectedIndex = -1;
 
-                isLoading = false;  // ← allow the event again
+                isLoading = false; 
             }
             catch (Exception ex)
             {
@@ -158,14 +158,14 @@ namespace DairyFarmManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // check if a row is selected
+            
             if (selectedMilkId == 0)
             {
                 MessageBox.Show("Please select a record from the table first.");
                 return;
             }
 
-            // ── VALIDATION ──
+            
             if (cmbboxCowid.SelectedValue == null)
             {
                 MessageBox.Show("Please select a Cow.");
@@ -192,7 +192,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── UPDATE ──
+            
             try
             {
                 DBconnection db = new DBconnection();
@@ -222,7 +222,7 @@ namespace DairyFarmManagementSystem
                 selectedMilkId = 0;
                 LoadMilkProduction();
 
-                // ── CLEAR FIELDS ──
+                
                 cmbboxCowid.SelectedIndex = -1;
                 txtAMmilk.Text = "";
                 txtNoonMilk.Text = "";
@@ -238,7 +238,7 @@ namespace DairyFarmManagementSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // ── VALIDATION ──
+            
             if (cmbboxCowid.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a Cow.");
@@ -265,7 +265,7 @@ namespace DairyFarmManagementSystem
                 return;
             }
 
-            // ── SAVE ──
+            
             try
             {
                 DBconnection db = new DBconnection();
@@ -288,7 +288,7 @@ namespace DairyFarmManagementSystem
                 MessageBox.Show("Milk production saved successfully!");
                 LoadMilkProduction();
 
-                // ── CLEAR FIELDS ──
+               
                 cmbboxCowid.SelectedIndex = -1;
                 txtCowName2.Text = "";
                 txtAMmilk.Text = "";
@@ -304,7 +304,7 @@ namespace DairyFarmManagementSystem
 
         private void cmbboxCowid_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isLoading) return;  // ← ignore if still loading
+            if (isLoading) return;  
             if (cmbboxCowid.SelectedIndex == -1) return;
 
             DataRowView row = (DataRowView)cmbboxCowid.SelectedItem;
@@ -338,7 +338,7 @@ namespace DairyFarmManagementSystem
         private void dataGridViewMilk_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex < 0) return; // ← move this to the top FIRST
+            if (e.RowIndex < 0) return; 
 
             DataGridViewRow row = dataGridViewMilk.Rows[e.RowIndex];
 
@@ -392,7 +392,7 @@ namespace DairyFarmManagementSystem
                 selectedMilkId = 0;
                 LoadMilkProduction();
 
-                // ── CLEAR FIELDS ──
+                
                 cmbboxCowid.SelectedIndex = -1;
                 txtAMmilk.Text = "";
                 txtNoonMilk.Text = "";
